@@ -1,13 +1,19 @@
 # ThermoVerse 專案交接
 
-更新日期：2026-09-11（臺灣時間）
+更新日期：2026-09-11 22:30（臺灣時間）
 
 ## 下個 Session 先做什麼
 
-1. 先讀本檔，再讀 `ThermoVerse_網站內容規劃.md`。
-2. 開啟並重新讀取 Google 文件的 `Statement of Work` 與 `Website Guidelines` 分頁。
-3. 確認 Google 文件是否已套用本檔「Google 文件待修改項目」列出的內容。
-4. 修改後重新讀取相關段落，確認文字、日期與條款均已正確寫入。
+1. **GitHub Pages 線上預覽啟用（若需對外展示）**：
+   - 目前倉庫為 Private：若需使用免費用 GitHub Pages 產生公開網址，請在 GitHub 倉庫 **Settings** > **Danger Zone** 改為 **Public**，隨後在 **Settings** > **Pages** 的 Branch 選擇 **`gh-pages`** 分支，即可獲得線上官方網址（`https://thermo2026.github.io/thermoverse-website/`）。
+2. **Google 文件條款確認與修改**：
+   - 開啟並重新讀取 Google 文件的 `Statement of Work` 與 `Website Guidelines` 分頁。
+   - 確認 Google 文件是否已套用本檔「Google 文件待修改項目」列出的內容。
+   - 修改後重新讀取相關段落，確認文字、日期與條款均已正確寫入。
+3. **交付節點控管**：
+   - 第一版：2026-09-12
+   - 第二版：2026-09-14
+   - 最終版：2026-09-16
 
 ## Google 文件
 
@@ -290,4 +296,27 @@
 - **校驗確認**：
   - 全站 30 處 WebP 圖片引用路徑經自動化程式核對，全數精準對應磁碟檔案，0 個破圖與 0 個 404。
   - HTML/CSS/JS 內舊格式（`.png`, `.jpg`, `.jpeg`）引用已全部清零。
+
+### 12. GitHub 倉庫初始化、帳號嚴格隔離與部署架構
+- **遠端倉庫位址**：
+  - `https://github.com/thermo2026/thermoverse-website.git`
+- **獨立 Git 身分與帳號隔離（重要）**：
+  - 本專案嚴格獨立，與使用者的個人專案 `n239-studio` **完全隔離**。
+  - 本地倉庫獨立設定：
+    - `user.name = thermo2026`
+    - `user.email = thermo2026@users.noreply.github.com`
+  - 歷史所有 Commit 的作者（Author & Committer）均已透過 rebase 完成清洗，無任何私人身分殘留。
+  - 遠端推送採用 `thermo2026` 專屬 Personal Access Token（PAT），不影響系統全域 SSH 金鑰與其他專案。
+- **倉庫檔案與過濾機制**：
+  - 根目錄新增標準 [`.gitignore`](.gitignore)，有效過濾 `tmp/`（Pillow 二進位庫等）、`.build/`（投影片產出檔）、`output/`（影片截圖）及 `.DS_Store`，節省超過 200MB 的上傳空間。
+  - 根目錄新增正式專案說明文件 [`README.md`](README.md)，記載本地啟動（Python HTTP Server）與部署說明。
+- **分支雙軌架構**：
+  - **`main` 分支**：存放完整專案程式碼、SOW 法律與規劃文件、設計文件，並在根目錄提供自動跳轉至 `website/` 的 `index.html`。
+  - **`gh-pages` 分支**：透過 `git subtree split` 自動生成，直接將 `website/` 目錄提升至根層級，專門供 GitHub Pages 靜態伺服器部署。
+- **GitHub Pages 免費上線指引**：
+  - 由於免費版 GitHub Pages 僅支援 **Public** 倉庫：
+    1. 前往 GitHub 倉庫 **Settings** → **Danger Zone** 將可見度改為 **Public**。
+    2. 前往 **Settings** → **Pages** → **Build and deployment** 下方的 Branch 選擇 **`gh-pages`** / **`/(root)`** 並儲存。
+    3. 即可獲得官方線上預覽網址：`https://thermo2026.github.io/thermoverse-website/`。
+
 
