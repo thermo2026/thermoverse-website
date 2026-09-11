@@ -44,9 +44,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 42px; }
 .grid.two-column { grid-template-columns: repeat(2, 1fr); }
 .card { padding: 30px; background: rgba(255,255,255,0.74); border: 1px solid var(--line); border-radius: 26px; backdrop-filter: blur(14px); }
-.solution-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; min-height: 520px; box-shadow: 0 16px 40px rgba(38, 52, 62, 0.05); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.solution-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; min-height: 580px; box-shadow: 0 16px 40px rgba(38, 52, 62, 0.05); transition: transform 0.25s ease, box-shadow 0.25s ease; }
 .solution-card:hover { transform: translateY(-3px); box-shadow: 0 22px 50px rgba(38, 52, 62, 0.09); }
-.solution-media { width: 100%; height: 240px; position: relative; overflow: hidden; background: #edf2f7; }
+.solution-media { width: 100%; height: 300px; position: relative; overflow: hidden; background: #edf2f7; }
 .solution-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
 .solution-card:hover .solution-media img { transform: scale(1.03); }
 .solution-content { padding: 32px 36px 36px; display: flex; flex-direction: column; flex: 1; }
