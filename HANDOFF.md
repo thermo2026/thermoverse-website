@@ -222,7 +222,8 @@
 
 ### 5. 核心方案卡片（#solutions）增高與專屬視覺圖更換
 - **大標題修訂**：改為 `Two distinct pillars for building energy management.`。
-- **卡片高度加高**：設定最小高度為 `min-height: 520px`，呈現縱向大氣感。
+- **上半部圖片高度增加 25%**：
+  - `.solution-media` 高度由原先 `240px` 增加 25% 至 **`300px`**，卡片最小高度同步調整為 `min-height: 580px`，充分展現整棟智慧建築切面與天花板儲能電路網絡的科技細節。
 - **更換為對應的高清實景 WebP 圖像**：
   - **ENERGY SERVICES（Act on today’s building needs.）**：替換為 `assets/Act on today’s building needs.webp`（現代多層智慧建築剖面、物聯網感測與 MEP 數位雙生儀表板）。
   - **LATCHES INNOVATION（Prepare assets for active thermal storage.）**：替換為 `assets/Prepare assets for active thermal storage.webp`（辦公空間上方 drop-ceiling 輕鋼架天花板與發光散熱管線/儲能電路網絡意象）。
