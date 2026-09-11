@@ -266,11 +266,16 @@
   - `.hero-content` 加入 `margin: 0 auto; box-sizing: border-box;`，避免在特定視窗寬度下內距（padding）疊加容器寬度導致橫向微溢出。
   - 在 `@media (max-width: 760px)` 響應式中，明確將 `.animated-hero` 排除在通用 `.hero` 的覆蓋規則之外（改為 `.hero:not(.animated-hero)`），確保在任何小視窗或筆電視窗縮放時，Hero 影片始終保持 100% 絕對全螢幕鋪滿，絕不露出下層白色背景。
 
-### 9. 頁尾底欄（.footer-bottom）版面置中調整
-- **樣式調整**：
-  - 原先採用 `justify-content: space-between` 將版權宣告（`© 2026 ThermoVerse Inc.`）與隱私權條款（`Privacy Policy`）分置於畫面最左與最右側。
-  - 依需求改為**全寬度水平置中排列**（`justify-content: center; align-items: center; gap: 24px; text-align: center;`）。
-  - 手機版（`max-width: 760px`）同步維持置中對齊（`gap: 18px`），視覺整潔聚焦。
+### 9. 頁尾（.footer）高度壓縮與底欄置中
+- **頁尾整體高度降低（更緊湊洗鍊）**：
+  - `.footer` 上下內距由原先 `84px 0 28px` 縮減至 **`48px 0 24px`**（頂部空間大幅緊湊，減少浪費）。
+  - `.footer-brand p` 標語與 Logo 的間距由 `28px` 降至 **`16px`**。
+  - `.footer-bottom` 與上方欄位的大間距由 `76px` 壓縮至 **`38px`**，分隔線內距縮減為 `20px`。
+  - 手機版頂部內距由 `64px` 縮減為 **`40px`**，欄位間距縮減為 `32px`。
+  - 整體 Footer 高度節省超過 100px，外觀更加俐落精緻。
+- **底欄置中排列**：
+  - 原先採用 `justify-content: space-between`，改為**全寬度水平置中排列**（`justify-content: center; align-items: center; gap: 24px; text-align: center;`）。
+  - 手機版同步維持置中對齊（`gap: 18px`），視覺整潔聚焦。
 
 ### 10. 頁尾 Logo 下方品牌標語更新（.footer-brand p）
 - **文案調整**：
