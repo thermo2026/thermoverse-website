@@ -324,4 +324,12 @@
     2. 前往 **Settings** → **Pages** → **Build and deployment** 下方的 Branch 選擇 **`gh-pages`** / **`/(root)`** 並儲存。
     3. 即可獲得官方線上預覽網址：`https://thermo2026.github.io/thermoverse-website/`。
 
+### 13. Technology (LATCHES) 頁面 Hero 標題更新
+- **標題調整（technology.html）**：
+  - 原標題：`Turn Your Ceiling Into a Programmable Thermal Battery.`
+  - 新標題：**`The world's most compact, zero-footprint thermal energy storage solution`**
+- **全站次頁面 CSS 版本號同步**：
+  - 所有次頁面（`technology.html`、`about.html`、`use-cases.html`、`contact.html`、`privacy.html`）之樣式表參照全數同步更新至 `styles.css?v=15`，確保頁尾高度壓縮與最新樣式即時生效。
+
+
 
