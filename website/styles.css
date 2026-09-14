@@ -561,6 +561,88 @@ button.button, input[type="submit"].button {
   transform: translateY(-2px);
 }
 
+/* About Us Hero (Inspired by media_1789383242977.png & media_1789383328739.jpg) */
+.about-hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: #0b1528;
+  background-image:
+    linear-gradient(90deg, rgba(11, 21, 40, 0.75) 0%, rgba(11, 21, 40, 0.48) 50%, rgba(11, 21, 40, 0.15) 85%),
+    linear-gradient(180deg, rgba(11, 21, 40, 0.55) 0%, transparent 30%, rgba(11, 21, 40, 0.25) 100%),
+    url('assets/about-hero.webp');
+  background-size: cover;
+  background-position: center 50%;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.about-hero .eyebrow {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.about-hero .arch-hero-title {
+  color: #ffffff;
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.4);
+  font-weight: 350;
+  max-width: 860px;
+}
+
+.about-hero .arch-hero-desc {
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  max-width: 680px;
+  font-size: 1.1rem;
+  line-height: 1.68;
+}
+
+.about-hero .btn-pill {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-hero .btn-pill:hover {
+  background: #ffffff;
+  color: var(--ink);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.about-hero .btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.about-hero .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px);
+}
+
 /* Architectural Cards Grid (Image 1 style) */
 .arch-cards-grid {
   display: grid;
