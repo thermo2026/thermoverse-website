@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=30">
+  <link rel="stylesheet" href="styles.css?v=31">
 </head>
 <body>
   <header class="site-header">
@@ -38,33 +38,112 @@
       </div>
     </section>
 
-    <!-- SECTION 01 · POSITIONING & MISSION (Split Style) -->
-    <section class="arch-split-section" id="positioning">
-      <div class="wrap arch-split-wrap">
-        <div class="arch-split-content">
-          <div class="eyebrow">01 · MISSION &amp; POSITIONING</div>
-          <h2>Essential grid capacity for dense cities.</h2>
-          <p class="section-intro">ThermoVerse addresses two connected needs: improving the operational performance of buildings today and developing compact thermal storage for cities where floor area and fire-code constraints limit traditional chemical battery systems (BESS).</p>
-          <div>
-            <a class="btn-pill" href="use-cases.html">Explore Solutions</a>
+    <!-- SECTION 01 · MISSION & POSITIONING (Goals Showcase - Image Reference Style) -->
+    <section class="section" id="positioning" style="padding-top: 72px; padding-bottom: 84px; background: #ffffff;">
+      <div class="wrap">
+        <div class="goals-showcase-card">
+          <div class="goals-showcase-header">
+            <div class="eyebrow">01 · MISSION &amp; POSITIONING</div>
+            <h2 class="goals-showcase-title">Our goals</h2>
           </div>
-          <dl class="arch-metric-row">
-            <div class="arch-metric-item">
-              <dt>0 SF</dt>
-              <dd>Rentable floor space preserved</dd>
+
+          <div class="goals-showcase-body">
+            <!-- Left Navigation & Progress -->
+            <div class="goals-nav">
+              <div class="goals-progress-row" aria-hidden="true">
+                <div class="goals-progress-track">
+                  <div class="goals-progress-bar" id="goalsProgressBar" style="width: 25%;"></div>
+                </div>
+                <div class="goals-counter" id="goalsCounter">01 / 04</div>
+              </div>
+
+              <ul class="goals-tab-list" role="tablist" aria-label="Mission and Goals Tabs">
+                <li>
+                  <button class="goals-tab-btn active" role="tab" aria-selected="true" data-index="0" id="goal-tab-0" aria-controls="goal-pane-0">
+                    <span class="goals-tab-bullet" aria-hidden="true"></span>
+                    <span>Zero Footprint</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="goals-tab-btn" role="tab" aria-selected="false" data-index="1" id="goal-tab-1" aria-controls="goal-pane-1">
+                    <span class="goals-tab-bullet" aria-hidden="true"></span>
+                    <span>Safety &amp; Compliance</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="goals-tab-btn" role="tab" aria-selected="false" data-index="2" id="goal-tab-2" aria-controls="goal-pane-2">
+                    <span class="goals-tab-bullet" aria-hidden="true"></span>
+                    <span>Grid Resilience</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="goals-tab-btn" role="tab" aria-selected="false" data-index="3" id="goal-tab-3" aria-controls="goal-pane-3">
+                    <span class="goals-tab-bullet" aria-hidden="true"></span>
+                    <span>Dual-Track Execution</span>
+                  </button>
+                </li>
+              </ul>
             </div>
-            <div class="arch-metric-item">
-              <dt>Solid-State</dt>
-              <dd>Inherently non-toxic and non-flammable</dd>
+
+            <!-- Right Display Card -->
+            <div class="goals-card-display">
+              <!-- Pane 0: Zero Footprint -->
+              <div class="goals-pane active" id="goal-pane-0" role="tabpanel" aria-labelledby="goal-tab-0">
+                <div class="goals-pane-content">
+                  <h3 class="goals-pane-title">Preserve 100% of rentable floor space.</h3>
+                  <div class="goals-pane-bottom">
+                    <p class="goals-pane-desc">By embedding LATCHES™ modular phase-change units seamlessly into existing ceiling plenums and architectural cavities, dense commercial properties deploy massive thermal storage with zero rentable square footage consumed.</p>
+                    <span class="goals-pane-tag">0 SF Rentable Area Consumed</span>
+                  </div>
+                </div>
+                <div class="goals-pane-media">
+                  <img src="assets/install.webp" alt="Modular ceiling installation of thermal panels">
+                </div>
+              </div>
+
+              <!-- Pane 1: Safety & Compliance -->
+              <div class="goals-pane" id="goal-pane-1" role="tabpanel" aria-labelledby="goal-tab-1">
+                <div class="goals-pane-content">
+                  <h3 class="goals-pane-title">Inherently non-flammable solid-state safety.</h3>
+                  <div class="goals-pane-bottom">
+                    <p class="goals-pane-desc">Unlike chemical battery storage systems (BESS) subject to thermal runaway risks, toxic venting, and stringent municipal fire codes, our solid-state phase-change composite is chemically inert and completely safe for occupied high-rises.</p>
+                    <span class="goals-pane-tag">Non-Toxic · Zero Thermal Runaway Risk</span>
+                  </div>
+                </div>
+                <div class="goals-pane-media">
+                  <img src="assets/workshop.webp" alt="Engineering collaboration and materials safety testing">
+                </div>
+              </div>
+
+              <!-- Pane 2: Grid Resilience -->
+              <div class="goals-pane" id="goal-pane-2" role="tabpanel" aria-labelledby="goal-tab-2">
+                <div class="goals-pane-content">
+                  <h3 class="goals-pane-title">Dynamic grid resilience &amp; peak shifting.</h3>
+                  <div class="goals-pane-bottom">
+                    <p class="goals-pane-desc">Smart predictive edge algorithms orchestrate automated thermal charging during off-peak windows and discharge during peak demand hours—curbing peak utility tariffs while buffering local distribution transformers.</p>
+                    <span class="goals-pane-tag">Automated Peak HVAC Load Shifting</span>
+                  </div>
+                </div>
+                <div class="goals-pane-media">
+                  <img src="assets/city.webp" alt="Urban skyline and smart grid buildings">
+                </div>
+              </div>
+
+              <!-- Pane 3: Dual-Track Execution -->
+              <div class="goals-pane" id="goal-pane-3" role="tabpanel" aria-labelledby="goal-tab-3">
+                <div class="goals-pane-content">
+                  <h3 class="goals-pane-title">Practical action today, deep innovation tomorrow.</h3>
+                  <div class="goals-pane-bottom">
+                    <p class="goals-pane-desc">Our dual-track approach combines immediate utility cost reductions through ASHRAE Level I–III audits and MEP optimizations today, while concurrently developing proprietary thermal storage assets for smart cities.</p>
+                    <span class="goals-pane-tag">From Immediate Audits to Active Storage</span>
+                  </div>
+                </div>
+                <div class="goals-pane-media">
+                  <img src="assets/Commercial buildings.webp" alt="Commercial facility audit and energy management">
+                </div>
+              </div>
             </div>
-            <div class="arch-metric-item">
-              <dt>Dual Track</dt>
-              <dd>Immediate audits to future storage</dd>
-            </div>
-          </dl>
-        </div>
-        <div class="arch-split-media">
-          <img src="assets/workshop.webp" alt="Engineering collaboration in a workshop">
+          </div>
         </div>
       </div>
     </section>
@@ -255,5 +334,60 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script>
+    (function() {
+      const tabs = document.querySelectorAll('.goals-tab-btn');
+      const panes = document.querySelectorAll('.goals-pane');
+      const progressBar = document.getElementById('goalsProgressBar');
+      const counter = document.getElementById('goalsCounter');
+      if (!tabs.length || !panes.length) return;
+
+      const total = tabs.length;
+
+      function activateTab(index) {
+        tabs.forEach((tab, i) => {
+          const isActive = (i === index);
+          tab.classList.toggle('active', isActive);
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          tab.setAttribute('tabindex', isActive ? '0' : '-1');
+        });
+
+        panes.forEach((pane, i) => {
+          pane.classList.toggle('active', i === index);
+        });
+
+        if (progressBar) {
+          const pct = Math.round(((index + 1) / total) * 100);
+          progressBar.style.width = pct + '%';
+        }
+
+        if (counter) {
+          counter.textContent = '0' + (index + 1) + ' / 0' + total;
+        }
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const index = parseInt(tab.dataset.index, 10);
+          activateTab(index);
+        });
+
+        tab.addEventListener('keydown', (e) => {
+          let currIndex = parseInt(tab.dataset.index, 10);
+          if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+            e.preventDefault();
+            const nextIndex = (currIndex + 1) % total;
+            tabs[nextIndex].focus();
+            activateTab(nextIndex);
+          } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+            e.preventDefault();
+            const prevIndex = (currIndex - 1 + total) % total;
+            tabs[prevIndex].focus();
+            activateTab(prevIndex);
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
