@@ -575,7 +575,7 @@ button.button, input[type="submit"].button {
     linear-gradient(180deg, rgba(11, 21, 40, 0.55) 0%, transparent 30%, rgba(11, 21, 40, 0.25) 100%),
     url('assets/about-hero.webp');
   background-size: cover;
-  background-position: center 50%;
+  background-position: center 45%;
   background-repeat: no-repeat;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   overflow: hidden;
