@@ -479,6 +479,88 @@ button.button, input[type="submit"].button {
   margin: 0 0 32px;
 }
 
+/* Use Cases Hero (Inspired by media_1789382507287.png) */
+.usecases-hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-color: #0b1528;
+  background-image:
+    linear-gradient(90deg, rgba(11, 21, 40, 0.72) 0%, rgba(11, 21, 40, 0.46) 48%, rgba(11, 21, 40, 0.12) 85%),
+    linear-gradient(180deg, rgba(11, 21, 40, 0.52) 0%, transparent 28%, rgba(11, 21, 40, 0.25) 100%),
+    url('assets/usecases-hero.webp');
+  background-size: cover;
+  background-position: center 60%;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.usecases-hero .eyebrow {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.usecases-hero .arch-hero-title {
+  color: #ffffff;
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.38);
+  font-weight: 350;
+  max-width: 840px;
+}
+
+.usecases-hero .arch-hero-desc {
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+  max-width: 660px;
+  font-size: 1.1rem;
+  line-height: 1.68;
+}
+
+.usecases-hero .btn-pill {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.usecases-hero .btn-pill:hover {
+  background: #ffffff;
+  color: var(--ink);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.usecases-hero .btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.usecases-hero .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px);
+}
+
 /* Architectural Cards Grid (Image 1 style) */
 .arch-cards-grid {
   display: grid;
