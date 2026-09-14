@@ -584,6 +584,139 @@ button.button, input[type="submit"].button {
     padding-bottom: 0;
   }
 }
+
+/* Architectural Milestone Timeline Track (media_1789377231596.png style) */
+.timeline-section-wrap {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 2.15fr);
+  gap: clamp(40px, 5vw, 72px);
+  align-items: start;
+}
+.timeline-header {
+  position: sticky;
+  top: 110px;
+}
+.timeline-header .eyebrow {
+  margin-bottom: 14px;
+}
+.timeline-header h2 {
+  font-size: clamp(2.25rem, 2.8vw, 3rem);
+  font-weight: 350;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+.timeline-header .section-intro {
+  margin: 0;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.62;
+}
+.timeline-track-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 6px;
+}
+.timeline-line {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: rgba(15, 23, 42, 0.16);
+  z-index: 1;
+}
+.timeline-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2.2vw, 32px);
+}
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+}
+.timeline-step-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+.timeline-step-num {
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--coral);
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+}
+.timeline-step-node {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(15, 23, 42, 0.35);
+  background-color: #ffffff;
+  transition: all 0.25s ease;
+  margin-left: 2px;
+}
+.timeline-step:hover .timeline-step-node {
+  border-color: var(--coral);
+  background-color: var(--coral);
+  transform: scale(1.2);
+}
+.timeline-step-content {
+  display: flex;
+  flex-direction: column;
+}
+.timeline-step-date {
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  color: var(--coral);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.timeline-step-title {
+  margin: 0 0 10px;
+  font-size: 0.98rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.35;
+}
+.timeline-step-desc {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+@media (max-width: 1024px) {
+  .timeline-section-wrap {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .timeline-header {
+    position: static;
+  }
+  .timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 44px;
+  }
+  .timeline-line {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  .timeline-grid {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+  }
+}
+
 .arch-service-card {
   display: flex;
   flex-direction: column;
