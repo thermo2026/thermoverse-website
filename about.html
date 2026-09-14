@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=58">
+  <link rel="stylesheet" href="styles.css?v=59">
 </head>
 <body>
   <header class="site-header">
@@ -232,15 +232,48 @@
       </div>
     </section>
 
-    <!-- SECTION 03 · MILESTONES (Continuous Timeline - Official Milestones) -->
+    <!-- SECTION 03 · MILESTONES -->
     <section class="section" id="history" style="padding-top: 88px; padding-bottom: 96px;">
-      <div class="wrap timeline-section-wrap">
-        <div class="timeline-header">
-          <div class="eyebrow">03 · MILESTONES</div>
-          <h2>From a paradigm shift to scaling smart operations.</h2>
-          <p class="section-intro">Our journey modernizing buildings to meet tomorrow’s rising energy demands — from ceiling to grid.</p>
+      <div class="wrap">
+        <!-- Top Split: Left Header + Right Image Player -->
+        <div class="timeline-top-split">
+          <div class="timeline-header">
+            <div class="eyebrow">03 · MILESTONES</div>
+            <h2>From a paradigm shift to scaling smart operations.</h2>
+            <p class="section-intro">Our journey modernizing buildings to meet tomorrow’s rising energy demands — from ceiling to grid.</p>
+          </div>
+
+          <div class="milestones-player" id="milestonesPlayer" aria-label="Company Highlights Carousel">
+            <div class="milestones-slider-track">
+              <div class="milestones-slide is-active" data-index="0">
+                <img src="assets/111.webp" alt="IC Taiwan Grand Challenge Award" class="milestones-slide-img">
+                <div class="milestones-slide-overlay"></div>
+                <div class="milestones-slide-badge">GLOBAL RECOGNITION · IC TAIWAN GRAND CHALLENGE</div>
+              </div>
+              <div class="milestones-slide" data-index="1">
+                <img src="assets/222.webp" alt="ThermoVerse CleanTech Venture Showcase" class="milestones-slide-img">
+                <div class="milestones-slide-overlay"></div>
+                <div class="milestones-slide-badge">VENTURE SHOWCASE · CLEAN ENERGY ACCELERATOR</div>
+              </div>
+              <div class="milestones-slide" data-index="2">
+                <img src="assets/333.webp" alt="ThermoVerse Team Award Celebration" class="milestones-slide-img">
+                <div class="milestones-slide-overlay"></div>
+                <div class="milestones-slide-badge">TEAM CELEBRATION · ARCHITECTURAL INNOVATION</div>
+              </div>
+            </div>
+            <div class="milestones-player-controls">
+              <button class="player-btn player-prev" type="button" aria-label="Previous slide">‹</button>
+              <div class="player-dots">
+                <button class="player-dot is-active" type="button" data-index="0" aria-label="Slide 1"></button>
+                <button class="player-dot" type="button" data-index="1" aria-label="Slide 2"></button>
+                <button class="player-dot" type="button" data-index="2" aria-label="Slide 3"></button>
+              </div>
+              <button class="player-btn player-next" type="button" aria-label="Next slide">›</button>
+            </div>
+          </div>
         </div>
         
+        <!-- Bottom: Milestones Timeline Steps -->
         <div class="timeline-track-wrap" aria-label="Company Milestones Timeline">
           <div class="timeline-line" aria-hidden="true"></div>
           <div class="timeline-grid">
@@ -453,6 +486,79 @@
           setActive(activeIndex);
         });
       }
+    })();
+
+    // Milestones Image Carousel Player Controller
+    (function() {
+      const player = document.getElementById('milestonesPlayer');
+      if (!player) return;
+
+      const slides = player.querySelectorAll('.milestones-slide');
+      const dots = player.querySelectorAll('.player-dot');
+      const prevBtn = player.querySelector('.player-prev');
+      const nextBtn = player.querySelector('.player-next');
+      if (!slides.length) return;
+
+      let current = 0;
+      let timer = null;
+      const total = slides.length;
+      const AUTO_DELAY = 4500;
+
+      function showSlide(index) {
+        current = (index + total) % total;
+        slides.forEach((slide, idx) => {
+          slide.classList.toggle('is-active', idx === current);
+        });
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('is-active', idx === current);
+        });
+      }
+
+      function nextSlide() {
+        showSlide(current + 1);
+      }
+
+      function prevSlide() {
+        showSlide(current - 1);
+      }
+
+      function startTimer() {
+        stopTimer();
+        timer = setInterval(nextSlide, AUTO_DELAY);
+      }
+
+      function stopTimer() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          prevSlide();
+          startTimer();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          nextSlide();
+          startTimer();
+        });
+      }
+
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+          showSlide(idx);
+          startTimer();
+        });
+      });
+
+      player.addEventListener('mouseenter', stopTimer);
+      player.addEventListener('mouseleave', startTimer);
+
+      startTimer();
     })();
   </script>
 </body>
