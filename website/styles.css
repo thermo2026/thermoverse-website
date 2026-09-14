@@ -641,9 +641,20 @@ button.button, input[type="submit"].button {
 .about-hero .arch-hero-desc {
   color: rgba(255, 255, 255, 0.92);
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
-  max-width: 680px;
-  font-size: 1.1rem;
-  line-height: 1.68;
+  max-width: 920px;
+  font-size: clamp(1rem, 1.12vw, 1.08rem);
+  line-height: 1.62;
+  text-wrap: balance;
+}
+
+.hero-desc-br {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .hero-desc-br {
+    display: none;
+  }
 }
 
 .about-hero .btn-pill {
