@@ -116,6 +116,19 @@
 - **原則卡片內文 (`.faithe-card-desc`)**：
   - **字級**：`0.85rem`（約 13.6px），`line-height: 1.58`，`color: #64748b`。
 
+### 3.6.3 人才培訓雙欄展台 (Workforce Showcase - Section 04)
+- **區塊頂部大標 (`.workforce-header-title h2`)**：
+  - **字級**：`clamp(2.25rem, 3.2vw, 3.25rem)`，`font-weight: 350`。
+  - **副標斜體標註 (`.workforce-title-accent`)**：`font-style: italic; font-weight: 300; color: var(--ink);`。
+- **數據指標卡片 (`.workforce-stat-num`)**：
+  - **字級**：`clamp(3.5rem, 5.2vw, 5rem)`，`font-weight: 750`，`color: var(--ink)`。
+  - **數據描述 (`.workforce-stat-caption`)**：`0.95rem`，`line-height: 1.58`，`color: #64748b`。
+- **培訓學員頭像疊加 (`.workforce-avatar-stack`)**：
+  - 圓形頭像 `48px x 48px`，白邊框 `border: 3px solid #ffffff`，負間距 `-12px` 重疊。
+  - `+120` 更多標籤以珊瑚紅強調數字。
+- **右側影音卡片 (`.workforce-media-card`)**：
+  - 圓角 `24px`，右上方配置半透明毛玻璃播放圓形標章（`.workforce-play-badge`），左下角配置半透明深色膠囊標籤。
+
 ### 3.7 時間軸里程碑節點 (Milestones / Timeline)
 - **節點編號 (`.timeline-step-num`)**：`1.45rem`，`font-weight: 500`，`color: var(--coral)`
 - **年份日期 (`.timeline-step-date`)**：`0.72rem`，`font-weight: 750`，`letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral);`
