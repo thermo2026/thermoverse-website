@@ -1452,3 +1452,111 @@ button.button, input[type="submit"].button {
   }
 }
 
+/* ==========================================================================
+   04 · COMPANY PRINCIPLES & TALENT PIPELINE (IMAGE REFERENCE STYLE)
+   ========================================================================== */
+.principles-strip-wrap {
+  width: 100%;
+  position: relative;
+  padding-top: 8px;
+}
+
+.principles-strip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 64px;
+  align-items: start;
+}
+
+.principle-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.principle-col-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.principle-go-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 5px 14px;
+  border: 1px solid #1e252b;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e252b;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  background: transparent;
+  transition: all 0.22s ease;
+  flex-shrink: 0;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+.principle-go-pill .arrow {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.principle-go-pill:hover {
+  background: #1e252b;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.principle-go-pill:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
+.principle-col-title {
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 800;
+  line-height: 1.12;
+  color: #1e252b;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+}
+
+.principle-col-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #556270;
+  margin: 0 0 20px 0;
+  max-width: 520px;
+}
+
+.principle-vertical-brand {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  color: #cbd5e1;
+  align-self: center;
+  user-select: none;
+  padding: 16px 0;
+  border-right: 2px solid #e2e8f0;
+  padding-right: 18px;
+}
+
+@media (max-width: 900px) {
+  .principles-strip-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .principle-vertical-brand {
+    display: none;
+  }
+}
+
+
