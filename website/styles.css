@@ -1497,37 +1497,254 @@ button.button, input[type="submit"].button {
   margin: 0;
 }
 
-/* Full 3-column grid for FAITHE Values in dedicated Section 04 */
-.faithe-values-grid-full {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 32px;
+/* FAITHE Centerpiece Triad Layout & Outward Expansion Animation */
+.faith-triad-wrap {
+  width: 100%;
+  position: relative;
+  padding: 12px 0;
 }
-.faithe-values-grid-full .faithe-val-item {
-  background: #f8fafc;
-  border: 1px solid #eef2f6;
-  border-radius: 16px;
-  padding: 20px 22px;
+
+.faith-triad-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.18fr 1fr;
+  gap: clamp(28px, 3.8vw, 56px);
+  align-items: center;
+}
+
+.faith-triad-col {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: clamp(28px, 3.4vw, 44px);
 }
-.faithe-values-grid-full .faithe-val-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+
+.faith-item {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  border-radius: 12px;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid transparent;
 }
-.faithe-values-grid-full .faithe-val-title {
-  font-size: 0.95rem;
-  font-weight: 700;
+
+.faith-item:hover,
+.faith-item.is-active {
+  border-color: rgba(223, 72, 98, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 24px rgba(223, 72, 98, 0.08), 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.faith-item.left-item:hover,
+.faith-item.left-item.is-active {
+  transform: translateX(-6px);
+}
+
+.faith-item.right-item:hover,
+.faith-item.right-item.is-active {
+  transform: translateX(6px);
+}
+
+.faith-item .goals-item-arrow {
+  font-size: 18px;
+  font-weight: 600;
   color: #1e252b;
+  transition: transform 0.25s ease, color 0.25s ease;
+  display: inline-block;
+  user-select: none;
 }
-.faithe-values-grid-full .faithe-val-desc {
-  font-size: 0.85rem;
-  line-height: 1.55;
-  color: #556270;
-  margin: 0;
+
+.faith-item:hover .goals-item-arrow,
+.faith-item.is-active .goals-item-arrow {
+  color: #df4862;
+}
+
+.faith-item.left-item:hover .goals-item-arrow,
+.faith-item.left-item.is-active .goals-item-arrow {
+  transform: translateX(6px);
+}
+
+.faith-item.right-item:hover .goals-item-arrow,
+.faith-item.right-item.is-active .goals-item-arrow {
+  transform: translateX(-6px);
+}
+
+.faith-item:hover .goals-item-title,
+.faith-item.is-active .goals-item-title {
+  color: #df4862;
+}
+
+/* Centerpiece FAITHE */
+.faith-triad-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 16px;
+  position: relative;
+}
+
+.center-faith-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.center-faith-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 150px;
+  background: radial-gradient(ellipse, rgba(223, 72, 98, 0.22) 0%, rgba(223, 72, 98, 0.06) 50%, transparent 72%);
+  border-radius: 50%;
+  filter: blur(26px);
+  pointer-events: none;
+  z-index: 0;
+  animation: faithHaloPulse 3.8s ease-in-out infinite alternate;
+}
+
+@keyframes faithHaloPulse {
+  0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.65; }
+  100% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
+}
+
+.center-faith-letters {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 10px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(223, 72, 98, 0.16);
+  box-shadow: 0 16px 36px rgba(223, 72, 98, 0.1), 0 4px 16px rgba(15, 23, 42, 0.05);
+  transition: gap 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.center-faith-letters:hover {
+  gap: 12px;
+  box-shadow: 0 20px 44px rgba(223, 72, 98, 0.18), 0 6px 20px rgba(15, 23, 42, 0.07);
+}
+
+.faith-letter-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: clamp(26px, 2.8vw, 36px);
+  font-weight: 850;
+  color: #1e252b;
+  width: clamp(40px, 4.2vw, 52px);
+  height: clamp(48px, 4.8vw, 60px);
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+  line-height: 1;
+  position: relative;
+}
+
+.faith-letter-btn:hover,
+.faith-letter-btn.is-active {
+  background: rgba(223, 72, 98, 0.09);
+  color: #df4862;
+  transform: translateY(-3px) scale(1.12);
+  box-shadow: 0 6px 16px rgba(223, 72, 98, 0.15);
+}
+
+/* Staggered Outward Expansion Animations */
+@keyframes faithExpandLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(36px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes faithExpandRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-36px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.faith-triad-wrap.in-view .faith-col-left .faith-item:nth-child(1),
+.faith-col-left .faith-item:nth-child(1) {
+  animation: faithExpandLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.1s;
+}
+.faith-triad-wrap.in-view .faith-col-left .faith-item:nth-child(2),
+.faith-col-left .faith-item:nth-child(2) {
+  animation: faithExpandLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.22s;
+}
+.faith-triad-wrap.in-view .faith-col-left .faith-item:nth-child(3),
+.faith-col-left .faith-item:nth-child(3) {
+  animation: faithExpandLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.34s;
+}
+
+.faith-triad-wrap.in-view .faith-col-right .faith-item:nth-child(1),
+.faith-col-right .faith-item:nth-child(1) {
+  animation: faithExpandRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.1s;
+}
+.faith-triad-wrap.in-view .faith-col-right .faith-item:nth-child(2),
+.faith-col-right .faith-item:nth-child(2) {
+  animation: faithExpandRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.22s;
+}
+.faith-triad-wrap.in-view .faith-col-right .faith-item:nth-child(3),
+.faith-col-right .faith-item:nth-child(3) {
+  animation: faithExpandRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.34s;
+}
+
+@media (max-width: 992px) {
+  .faith-triad-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .faith-triad-center {
+    order: -1;
+    margin-bottom: 8px;
+  }
+  .faith-triad-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .faith-triad-col {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .center-faith-letters {
+    gap: 4px;
+    padding: 8px 10px;
+  }
+  .faith-letter-btn {
+    width: 38px;
+    height: 44px;
+    font-size: 22px;
+  }
 }
 
 /* Dedicated Section 05: Talent Pipeline Layout */
