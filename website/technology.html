@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Technology (LATCHES™) | ThermoVerse</title><meta name="description" content="LATCHES™ turns ceilings and walls into programmable, BACnet-native thermal energy storage for buildings."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=25"></head>
+  <link rel="stylesheet" href="styles.css?v=26"></head>
 <body>
   <header class="site-header"><nav class="nav" aria-label="Main navigation"><a href="index.html"><img class="logo" src="assets/logo.webp" alt="ThermoVerse"></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">☰</button><div class="nav-links" id="nav-links"><a aria-current="page" href="technology.html">LATCHES™</a><a href="use-cases.html">Use Cases &amp; Services</a><a href="about.html">About Us</a><a href="contact.html">Contact Us</a></div></nav></header>
   <main>
@@ -9,19 +9,126 @@
 
     <section class="section" id="thermal-battery"><div class="wrap editorial-row"><div><div class="eyebrow">Urban-safe energy storage</div><h2>Thermal storage without surrendering floor area.</h2></div><p class="section-intro">By integrating thermal storage into existing ceiling or wall areas, it offers an alternative where traditional chemical Battery Energy Storage Systems (BESS) may be restricted by urban fire codes or space constraints.</p></div></section>
 
-    <section class="section alt" id="sensing-control"><div class="wrap"><div class="eyebrow">Sensing, storage, and control</div><h2>Command the timed release of stored thermal energy.</h2><div class="process-cards">
-      <article class="process-card"><div class="process-visual" aria-hidden="true"><svg class="process-diagram sense-diagram" viewBox="0 0 320 180" focusable="false"><path class="diagram-track" d="M38 90h76m92 0h76"/><rect class="sense-module" x="114" y="49" width="92" height="82" rx="18"/><circle class="sense-core" cx="160" cy="90" r="15"/><circle class="sense-pulse" cx="160" cy="90" r="31"/><circle class="diagram-node node-left" cx="38" cy="90" r="7"/><circle class="diagram-node node-right" cx="282" cy="90" r="7"/><path class="sense-wave" d="M139 90c0-12 9-21 21-21s21 9 21 21-9 21-21 21-21-9-21-21z"/></svg></div><span class="process-index">01 / MONITOR</span><h3>Sense</h3><p>A State-of-Charge Monitor observes the thermal storage state and relevant building conditions.</p></article>
-      <article class="process-card process-card-focus"><div class="process-visual" aria-hidden="true"><svg class="process-diagram predict-diagram" viewBox="0 0 320 180" focusable="false"><path class="diagram-track" d="M38 90h72m100 0h72M160 35v21m0 68v21"/><rect class="controller-shell" x="110" y="56" width="100" height="68" rx="18"/><path class="controller-line" d="M132 91h56M160 73v36"/><circle class="controller-core" cx="160" cy="90" r="8"/><circle class="predict-pulse pulse-a" cx="38" cy="90" r="6"/><circle class="predict-pulse pulse-b" cx="282" cy="90" r="6"/><circle class="predict-pulse pulse-c" cx="160" cy="35" r="5"/><circle class="diagram-node" cx="160" cy="145" r="6"/></svg></div><span class="process-index">02 / EDGE CONTROL</span><h3>Predict</h3><p>A predictive edge controller interprets demand, HVAC, and operating signals close to the equipment.</p></article>
-      <article class="process-card"><div class="process-visual" aria-hidden="true"><svg class="process-diagram storage-diagram" viewBox="0 0 320 180" focusable="false"><path class="diagram-track" d="M44 90h55m122 0h55"/><rect class="storage-shell" x="99" y="48" width="122" height="84" rx="16"/><path class="storage-line" d="M122 68h76M122 90h76M122 112h76"/><path class="energy-arrow arrow-in" d="M48 74h38l14 16-14 16H48"/><path class="energy-arrow arrow-out" d="M272 74h-38l-14 16 14 16h38"/><circle class="storage-glow" cx="160" cy="90" r="44"/></svg></div><span class="process-index">03 / THERMAL CYCLE</span><h3>Charge or discharge</h3><p>The controller commands storage cycles and the timed release of thermal energy in the PCMs.</p></article>
+    <section class="section" id="sensing-control"><div class="wrap"><div class="eyebrow">Sensing, storage, and control</div><h2>Command the timed release of stored thermal energy.</h2><div class="process-cards">
+      <article class="process-card"><div class="process-visual" aria-hidden="true">
+        <svg class="process-diagram arch-wireframe-svg" viewBox="0 0 280 160" focusable="false" aria-hidden="true">
+          <!-- Top layer: dashed back, solid front -->
+          <path class="wire-dash" d="M 84 36 L 140 14 L 196 36" />
+          <path class="wire-stroke" d="M 84 36 L 140 58 L 196 36" />
+          <!-- Stacked intermediate layers -->
+          <path class="wire-stroke" d="M 84 54 L 140 32 L 196 54 L 140 76 Z" />
+          <path class="wire-stroke" d="M 84 72 L 140 50 L 196 72 L 140 94 Z" />
+          <path class="wire-stroke" d="M 84 90 L 140 68 L 196 90 L 140 112 Z" />
+          <path class="wire-stroke" d="M 84 108 L 140 86 L 196 108 L 140 130 Z" />
+          <!-- Vertical construction dashed lines -->
+          <path class="wire-dash" d="M 84 36 V 108" />
+          <path class="wire-dash" d="M 196 36 V 108" />
+          <path class="wire-dash" d="M 140 14 V 86" />
+          <path class="wire-stroke" d="M 140 58 V 130" />
+          <!-- Central monitoring axis line and focal node -->
+          <path class="wire-dash" d="M 140 6 V 138" />
+          <circle class="wire-dot" cx="140" cy="72" r="3.2" />
+        </svg>
+      </div><span class="process-index">01 / MONITOR</span><h3>Sense</h3><p>A State-of-Charge Monitor observes the thermal storage state and relevant building conditions.</p></article>
+      <article class="process-card"><div class="process-visual" aria-hidden="true">
+        <svg class="process-diagram arch-wireframe-svg" viewBox="0 0 280 160" focusable="false" aria-hidden="true">
+          <!-- Horizon line -->
+          <line class="wire-stroke" x1="56" y1="84" x2="224" y2="84" />
+          <!-- Apex point -->
+          <circle class="wire-dot" cx="140" cy="28" r="3.2" />
+          <!-- Dashed projection lines from apex to horizon -->
+          <line class="wire-dash" x1="140" y1="28" x2="114" y2="84" />
+          <line class="wire-dash" x1="140" y1="28" x2="166" y2="84" />
+          <line class="wire-dash" x1="140" y1="28" x2="140" y2="84" />
+          <!-- Ground perspective trapezoid below horizon -->
+          <polygon class="wire-stroke" points="114,84 166,84 192,136 88,136" />
+          <!-- Vertical division line in ground plane -->
+          <line class="wire-stroke" x1="140" y1="84" x2="140" y2="136" />
+        </svg>
+      </div><span class="process-index">02 / EDGE CONTROL</span><h3>Predict</h3><p>A predictive edge controller interprets demand, HVAC, and operating signals close to the equipment.</p></article>
+      <article class="process-card"><div class="process-visual" aria-hidden="true">
+        <svg class="process-diagram arch-wireframe-svg" viewBox="0 0 280 160" focusable="false" aria-hidden="true">
+          <!-- Outer circle -->
+          <circle class="wire-stroke" cx="140" cy="80" r="48" />
+          <!-- Inner dashed latent circle -->
+          <circle class="wire-dash" cx="140" cy="80" r="28" />
+          <!-- Center thermal core node -->
+          <circle class="wire-dot" cx="140" cy="80" r="3.2" />
+          <!-- Orbiting cycle arrows -->
+          <path class="wire-stroke" d="M 124 20 A 62 62 0 0 1 156 24" />
+          <path class="wire-stroke" d="M 149 20 L 157 24 L 154 33" />
+          <path class="wire-stroke" d="M 156 140 A 62 62 0 0 1 124 136" />
+          <path class="wire-stroke" d="M 131 140 L 123 136 L 126 127" />
+        </svg>
+      </div><span class="process-index">03 / THERMAL CYCLE</span><h3>Charge or discharge</h3><p>The controller commands storage cycles and the timed release of thermal energy in the PCMs.</p></article>
     </div></div></section>
 
     <section class="section" id="pcm-storage"><div class="wrap split"><div><div class="eyebrow">Safe, Clean, Compact</div><h2>Solid-state thermal storage designed for occupied spaces.</h2><p class="section-intro">Unlike chemical battery systems (BESS) restricted by dense urban fire codes, LATCHES™ utilizes solid-state Phase Change Materials that are non-toxic and safe for occupied indoor spaces.</p></div><article class="card"><div class="num">THERMAL CAPACITY</div><h3>102 BTU/SF storage capacity*</h3><p>LATCHES™ delivers 102 BTU/SF of latent thermal storage, designed to maintain indoor temperature setpoints four hours longer than standard insulation.</p><p class="footnote">*Based on laboratory test results.</p></article></div></section>
 
-    <section class="section alt" id="installation"><div class="wrap split"><img src="assets/install.webp" alt="Technician working with a ceiling installation"><div><div class="eyebrow">Installed up to 8× faster*</div><h2>Zero-footprint integration with Ceilings.</h2><p class="section-intro">LATCHES™ is designed for drop-ceiling and wall integration, preserving rentable floor area while placing thermal storage close to the conditioned space.</p><p class="footnote">*Compared to conventional battery energy storage systems (BESS).</p></div></div></section>
+    <section class="section" id="installation"><div class="wrap split"><img src="assets/install.webp" alt="Technician working with a ceiling installation"><div><div class="eyebrow">Installed up to 8× faster*</div><h2>Zero-footprint integration with Ceilings.</h2><p class="section-intro">LATCHES™ is designed for drop-ceiling and wall integration, preserving rentable floor area while placing thermal storage close to the conditioned space.</p><p class="footnote">*Compared to conventional battery energy storage systems (BESS).</p></div></div></section>
 
     <section class="section" id="bas-integration"><div class="wrap"><div class="eyebrow">Heat-flow control and peak management</div><h2>BACnet-native control through the building’s existing BAS.</h2><p class="section-intro">LATCHES™ is designed to integrate with a Building Automation System (BAS) through BACnet-native controls. The building can coordinate thermal charging and discharge with HVAC schedules, peak-demand periods, heat-flow needs, and demand-response strategies.</p><div class="grid"><article class="card"><h3>Heat-flow control</h3><p>Coordinate stored thermal energy with zone and building conditions.</p></article><article class="card"><h3>Peak management</h3><p>Shift HVAC thermal loads away from peak-demand periods.</p></article><article class="card"><h3>Demand response</h3><p>Use existing BAS signals to support site and program demand-response strategies.</p></article></div></div></section>
 
-    <section class="section alt" id="faq"><div class="wrap"><div class="eyebrow">FAQ</div><h2>Suitability, integration needs, and assessment data.</h2><div class="grid two-column"><article class="card"><h3>What network compatibility is required?</h3><p>A site review confirms the existing BAS, BACnet network, controls architecture, and available connection points.</p></article><article class="card"><h3>Can the ceiling support the system?</h3><p>Ceiling type, available area, structural loading, services, access, and installation conditions must be assessed for each building.</p></article><article class="card"><h3>What building data is needed?</h3><p>Energy Services audits gather operating hours, utility tariffs, HVAC loads, equipment information, floor plans, and occupancy data relevant to qualification.</p></article><article class="card"><h3>Which sites are suitable?</h3><p>Commercial, industrial, and multifamily properties can be evaluated against their energy profile, HVAC configuration, installation conditions, and project goals.</p></article></div><div class="actions"><a class="button" href="contact.html?type=Technology%20%2F%20Engineering%20Inquiry&amp;source=Technology">Discuss Your Requirements</a></div></div></section>
+    <section class="section" id="faq">
+      <div class="wrap faq-layout">
+        <div class="faq-header">
+          <div class="eyebrow">FAQ</div>
+          <h2>Suitability, integration needs, and assessment data.</h2>
+          <p class="section-intro">Clear criteria to evaluate your building’s electrical, structural, and network readiness for LATCHES™ zero-footprint thermal storage.</p>
+        </div>
+        <div class="faq-body">
+          <div class="faq-list">
+            <details class="faq-accordion" open>
+              <summary class="faq-summary">
+                <h3>What network compatibility is required?</h3>
+                <span class="faq-icon-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="3" x2="8" y2="13"></line><polyline points="4 9 8 13 12 9"></polyline></svg>
+                </span>
+              </summary>
+              <div class="faq-content">
+                <p>A site review confirms the existing BAS, BACnet network, controls architecture, and available connection points.</p>
+              </div>
+            </details>
+            <details class="faq-accordion">
+              <summary class="faq-summary">
+                <h3>Can the ceiling support the system?</h3>
+                <span class="faq-icon-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="3" x2="8" y2="13"></line><polyline points="4 9 8 13 12 9"></polyline></svg>
+                </span>
+              </summary>
+              <div class="faq-content">
+                <p>Ceiling type, available area, structural loading, services, access, and installation conditions must be assessed for each building.</p>
+              </div>
+            </details>
+            <details class="faq-accordion">
+              <summary class="faq-summary">
+                <h3>What building data is needed?</h3>
+                <span class="faq-icon-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="3" x2="8" y2="13"></line><polyline points="4 9 8 13 12 9"></polyline></svg>
+                </span>
+              </summary>
+              <div class="faq-content">
+                <p>Energy Services audits gather operating hours, utility tariffs, HVAC loads, equipment information, floor plans, and occupancy data relevant to qualification.</p>
+              </div>
+            </details>
+            <details class="faq-accordion">
+              <summary class="faq-summary">
+                <h3>Which sites are suitable?</h3>
+                <span class="faq-icon-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="3" x2="8" y2="13"></line><polyline points="4 9 8 13 12 9"></polyline></svg>
+                </span>
+              </summary>
+              <div class="faq-content">
+                <p>Commercial, industrial, and multifamily properties can be evaluated against their energy profile, HVAC configuration, installation conditions, and project goals.</p>
+              </div>
+            </details>
+          </div>
+          <div class="faq-actions">
+            <a class="button" href="contact.html?type=Technology%20%2F%20Engineering%20Inquiry&amp;source=Technology">Discuss Your Requirements &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="footer"><div class="wrap footer-main"><div class="footer-brand"><a href="index.html" aria-label="ThermoVerse home"><img src="assets/logo.webp" alt="ThermoVerse"></a><p>Where Building Intelligence Meets Grid Resilience</p></div><nav class="footer-columns" aria-label="Footer navigation"><div><h2>Explore</h2><a href="technology.html">LATCHES™</a><a href="use-cases.html">Use Cases &amp; Services</a></div><div><h2>Company</h2><a href="about.html">About Us</a><a href="contact.html">Contact Us</a></div><div><h2>Connect</h2><a href="https://www.linkedin.com/company/thermoverse/">LinkedIn</a></div></nav></div><div class="wrap footer-bottom"><span>© 2026 ThermoVerse Inc.</span><a href="privacy.html">Privacy Policy</a></div></footer><script src="script.js"></script>
 </body>
