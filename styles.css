@@ -1701,8 +1701,8 @@ button.button, input[type="submit"].button {
   justify-content: center;
   align-items: flex-end;
   width: 100%;
-  gap: clamp(4px, 1.1vw, 18px); /* Tight spacing so letters sit right next to each other */
-  margin-bottom: 28px;
+  gap: clamp(6px, 1.4vw, 24px); /* Tight spacing so letters sit right next to each other */
+  margin-bottom: 34px;
   user-select: none;
 }
 
@@ -1717,11 +1717,11 @@ button.button, input[type="submit"].button {
 
 .faithe-char {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(7.5rem, 15vw, 18.5rem);
+  font-size: clamp(9.5rem, 19vw, 24rem);
   font-weight: 800;
-  line-height: 0.82;
+  line-height: 0.8;
   color: transparent;
-  -webkit-text-stroke: 2.5px rgba(15, 23, 42, 0.2);
+  -webkit-text-stroke: 2.8px rgba(15, 23, 42, 0.22);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   letter-spacing: -0.04em;
   display: inline-block;
@@ -1731,8 +1731,8 @@ button.button, input[type="submit"].button {
 .faithe-letter-node:hover .faithe-char,
 .faithe-letter-node.is-active .faithe-char {
   color: var(--ink);
-  -webkit-text-stroke: 2.5px var(--ink);
-  transform: translateY(-4px);
+  -webkit-text-stroke: 2.8px var(--ink);
+  transform: translateY(-6px);
 }
 
 /* Pointer Line (每一個字用線條指出來) */
@@ -1740,7 +1740,7 @@ button.button, input[type="submit"].button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 44px;
+  height: 48px;
   width: 100%;
   margin: 6px 0 0;
 }
@@ -1836,10 +1836,10 @@ button.button, input[type="submit"].button {
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
   .faithe-letters-banner {
-    gap: clamp(4px, 1vw, 12px);
+    gap: clamp(4px, 1.2vw, 14px);
   }
   .faithe-char {
-    font-size: clamp(5.5rem, 11vw, 8rem);
+    font-size: clamp(6.5rem, 13vw, 10.5rem);
   }
   .faithe-cards-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1853,8 +1853,8 @@ button.button, input[type="submit"].button {
     gap: 4px;
   }
   .faithe-char {
-    font-size: clamp(3.2rem, 12.5vw, 4.8rem);
-    -webkit-text-stroke: 1.8px rgba(15, 23, 42, 0.2);
+    font-size: clamp(3.8rem, 14vw, 5.8rem);
+    -webkit-text-stroke: 2px rgba(15, 23, 42, 0.22);
   }
   .faithe-pointer {
     height: 30px;
