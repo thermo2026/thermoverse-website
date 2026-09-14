@@ -90,6 +90,19 @@
   - **行高**：`1.65`
   - **顏色**：`#556270`
 
+### 3.6.1 軌道環繞卡片標題與徽章 (Orbit Card Title & Badge - Section 01)
+- **卡片標題 (`.orbit-card-title`)**：
+  - **字級**：`clamp(17px, 1.3vw, 20px)`（精緻和諧比例，嚴禁字體過大）
+  - **字重**：`500`（Medium 典雅細緻，嚴禁粗黑失衡）
+  - **字距**：`-0.01em`
+  - **行高**：`1.3`
+  - **色彩**：`var(--ink)`（**禁止懸停變紅，維持沉穩深色**）
+- **右上角編號徽章 (`.orbit-card-badge`)**：
+  - **字級**：`0.78rem`，`font-weight: 600`
+  - **色彩**：中性淺灰 `#f8fafc` 底、灰邊框 `#e2e8f0`、灰文字 `#64748b`、小灰圓點 `#cbd5e1`（**禁止變紅**）
+- **卡片內文 (`.orbit-card-desc`)**：
+  - **字級**：`14px` ~ `14.5px`，`line-height: 1.6`，`color: #64748b`
+
 ### 3.7 時間軸里程碑節點 (Milestones / Timeline)
 - **節點編號 (`.timeline-step-num`)**：`1.45rem`，`font-weight: 500`，`color: var(--coral)`
 - **年份日期 (`.timeline-step-date`)**：`0.72rem`，`font-weight: 750`，`letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral);`
