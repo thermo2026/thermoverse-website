@@ -476,6 +476,114 @@ button.button, input[type="submit"].button {
   gap: 24px;
   margin-top: 48px;
 }
+
+/* Services Strip (Horizontal Architectural Layout - No Learn More Button) */
+.services-strip-wrap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(24px, 3.5vw, 48px);
+  margin-top: 56px;
+  align-items: stretch;
+}
+.services-strip-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-top: 6px;
+}
+.services-strip-tag {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--coral);
+  text-transform: uppercase;
+}
+.services-strip-line {
+  width: 1.5px;
+  height: 38px;
+  background-color: var(--coral);
+  opacity: 0.7;
+}
+.services-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
+}
+.services-strip-col {
+  padding: 0 clamp(20px, 2.4vw, 36px);
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(15, 23, 42, 0.12);
+}
+.services-strip-col:first-child {
+  border-left: 1px solid rgba(15, 23, 42, 0.12);
+}
+.service-strip-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+.services-strip-col h3 {
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 14px;
+  line-height: 1.35;
+}
+.services-strip-col p {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: #64748b;
+}
+@media (max-width: 1024px) {
+  .services-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 36px;
+  }
+  .services-strip-col:nth-child(2n+1) {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .services-strip-wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 36px;
+  }
+  .services-strip-side {
+    flex-direction: row;
+    align-items: center;
+  }
+  .services-strip-tag {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+  .services-strip-line {
+    width: 32px;
+    height: 1.5px;
+  }
+  .services-strip-grid {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+  }
+  .services-strip-col {
+    border-left: none;
+    padding: 0 0 24px 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  .services-strip-col:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
 .arch-service-card {
   display: flex;
   flex-direction: column;
