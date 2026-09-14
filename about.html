@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=65">
+  <link rel="stylesheet" href="styles.css?v=66">
 </head>
 <body>
   <header class="site-header">
@@ -155,9 +155,22 @@
 
         <div class="orbit-layout-wrap">
           <div class="orbit-rings-bg" aria-hidden="true">
+            <!-- Pulsing thermal energy waves -->
+            <div class="orbit-wave wave-1"></div>
+            <div class="orbit-wave wave-2"></div>
+
+            <!-- Base structural concentric rings -->
             <div class="orbit-ring ring-outer"></div>
             <div class="orbit-ring ring-mid"></div>
             <div class="orbit-ring ring-inner"></div>
+
+            <!-- Rotating orbit nodes -->
+            <div class="orbit-rotator rotator-mid">
+              <span class="orbit-satellite sat-primary"></span>
+            </div>
+            <div class="orbit-rotator rotator-outer">
+              <span class="orbit-satellite sat-secondary"></span>
+            </div>
           </div>
 
           <div class="orbit-layout-grid">
