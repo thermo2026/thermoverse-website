@@ -1498,21 +1498,161 @@ button.button, input[type="submit"].button {
 .orbit-ring.ring-outer {
   width: 720px;
   height: 720px;
-  border: 1px solid rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  animation: ringOuterPulse 10s ease-in-out infinite alternate;
 }
 
 .orbit-ring.ring-mid {
   width: 500px;
   height: 500px;
-  border: 1px solid rgba(15, 23, 42, 0.07);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  animation: ringMidPulse 7s ease-in-out infinite alternate;
 }
 
 .orbit-ring.ring-inner {
   width: 280px;
   height: 280px;
-  border: 1px solid rgba(15, 23, 42, 0.09);
+  border: 1px solid rgba(15, 23, 42, 0.1);
   background: radial-gradient(circle, #ffffff 0%, rgba(255, 255, 255, 0.96) 65%, rgba(255, 255, 255, 0.8) 100%);
   box-shadow: 0 4px 24px rgba(15, 23, 42, 0.04);
+  animation: innerGlowPulse 5s ease-in-out infinite alternate;
+}
+
+/* Radiating Ripple Waves */
+.orbit-wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(224, 43, 32, 0.3);
+  pointer-events: none;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%) scale(0.55);
+  opacity: 0;
+}
+
+.orbit-wave.wave-1 {
+  animation: orbitWaveRipple 6s cubic-bezier(0.16, 0.8, 0.3, 1) infinite;
+}
+
+.orbit-wave.wave-2 {
+  animation: orbitWaveRipple 6s cubic-bezier(0.16, 0.8, 0.3, 1) infinite 3s;
+}
+
+@keyframes orbitWaveRipple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.55);
+    opacity: 0;
+    border-color: rgba(224, 43, 32, 0.45);
+  }
+  20% {
+    opacity: 0.75;
+  }
+  60% {
+    opacity: 0.25;
+    border-color: rgba(15, 23, 42, 0.12);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.46);
+    opacity: 0;
+    border-color: rgba(15, 23, 42, 0);
+  }
+}
+
+@keyframes innerGlowPulse {
+  0%, 100% {
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.04), 0 0 0 rgba(224, 43, 32, 0);
+    border-color: rgba(15, 23, 42, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 36px rgba(15, 23, 42, 0.08), 0 0 28px 4px rgba(224, 43, 32, 0.14);
+    border-color: rgba(224, 43, 32, 0.28);
+  }
+}
+
+@keyframes ringMidPulse {
+  0%, 100% {
+    border-color: rgba(15, 23, 42, 0.08);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    border-color: rgba(15, 23, 42, 0.14);
+    transform: translate(-50%, -50%) scale(1.01);
+  }
+}
+
+@keyframes ringOuterPulse {
+  0%, 100% {
+    border-color: rgba(15, 23, 42, 0.06);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    border-color: rgba(15, 23, 42, 0.11);
+    transform: translate(-50%, -50%) scale(1.008);
+  }
+}
+
+/* Orbiting Satellites / Nodes */
+.orbit-rotator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.orbit-rotator.rotator-mid {
+  width: 500px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  animation: orbitRotateMid 24s linear infinite;
+}
+
+.orbit-rotator.rotator-outer {
+  width: 720px;
+  height: 720px;
+  transform: translate(-50%, -50%);
+  animation: orbitRotateOuter 38s linear infinite reverse;
+}
+
+@keyframes orbitRotateMid {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes orbitRotateOuter {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.orbit-satellite {
+  position: absolute;
+  border-radius: 50%;
+  display: block;
+}
+
+.sat-primary {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #e02b20;
+  box-shadow: 0 0 14px rgba(224, 43, 32, 0.9), 0 0 3px #ffffff;
+}
+
+.sat-secondary {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 7px;
+  height: 7px;
+  background: #0f172a;
+  box-shadow: 0 0 8px rgba(15, 23, 42, 0.4);
+  opacity: 0.6;
 }
 
 .orbit-layout-grid {
@@ -1546,6 +1686,16 @@ button.button, input[type="submit"].button {
   text-align: center;
   position: relative;
   width: 100%;
+  animation: centerPillFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes centerPillFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
 }
 
 .orbit-center-logo {
@@ -1647,6 +1797,11 @@ button.button, input[type="submit"].button {
   .orbit-ring.ring-outer { width: 340px; height: 340px; }
   .orbit-ring.ring-mid { width: 250px; height: 250px; }
   .orbit-ring.ring-inner { width: 160px; height: 160px; }
+  .orbit-rotator.rotator-mid { width: 250px; height: 250px; }
+  .orbit-rotator.rotator-outer { width: 340px; height: 340px; }
+  .orbit-wave { width: 250px; height: 250px; }
+  .sat-primary { width: 8px; height: 8px; }
+  .sat-secondary { width: 6px; height: 6px; }
   .orbit-layout-col {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
