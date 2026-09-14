@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=64">
+  <link rel="stylesheet" href="styles.css?v=65">
 </head>
 <body>
   <header class="site-header">
@@ -244,7 +244,7 @@
           </div>
 
           <div class="milestones-player" id="milestonesPlayer" aria-label="Company Highlights Carousel">
-            <div class="milestones-slider-track">
+            <div class="milestones-slider-track" style="cursor: pointer;" title="Click to advance slide">
               <div class="milestones-slide is-active" data-index="0">
                 <img src="assets/111.webp" alt="IC Taiwan Grand Challenge Award" class="milestones-slide-img">
               </div>
@@ -256,13 +256,9 @@
               </div>
             </div>
             <div class="milestones-player-controls">
-              <button class="player-btn player-prev" type="button" aria-label="Previous slide">‹</button>
-              <div class="player-dots">
-                <button class="player-dot is-active" type="button" data-index="0" aria-label="Slide 1"></button>
-                <button class="player-dot" type="button" data-index="1" aria-label="Slide 2"></button>
-                <button class="player-dot" type="button" data-index="2" aria-label="Slide 3"></button>
-              </div>
-              <button class="player-btn player-next" type="button" aria-label="Next slide">›</button>
+              <button class="player-dot is-active" type="button" data-index="0" aria-label="Slide 1"></button>
+              <button class="player-dot" type="button" data-index="1" aria-label="Slide 2"></button>
+              <button class="player-dot" type="button" data-index="2" aria-label="Slide 3"></button>
             </div>
           </div>
         </div>
@@ -520,8 +516,9 @@
         });
       }
 
-      if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
+      const track = player.querySelector('.milestones-slider-track');
+      if (track) {
+        track.addEventListener('click', () => {
           nextSlide();
           startTimer();
         });
