@@ -762,8 +762,8 @@ button.button, input[type="submit"].button {
 /* Architectural Milestone Timeline Track with Top Image Carousel Player */
 .timeline-top-split {
   display: grid;
-  grid-template-columns: minmax(320px, 1fr) minmax(320px, 1.15fr);
-  gap: clamp(36px, 5vw, 64px);
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 380px);
+  gap: clamp(32px, 5vw, 64px);
   align-items: center;
   margin-bottom: clamp(48px, 6vw, 72px);
 }
@@ -788,14 +788,17 @@ button.button, input[type="submit"].button {
   line-height: 1.62;
 }
 
-/* Milestones Image Carousel Player */
+/* Milestones Image Carousel Player (Compact & Minimalist) */
 .milestones-player {
   position: relative;
-  border-radius: 16px;
+  width: 100%;
+  max-width: 380px;
+  margin-left: auto;
+  border-radius: 12px;
   overflow: hidden;
   background: #0f172a;
-  box-shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(15, 23, 42, 0.08);
-  aspect-ratio: 16 / 10;
+  box-shadow: 0 12px 28px -8px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(15, 23, 42, 0.06);
+  aspect-ratio: 16 / 10.5;
   display: flex;
   flex-direction: column;
 }
@@ -810,13 +813,11 @@ button.button, input[type="submit"].button {
   inset: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  transform: scale(1.03);
+  transition: opacity 0.5s ease;
 }
 .milestones-slide.is-active {
   opacity: 1;
   visibility: visible;
-  transform: scale(1);
   z-index: 2;
 }
 .milestones-slide-img {
@@ -826,69 +827,49 @@ button.button, input[type="submit"].button {
   object-position: center;
   display: block;
 }
-.milestones-slide-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.72) 100%);
-  pointer-events: none;
-}
-.milestones-slide-badge {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 120px;
-  z-index: 3;
-  color: #ffffff;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  line-height: 1.4;
-}
 .milestones-player-controls {
   position: absolute;
-  bottom: 16px;
-  right: 16px;
+  bottom: 10px;
+  right: 10px;
   z-index: 4;
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 6px 12px;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 10px;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 .player-btn {
   background: transparent;
   border: none;
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1;
-  width: 26px;
-  height: 26px;
+  width: 18px;
+  height: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   border-radius: 50%;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease;
   padding: 0;
+  opacity: 0.75;
 }
 .player-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.1);
+  opacity: 1;
 }
 .player-dots {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 .player-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.45);
   border: none;
@@ -898,7 +879,7 @@ button.button, input[type="submit"].button {
 }
 .player-dot.is-active {
   background: var(--coral, #ff6b4a);
-  width: 20px;
+  width: 14px;
   border-radius: 9999px;
 }
 
@@ -992,7 +973,11 @@ button.button, input[type="submit"].button {
 @media (max-width: 1024px) {
   .timeline-top-split {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
+  }
+  .milestones-player {
+    max-width: 100%;
+    margin-left: 0;
   }
   .timeline-header {
     position: static;
