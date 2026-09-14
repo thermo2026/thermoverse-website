@@ -1517,253 +1517,196 @@ button.button, input[type="submit"].button {
   margin: 0;
 }
 
-/* FAITHE Centerpiece Triad Layout & Outward Expansion Animation */
-.faith-triad-wrap {
+/* SECTION 03 · FAITHE Stage Showcase (Inspired by media_1789379684438.png) */
+.faithe-stage {
+  position: relative;
   width: 100%;
-  position: relative;
-  padding: 12px 0;
 }
 
-.faith-triad-grid {
+.faithe-grid {
   display: grid;
-  grid-template-columns: 1fr 1.18fr 1fr;
-  gap: clamp(28px, 3.8vw, 56px);
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(10px, 1.4vw, 20px);
+  align-items: stretch;
+}
+
+.faithe-col {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-}
-
-.faith-triad-col {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(28px, 3.4vw, 44px);
-}
-
-.faith-item {
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
   position: relative;
-  border-radius: 12px;
-  padding: 8px 12px;
-  background: transparent;
-  border: 1px solid transparent;
+  outline: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.faith-item:hover,
-.faith-item.is-active {
-  border-color: rgba(223, 72, 98, 0.2);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 10px 24px rgba(223, 72, 98, 0.08), 0 2px 8px rgba(15, 23, 42, 0.03);
-}
-
-.faith-item.left-item:hover,
-.faith-item.left-item.is-active {
-  transform: translateX(-6px);
-}
-
-.faith-item.right-item:hover,
-.faith-item.right-item.is-active {
-  transform: translateX(6px);
-}
-
-.faith-item .goals-item-arrow {
-  font-size: 18px;
-  font-weight: 600;
-  color: #1e252b;
-  transition: transform 0.25s ease, color 0.25s ease;
-  display: inline-block;
+.faithe-char-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: clamp(84px, 9vw, 130px);
   user-select: none;
 }
 
-.faith-item:hover .goals-item-arrow,
-.faith-item.is-active .goals-item-arrow {
-  color: #df4862;
+.faithe-char {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(5.2rem, 7.6vw, 8.8rem);
+  font-weight: 800;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.8px rgba(15, 23, 42, 0.22);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: -0.02em;
 }
 
-.faith-item.left-item:hover .goals-item-arrow,
-.faith-item.left-item.is-active .goals-item-arrow {
-  transform: translateX(6px);
+/* Hover & Active: Turn Solid! (滑鼠點到那個字的時候變成實心) */
+.faithe-col:hover .faithe-char,
+.faithe-col.is-active .faithe-char {
+  color: var(--ink);
+  -webkit-text-stroke: 1.8px var(--ink);
+  transform: translateY(-4px) scale(1.04);
 }
 
-.faith-item.right-item:hover .goals-item-arrow,
-.faith-item.right-item.is-active .goals-item-arrow {
-  transform: translateX(-6px);
-}
-
-.faith-item:hover .goals-item-title,
-.faith-item.is-active .goals-item-title {
-  color: #df4862;
-}
-
-/* Centerpiece FAITHE */
-.faith-triad-center {
+/* Pointer Line (每一個字用線條指出來) */
+.faithe-pointer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  padding: 10px 16px;
-  position: relative;
+  height: 44px;
+  width: 100%;
+  margin: 2px 0 14px;
 }
 
-.center-faith-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.center-faith-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 320px;
-  height: 150px;
-  background: radial-gradient(ellipse, rgba(223, 72, 98, 0.22) 0%, rgba(223, 72, 98, 0.06) 50%, transparent 72%);
+.faithe-pointer-node {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  filter: blur(26px);
-  pointer-events: none;
-  z-index: 0;
-  animation: faithHaloPulse 3.8s ease-in-out infinite alternate;
+  background-color: rgba(15, 23, 42, 0.25);
+  transition: all 0.3s ease;
 }
 
-@keyframes faithHaloPulse {
-  0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.65; }
-  100% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
+.faithe-pointer-stem {
+  width: 1.5px;
+  flex-grow: 1;
+  background-color: rgba(15, 23, 42, 0.16);
+  transition: all 0.3s ease;
 }
 
-.center-faith-letters {
-  position: relative;
-  z-index: 1;
+.faithe-pointer-arrow {
+  font-size: 13px;
+  line-height: 1;
+  color: rgba(15, 23, 42, 0.3);
+  transition: all 0.3s ease;
+  margin-top: -2px;
+}
+
+.faithe-col:hover .faithe-pointer-node,
+.faithe-col.is-active .faithe-pointer-node {
+  background-color: var(--coral);
+  transform: scale(1.3);
+}
+
+.faithe-col:hover .faithe-pointer-stem,
+.faithe-col.is-active .faithe-pointer-stem {
+  background-color: var(--coral);
+}
+
+.faithe-col:hover .faithe-pointer-arrow,
+.faithe-col.is-active .faithe-pointer-arrow {
+  color: var(--coral);
+  transform: translateY(3px);
+}
+
+/* Principle Card */
+.faithe-card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  padding: 20px 16px 18px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+.faithe-col:hover .faithe-card,
+.faithe-col.is-active .faithe-card {
+  border-color: rgba(15, 23, 42, 0.2);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.07), 0 2px 6px rgba(15, 23, 42, 0.04);
+  transform: translateY(-3px);
+}
+
+.faithe-card-eyebrow {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: #ffffff;
-  padding: 10px 14px;
-  border-radius: 18px;
-  border: 1px solid rgba(223, 72, 98, 0.16);
-  box-shadow: 0 16px 36px rgba(223, 72, 98, 0.1), 0 4px 16px rgba(15, 23, 42, 0.05);
-  transition: gap 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  justify-content: space-between;
+  margin-bottom: 14px;
 }
 
-.center-faith-letters:hover {
-  gap: 12px;
-  box-shadow: 0 20px 44px rgba(223, 72, 98, 0.18), 0 6px 20px rgba(15, 23, 42, 0.07);
-}
-
-.faith-letter-btn {
-  background: none;
-  border: none;
-  font-family: var(--font-sans);
-  font-size: clamp(26px, 2.8vw, 36px);
-  font-weight: 850;
-  color: #1e252b;
-  width: clamp(40px, 4.2vw, 52px);
-  height: clamp(48px, 4.8vw, 60px);
-  border-radius: 12px;
+.faithe-card-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: var(--ink);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
   line-height: 1;
-  position: relative;
 }
 
-.faith-letter-btn:hover,
-.faith-letter-btn.is-active {
-  background: rgba(223, 72, 98, 0.09);
-  color: #df4862;
-  transform: translateY(-3px) scale(1.12);
-  box-shadow: 0 6px 16px rgba(223, 72, 98, 0.15);
+.faithe-card-num {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
 }
 
-/* Staggered Outward Expansion Animations */
-@keyframes faithExpandLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(36px);
+.faithe-card-title {
+  font-size: clamp(16px, 1.25vw, 19px);
+  font-weight: 500;
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.faithe-card-desc {
+  font-size: 0.85rem;
+  line-height: 1.58;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .faithe-grid {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 36px;
   }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
-@keyframes faithExpandRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-36px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.faith-triad-wrap.in-view .faith-col-left .faith-item:nth-child(1),
-.faith-col-left .faith-item:nth-child(1) {
-  animation: faithExpandLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: 0.1s;
-}
-.faith-triad-wrap.in-view .faith-col-left .faith-item:nth-child(2),
-.faith-col-left .faith-item:nth-child(2) {
-  animation: faithExpandLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: 0.22s;
-}
-.faith-triad-wrap.in-view .faith-col-left .faith-item:nth-child(3),
-.faith-col-left .faith-item:nth-child(3) {
-  animation: faithExpandLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: 0.34s;
-}
-
-.faith-triad-wrap.in-view .faith-col-right .faith-item:nth-child(1),
-.faith-col-right .faith-item:nth-child(1) {
-  animation: faithExpandRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: 0.1s;
-}
-.faith-triad-wrap.in-view .faith-col-right .faith-item:nth-child(2),
-.faith-col-right .faith-item:nth-child(2) {
-  animation: faithExpandRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: 0.22s;
-}
-.faith-triad-wrap.in-view .faith-col-right .faith-item:nth-child(3),
-.faith-col-right .faith-item:nth-child(3) {
-  animation: faithExpandRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: 0.34s;
-}
-
-@media (max-width: 992px) {
-  .faith-triad-grid {
+@media (max-width: 640px) {
+  .faithe-grid {
     grid-template-columns: 1fr;
-    gap: 44px;
+    row-gap: 28px;
   }
-  .faith-triad-center {
-    order: -1;
-    margin-bottom: 8px;
+  .faithe-char-wrap {
+    height: 72px;
   }
-  .faith-triad-col {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+  .faithe-char {
+    font-size: 4.5rem;
   }
-}
-
-@media (max-width: 680px) {
-  .faith-triad-col {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .center-faith-letters {
-    gap: 4px;
-    padding: 8px 10px;
-  }
-  .faith-letter-btn {
-    width: 38px;
-    height: 44px;
-    font-size: 22px;
+  .faithe-pointer {
+    height: 30px;
   }
 }
 

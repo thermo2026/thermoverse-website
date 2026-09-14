@@ -103,6 +103,19 @@
 - **卡片內文 (`.orbit-card-desc`)**：
   - **字級**：`14px` ~ `14.5px`，`line-height: 1.6`，`color: #64748b`
 
+### 3.6.2 FAITHE 展台字母與指針卡片 (FAITHE Stage Character & Pointer Cards - Section 03)
+- **背部巨大描邊字母 (`.faithe-char`)**：
+  - **字級**：`clamp(5.2rem, 7.6vw, 8.8rem)`，`font-weight: 800`，字體 `Outfit`。
+  - **預設樣式**：透明文字 `color: transparent;`，帶有 `1.8px` 淺色描邊（`-webkit-text-stroke: 1.8px rgba(15, 23, 42, 0.22);`）。
+  - **懸停／選中（點到變實心）**：`color: var(--ink); -webkit-text-stroke: 1.8px var(--ink); transform: translateY(-4px) scale(1.04);`，嚴禁變紅，轉為沉穩實心深色。
+- **指示線與節點箭頭 (`.faithe-pointer`)**：
+  - 高度 `44px`，包含圓點 (`.faithe-pointer-node`)、引導垂直實線 (`.faithe-pointer-stem`) 與向下箭頭 (`.faithe-pointer-arrow`)。
+  - 懸停／選中時激活為珊瑚紅 `var(--coral)`。
+- **原則卡片標題 (`.faithe-card-title`)**：
+  - **字級**：`clamp(16px, 1.25vw, 19px)`，`font-weight: 500`（Medium），`color: var(--ink)`。
+- **原則卡片內文 (`.faithe-card-desc`)**：
+  - **字級**：`0.85rem`（約 13.6px），`line-height: 1.58`，`color: #64748b`。
+
 ### 3.7 時間軸里程碑節點 (Milestones / Timeline)
 - **節點編號 (`.timeline-step-num`)**：`1.45rem`，`font-weight: 500`，`color: var(--coral)`
 - **年份日期 (`.timeline-step-date`)**：`0.72rem`，`font-weight: 750`，`letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral);`

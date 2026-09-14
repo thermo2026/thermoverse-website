@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=45">
+  <link rel="stylesheet" href="styles.css?v=46">
 </head>
 <body>
   <header class="site-header">
@@ -213,102 +213,139 @@
       </div>
     </section>
 
-    <!-- SECTION 03 · COMPANY PRINCIPLES (Centerpiece FAITHE Triad Layout) -->
+    <!-- SECTION 03 · COMPANY PRINCIPLES (FAITHE Architectural Showcase) -->
     <section class="section" id="company-principles" style="padding-top: 88px; padding-bottom: 96px; background: #ffffff;">
       <div class="wrap">
-        <div class="eyebrow" style="text-align: center; margin-bottom: 48px;">03 · COMPANY PRINCIPLES</div>
+        <div class="section-header-center" style="text-align: center; max-width: 760px; margin: 0 auto 52px;">
+          <div class="eyebrow" style="margin-bottom: 14px;">03 · COMPANY PRINCIPLES</div>
+          <h2 style="font-size: clamp(2.25rem, 2.8vw, 3rem); font-weight: 350; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); margin: 0 0 16px;">
+            Leading by FAITHE
+          </h2>
+          <p class="section-intro" style="margin: 0 auto;">
+            <strong>Driven by Purpose. Leading by Action.</strong> Six core values guiding technical discipline, engineering excellence, and enduring relationships.
+          </p>
+        </div>
 
-        <div class="faith-triad-wrap">
-          <div class="faith-triad-grid">
+        <div class="faithe-stage" id="faitheStage">
+          <div class="faithe-grid">
 
-            <!-- Left Column: F, A, I -->
-            <div class="faith-triad-col faith-col-left">
-              <!-- Value F -->
-              <div class="faith-item left-item" data-letter="F">
-                <div class="goals-item-header">
-                  <h3 class="goals-item-title">F · Foundational Excellence</h3>
-                  <span class="goals-item-arrow" aria-hidden="true">→</span>
-                </div>
-                <p class="goals-item-desc">
-                  Embracing first-principles thinking approach to problem-solving.
-                </p>
+            <!-- F -->
+            <div class="faithe-col is-active" data-index="0" role="button" tabindex="0" aria-label="F: Foundational Excellence">
+              <div class="faithe-char-wrap">
+                <span class="faithe-char">F</span>
               </div>
-
-              <!-- Value A -->
-              <div class="faith-item left-item" data-letter="A">
-                <div class="goals-item-header">
-                  <h3 class="goals-item-title">A · Agency</h3>
-                  <span class="goals-item-arrow" aria-hidden="true">→</span>
-                </div>
-                <p class="goals-item-desc">
-                  Valuing lived experience in empowering individuals to act and make decisions.
-                </p>
+              <div class="faithe-pointer" aria-hidden="true">
+                <span class="faithe-pointer-node"></span>
+                <span class="faithe-pointer-stem"></span>
+                <span class="faithe-pointer-arrow">↓</span>
               </div>
-
-              <!-- Value I -->
-              <div class="faith-item left-item" data-letter="I">
-                <div class="goals-item-header">
-                  <h3 class="goals-item-title">I · Intentionality</h3>
-                  <span class="goals-item-arrow" aria-hidden="true">→</span>
+              <div class="faithe-card">
+                <div class="faithe-card-eyebrow">
+                  <span class="faithe-card-badge">F</span>
+                  <span class="faithe-card-num">01</span>
                 </div>
-                <p class="goals-item-desc">
-                  Working together through authentic engagement and a shared purpose.
-                </p>
+                <h3 class="faithe-card-title">Foundational Excellence</h3>
+                <p class="faithe-card-desc">Embracing first-principles thinking approach to problem-solving.</p>
               </div>
             </div>
 
-            <!-- Center Column: Glowing FAITHE Centerpiece -->
-            <div class="faith-triad-center">
-              <div class="center-faith-container">
-                <div class="center-faith-glow" aria-hidden="true"></div>
-                <div class="center-faith-letters" aria-label="FAITHE Principles">
-                  <button class="faith-letter-btn" data-key="F" type="button" aria-label="F: Foundational Excellence">F</button>
-                  <button class="faith-letter-btn" data-key="A" type="button" aria-label="A: Agency">A</button>
-                  <button class="faith-letter-btn" data-key="I" type="button" aria-label="I: Intentionality">I</button>
-                  <button class="faith-letter-btn" data-key="T" type="button" aria-label="T: Transparency">T</button>
-                  <button class="faith-letter-btn" data-key="H" type="button" aria-label="H: Horizon">H</button>
-                  <button class="faith-letter-btn" data-key="E" type="button" aria-label="E: Relational Equity">E</button>
-                </div>
+            <!-- A -->
+            <div class="faithe-col" data-index="1" role="button" tabindex="0" aria-label="A: Agency">
+              <div class="faithe-char-wrap">
+                <span class="faithe-char">A</span>
               </div>
-              <h2 class="center-goals-title">Leading by FAITHE</h2>
-              <p class="center-goals-subtitle">
-                <strong>Driven by Purpose. Leading by Action.</strong> Six core values guiding technical discipline, engineering excellence, and enduring relationships.
-              </p>
+              <div class="faithe-pointer" aria-hidden="true">
+                <span class="faithe-pointer-node"></span>
+                <span class="faithe-pointer-stem"></span>
+                <span class="faithe-pointer-arrow">↓</span>
+              </div>
+              <div class="faithe-card">
+                <div class="faithe-card-eyebrow">
+                  <span class="faithe-card-badge">A</span>
+                  <span class="faithe-card-num">02</span>
+                </div>
+                <h3 class="faithe-card-title">Agency</h3>
+                <p class="faithe-card-desc">Valuing lived experience in empowering individuals to act and make decisions.</p>
+              </div>
             </div>
 
-            <!-- Right Column: T, H, E -->
-            <div class="faith-triad-col faith-col-right">
-              <!-- Value T -->
-              <div class="faith-item right-item" data-letter="T">
-                <div class="goals-item-header">
-                  <span class="goals-item-arrow" aria-hidden="true">←</span>
-                  <h3 class="goals-item-title">T · Transparency</h3>
-                </div>
-                <p class="goals-item-desc">
-                  Building trust through open and honest communication.
-                </p>
+            <!-- I -->
+            <div class="faithe-col" data-index="2" role="button" tabindex="0" aria-label="I: Intentionality">
+              <div class="faithe-char-wrap">
+                <span class="faithe-char">I</span>
               </div>
-
-              <!-- Value H -->
-              <div class="faith-item right-item" data-letter="H">
-                <div class="goals-item-header">
-                  <span class="goals-item-arrow" aria-hidden="true">←</span>
-                  <h3 class="goals-item-title">H · Horizon</h3>
-                </div>
-                <p class="goals-item-desc">
-                  Innovating the future while responsibly managing the trust that has been built.
-                </p>
+              <div class="faithe-pointer" aria-hidden="true">
+                <span class="faithe-pointer-node"></span>
+                <span class="faithe-pointer-stem"></span>
+                <span class="faithe-pointer-arrow">↓</span>
               </div>
-
-              <!-- Value E -->
-              <div class="faith-item right-item" data-letter="E">
-                <div class="goals-item-header">
-                  <span class="goals-item-arrow" aria-hidden="true">←</span>
-                  <h3 class="goals-item-title">E · Relational (Equity)</h3>
+              <div class="faithe-card">
+                <div class="faithe-card-eyebrow">
+                  <span class="faithe-card-badge">I</span>
+                  <span class="faithe-card-num">03</span>
                 </div>
-                <p class="goals-item-desc">
-                  Fostering strong, positive relationships through mutual trust and shared understanding.
-                </p>
+                <h3 class="faithe-card-title">Intentionality</h3>
+                <p class="faithe-card-desc">Working together through authentic engagement and a shared purpose.</p>
+              </div>
+            </div>
+
+            <!-- T -->
+            <div class="faithe-col" data-index="3" role="button" tabindex="0" aria-label="T: Transparency">
+              <div class="faithe-char-wrap">
+                <span class="faithe-char">T</span>
+              </div>
+              <div class="faithe-pointer" aria-hidden="true">
+                <span class="faithe-pointer-node"></span>
+                <span class="faithe-pointer-stem"></span>
+                <span class="faithe-pointer-arrow">↓</span>
+              </div>
+              <div class="faithe-card">
+                <div class="faithe-card-eyebrow">
+                  <span class="faithe-card-badge">T</span>
+                  <span class="faithe-card-num">04</span>
+                </div>
+                <h3 class="faithe-card-title">Transparency</h3>
+                <p class="faithe-card-desc">Building trust through open and honest communication.</p>
+              </div>
+            </div>
+
+            <!-- H -->
+            <div class="faithe-col" data-index="4" role="button" tabindex="0" aria-label="H: Horizon">
+              <div class="faithe-char-wrap">
+                <span class="faithe-char">H</span>
+              </div>
+              <div class="faithe-pointer" aria-hidden="true">
+                <span class="faithe-pointer-node"></span>
+                <span class="faithe-pointer-stem"></span>
+                <span class="faithe-pointer-arrow">↓</span>
+              </div>
+              <div class="faithe-card">
+                <div class="faithe-card-eyebrow">
+                  <span class="faithe-card-badge">H</span>
+                  <span class="faithe-card-num">05</span>
+                </div>
+                <h3 class="faithe-card-title">Horizon</h3>
+                <p class="faithe-card-desc">Innovating the future while responsibly managing the trust that has been built.</p>
+              </div>
+            </div>
+
+            <!-- E -->
+            <div class="faithe-col" data-index="5" role="button" tabindex="0" aria-label="E: Relational Equity">
+              <div class="faithe-char-wrap">
+                <span class="faithe-char">E</span>
+              </div>
+              <div class="faithe-pointer" aria-hidden="true">
+                <span class="faithe-pointer-node"></span>
+                <span class="faithe-pointer-stem"></span>
+                <span class="faithe-pointer-arrow">↓</span>
+              </div>
+              <div class="faithe-card">
+                <div class="faithe-card-eyebrow">
+                  <span class="faithe-card-badge">E</span>
+                  <span class="faithe-card-num">06</span>
+                </div>
+                <h3 class="faithe-card-title">Relational (Equity)</h3>
+                <p class="faithe-card-desc">Fostering strong, positive relationships through mutual trust and shared understanding.</p>
               </div>
             </div>
 
@@ -381,52 +418,40 @@
   </footer>
   <script src="script.js"></script>
   <script>
-    // FAITHE Interactive Expansion & Linking
+    // FAITHE Architectural Stage Interaction (Hover & Click solid states)
     (function() {
-      const letters = document.querySelectorAll('.faith-letter-btn');
-      const items = document.querySelectorAll('.faith-item');
-      const faithWrap = document.querySelector('.faith-triad-wrap');
+      const cols = document.querySelectorAll('.faithe-col');
+      if (!cols.length) return;
+      let activeIndex = 0; // Default active column (F is solid)
 
-      function activate(key) {
-        letters.forEach(btn => {
-          btn.classList.toggle('is-active', btn.getAttribute('data-key') === key);
-        });
-        items.forEach(item => {
-          item.classList.toggle('is-active', item.getAttribute('data-letter') === key);
+      function setActive(index) {
+        cols.forEach((col, idx) => {
+          col.classList.toggle('is-active', idx === index);
         });
       }
 
-      function clearActive() {
-        letters.forEach(btn => btn.classList.remove('is-active'));
-        items.forEach(item => item.classList.remove('is-active'));
-      }
-
-      letters.forEach(btn => {
-        const key = btn.getAttribute('data-key');
-        btn.addEventListener('mouseenter', () => activate(key));
-        btn.addEventListener('mouseleave', clearActive);
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          activate(key);
+      cols.forEach((col, idx) => {
+        col.addEventListener('mouseenter', () => {
+          setActive(idx);
+        });
+        col.addEventListener('click', () => {
+          activeIndex = idx;
+          setActive(idx);
+        });
+        col.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            activeIndex = idx;
+            setActive(idx);
+          }
         });
       });
 
-      items.forEach(item => {
-        const key = item.getAttribute('data-letter');
-        item.addEventListener('mouseenter', () => activate(key));
-        item.addEventListener('mouseleave', clearActive);
-      });
-
-      if ('IntersectionObserver' in window && faithWrap) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              faithWrap.classList.add('in-view');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.15 });
-        observer.observe(faithWrap);
+      const stage = document.getElementById('faitheStage');
+      if (stage) {
+        stage.addEventListener('mouseleave', () => {
+          setActive(activeIndex);
+        });
       }
     })();
   </script>
