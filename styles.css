@@ -1400,7 +1400,8 @@ button.button, input[type="submit"].button {
   width: 280px;
   height: 280px;
   border: 1px solid rgba(15, 23, 42, 0.09);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 65%, transparent 100%);
+  background: radial-gradient(circle, #ffffff 0%, rgba(255, 255, 255, 0.96) 65%, rgba(255, 255, 255, 0.8) 100%);
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.04);
 }
 
 .orbit-layout-grid {
@@ -1433,16 +1434,21 @@ button.button, input[type="submit"].button {
   justify-content: center;
   text-align: center;
   position: relative;
+  width: 100%;
 }
 
-.orbit-center-title {
-  font-family: var(--font-sans);
-  font-size: clamp(28px, 3.2vw, 40px);
-  font-weight: 450;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin: 0;
+.orbit-center-logo {
+  max-width: clamp(160px, 18vw, 230px);
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 2px 10px rgba(15, 23, 42, 0.05));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.orbit-center-pill:hover .orbit-center-logo {
+  transform: scale(1.06);
 }
 
 .orbit-card {
