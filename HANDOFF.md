@@ -329,8 +329,80 @@
   - 原標題：`Turn Your Ceiling Into a Programmable Thermal Battery.`
   - 新標題：**`The world's most compact, zero-footprint thermal energy storage solution`**
   - **移除描述長段落**：依需求拿掉原先下方長篇說明段落，使 Hero 區塊視覺更洗鍊聚焦、直接引導至下方核心方案。
-- **全站次頁面 CSS 版本號同步**：
-  - 所有次頁面（`technology.html`、`about.html`、`use-cases.html`、`contact.html`、`privacy.html`）之樣式表參照全數同步更新至 `styles.css?v=15`，確保頁尾高度壓縮與最新樣式即時生效。
+
+### 14. 全站字體大小與排版階層全面比照首頁標準化
+- **Hero 大標題（.page-hero h1）比照首頁 Hero**：
+  - 由原先過大的 `clamp(3rem, 6.3vw, 5.9rem)`、重字重 `550`，全面比照首頁改為：
+    - `font-size: clamp(2.5rem, 4.2vw, 4.5rem)`
+    - `font-weight: 350`（優雅輕盈字重）
+    - `line-height: 1.04`、`letter-spacing: -0.025em`
+    - 最大寬度放寬至 `960px`，使長標題換行更平順
+    - 手機版同步改為 `clamp(2.15rem, 10vw, 2.75rem)`，與首頁完全一致。
+- **Hero 說明內文（.page-hero p）比照首頁段落**：
+  - 調整為 `font-size: 1.08rem; color: var(--muted);`，與首頁各區塊引言（`.section-intro`）完全同規。
+- **卡片與條列標題（.card h3, .step h3, .line-list h3）比照首頁卡片**：
+  - `.card h3` 由原 `1.25rem` 統一調整為 **`1.45rem; font-weight: 600;`**，與首頁解決方案與應用卡片標題完全對齊。
+  - `.step h3` 與 `.line-list h3` 統一明確規範為 `1.25rem; font-weight: 600;`。
+- **全站 CSS 版本升級**：
+  - 所有頁面升級至 `styles.css?v=16`，即時突破瀏覽器快取。
+
+### 15. 全站次頁 Hero 高度全面比照首頁 100vh 滿版對齊
+- **高度統一為滿版視窗高度（.page-hero）**：
+  - 設定 `min-height: 100vh; min-height: 100svh;`，與首頁 Hero（`.animated-hero`）完全一致。
+  - 採用 Flexbox 垂直置中佈局（`display: flex; flex-direction: column; justify-content: center;`），搭配彈性安全內距（`padding: clamp(112px, 14vh, 160px) 0 clamp(40px, 8vh, 80px);`），完美避開頂部固定式導覽列。
+  - 手機版同步維持 `min-height: 100vh; min-height: 100svh;`。
+- **全站 CSS 快取版本升級至 v=17**：
+  - 所有 6 個頁面已同步更新為 `styles.css?v=17`。
+
+### 16. Technology (LATCHES) 頁面各區塊小標數字移除
+- **移除小標編號（.eyebrow）**：
+  - `01 · LATCHES thermal battery overview` ➔ **`LATCHES thermal battery overview`**
+  - `02 · Phase Change Materials` ➔ **`Phase Change Materials`**
+  - `03 · Sensing, storage, and control` ➔ **`Sensing, storage, and control`**
+  - `04 · Ceilings and walls` ➔ **`Ceilings and walls`**
+  - `05 · Heat-flow control and peak management` ➔ **`Heat-flow control and peak management`**
+  - `06 · FAQ` ➔ **`FAQ`**
+  - 全數移除前綴編號與中圓點，版面與首頁、Use Cases 頁面的乾淨無編號風格保持一致。
+
+### 17. Technology (LATCHES) 頁面 Hero 按鈕移除並換為描述文字
+- **Hero 結構微調（technology.html）**：
+  - 移除原 Hero 下方的按鈕（`<a class="button">Discuss Your Requirements</a>`）。
+  - 替換為全新精簡描述段落：
+    ```html
+    <p>Solid-state thermal battery designed for dense urban buildings</p>
+    ```
+  - 樣式套用 `.page-hero p`（`font-size: 1.08rem; color: var(--muted);`），與首頁各區塊排版規格完全同軌，畫面更具品牌高級感。
+
+### 18. Technology (LATCHES) 頁面移除重複開頭文案
+- **移除冗餘語句（#thermal-battery 區塊）**：
+  - 原文案：`LATCHES is a zero-footprint, solid-state thermal battery designed for dense urban buildings. By integrating thermal storage into existing ceiling or wall areas...`
+  - 調整後：**`By integrating thermal storage into existing ceiling or wall areas, it offers an alternative where traditional chemical Battery Energy Storage Systems (BESS) may be restricted by urban fire codes or space constraints.`**
+  - 效益：因上方 Hero 已包含專屬描述 `Solid-state thermal battery designed for dense urban buildings`，移除此句後消除上下重複，內容更加精練緊湊。
+
+### 19. Technology (LATCHES) 頁面小標優化
+- **小標更新（#thermal-battery 區塊）**：
+  - 原小標：`LATCHES thermal battery overview`
+  - 新小標：**`Urban-safe energy storage`**
+  - 效益：更精確聚焦於其解決都會消防法規（Fire Codes）與安全替代化學電池的核心定位。
+
+### 20. Technology (LATCHES) 頁面區塊順序互換（Sensing & Control ↔ Phase Change Materials）
+- **區塊順序調整（technology.html）**：
+  - 第 2 區塊改為：**`Sensing, storage, and control`**（`#sensing-control`），先闡述感知、預測與充放電控制流程（步驟 1 Sense / 2 Predict / 3 Charge or discharge）。
+  - 第 3 區塊改為：**`Phase Change Materials`**（`#pcm-storage`），接著深入介紹 102 BTU/SF 相變蓄熱材料特性與儲能卡片。
+  - **背景樣式自適應調適**：同步調整斑馬紋交錯背景樣式（`#sensing-control` 設為 `section alt` 淡漸層，`#pcm-storage` 設為純白 `section`），維持全頁視覺律動節奏。
+
+### 21. Technology (LATCHES) 頁面移除內部準則對比句
+- **移除安裝說明冗餘內部句（#installation 區塊）**：
+  - 原文案：`LATCHES is designed for drop-ceiling and wall integration, preserving rentable floor area while placing thermal storage close to the conditioned space. Its installation approach is designed to be eight times faster than the comparison system referenced in the Company’s Website Guidelines.`
+  - 調整後：**`LATCHES is designed for drop-ceiling and wall integration, preserving rentable floor area while placing thermal storage close to the conditioned space.`**
+  - 效益：移除帶有內部文件條款風味的比較指引句，使面向客戶的行銷與技術文案更加純粹自然。
+
+
+
+
+
+
+
 
 
 
