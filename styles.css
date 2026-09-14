@@ -1710,34 +1710,228 @@ button.button, input[type="submit"].button {
   }
 }
 
-/* Dedicated Section 05: Talent Pipeline Layout */
-.talent-pipeline-grid {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 48px;
-}
-.talent-pipeline-content {
-  max-width: 760px;
-  display: flex;
-  flex-direction: column;
+/* SECTION 04 · WORKFORCE SHOWCASE (CoreFlow Style Reference) */
+.workforce-header-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(360px, 1.35fr);
+  gap: clamp(32px, 4.5vw, 64px);
+  align-items: start;
+  margin-bottom: clamp(36px, 4.5vw, 56px);
 }
 
-@media (max-width: 900px) {
-  .faithe-values-grid-full {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .talent-pipeline-grid {
-    flex-direction: column;
-    gap: 32px;
-  }
+.workforce-header-title h2 {
+  font-size: clamp(2.25rem, 3.2vw, 3.25rem);
+  font-weight: 350;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
 }
-@media (max-width: 600px) {
-  .faithe-values-grid {
+
+.workforce-title-accent {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ink);
+}
+
+.workforce-header-desc .section-intro {
+  margin: 0;
+}
+
+.workforce-showcase-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(420px, 1.8fr);
+  gap: clamp(20px, 2.8vw, 36px);
+  align-items: stretch;
+}
+
+.workforce-stat-card {
+  background: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  padding: clamp(28px, 3.2vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.workforce-stat-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(3.5rem, 5.2vw, 5rem);
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.workforce-stat-caption {
+  font-size: 0.95rem;
+  line-height: 1.58;
+  color: #64748b;
+  margin: 0 0 24px;
+}
+
+.workforce-avatar-stack {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.workforce-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  margin-left: -12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+  transition: transform 0.25s ease;
+}
+
+.workforce-avatar:first-child {
+  margin-left: 0;
+}
+
+.workforce-avatar:hover {
+  transform: translateY(-4px) scale(1.1);
+  z-index: 5;
+}
+
+.workforce-avatar-more {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #ffffff;
+  margin-left: -12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--coral);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.workforce-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.workforce-card-actions .btn-pill {
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.workforce-media-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #0f172a;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.09);
+}
+
+.workforce-media-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.workforce-media-card:hover .workforce-media-img {
+  transform: scale(1.03);
+}
+
+.workforce-media-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.45) 100%);
+  pointer-events: none;
+}
+
+.workforce-play-badge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 3;
+}
+
+.workforce-play-icon {
+  font-size: 17px;
+  color: var(--ink);
+  margin-left: 3px;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.workforce-play-badge:hover {
+  transform: scale(1.12);
+  background: #ffffff;
+}
+
+.workforce-play-badge:hover .workforce-play-icon {
+  color: var(--coral);
+}
+
+.workforce-media-footer {
+  position: relative;
+  z-index: 2;
+  padding: 24px;
+}
+
+.workforce-media-pill {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 960px) {
+  .workforce-header-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
-  .faithe-values-grid-full {
+  .workforce-showcase-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .workforce-media-card {
+    min-height: 340px;
   }
 }
 
