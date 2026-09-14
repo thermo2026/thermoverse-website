@@ -446,11 +446,21 @@ button.button, input[type="submit"].button {
   transform: translateY(-2px);
 }
 
-/* Architectural Hero */
+/* Architectural Hero (Matches Home Hero 100vh / 100svh Height) */
 .arch-hero {
-  padding: clamp(120px, 14vh, 160px) 0 clamp(48px, 6vh, 80px);
+  min-height: 100vh;
+  min-height: 100svh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(112px, 14vh, 160px) 0 clamp(48px, 8vh, 80px);
   background: #ffffff;
   border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.arch-hero > .wrap {
+  width: 100%;
 }
 .arch-hero-title {
   max-width: 960px;
