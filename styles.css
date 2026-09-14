@@ -630,7 +630,7 @@ button.button, input[type="submit"].button {
 }
 .timeline-line {
   position: absolute;
-  top: 48px;
+  top: 12.5px;
   left: 0;
   right: 0;
   height: 1px;
@@ -647,20 +647,13 @@ button.button, input[type="submit"].button {
 .timeline-step {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .timeline-step-top {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 22px;
-}
-.timeline-step-num {
-  font-size: 1.45rem;
-  font-weight: 500;
-  line-height: 1;
-  color: var(--coral);
-  letter-spacing: 0.02em;
-  margin-bottom: 14px;
+  height: 13px;
 }
 .timeline-step-node {
   width: 13px;
@@ -679,6 +672,7 @@ button.button, input[type="submit"].button {
 .timeline-step-content {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 .timeline-step-date {
   font-size: 0.72rem;
@@ -702,6 +696,18 @@ button.button, input[type="submit"].button {
   font-size: 0.88rem;
   line-height: 1.55;
   color: #64748b;
+}
+.timeline-step-bottom {
+  margin-top: auto;
+  padding-top: 24px;
+}
+.timeline-step-num {
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--coral);
+  letter-spacing: 0.02em;
+  display: inline-block;
 }
 
 @media (max-width: 1024px) {
