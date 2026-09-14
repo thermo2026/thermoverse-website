@@ -397,6 +397,19 @@
   - 調整後：**`LATCHES is designed for drop-ceiling and wall integration, preserving rentable floor area while placing thermal storage close to the conditioned space.`**
   - 效益：移除帶有內部文件條款風味的比較指引句，使面向客戶的行銷與技術文案更加純粹自然。
 
+### 22. Phase Change Materials (PCM) 區塊全面聚焦「安全性」與「方便性」（方案 A）
+- **文案重塑與痛點聚焦（#pcm-storage 區塊）**：
+  - **小標**：`Phase Change Materials`
+  - **主標題**：**`Urban-safe thermal storage without chemical fire risks.`**
+  - **左側內文（安全性）**：
+    > `Unlike chemical battery systems (BESS) restricted by dense urban fire codes, LATCHES utilizes solid-state Phase Change Materials that are inherently non-flammable, non-toxic, and safe for occupied indoor spaces—delivering 102 BTU/SF of reliable thermal buffering.`
+  - **右側卡片（方便性）**：
+    - 標籤：`PASSIVE CONVENIENCE`
+    - 卡片標題：`Maintenance-free drop-in integration`
+    - 卡片內文：`Installs seamlessly into standard ceiling grids without dedicated equipment rooms, liquid cooling loops, or routine degradation concerns.`
+  - **效益**：將原本偏向物理定義與生硬數字的文案，全面翻轉為業主、物業與機電工程師最關心的「無火災隱患、通過都會消防法規」與「零維護、直接嵌裝無機房負擔」的核心價值。
+
+
 
 
 
