@@ -759,16 +759,16 @@ button.button, input[type="submit"].button {
   }
 }
 
-/* Architectural Milestone Timeline Track (media_1789377231596.png style) */
-.timeline-section-wrap {
+/* Architectural Milestone Timeline Track with Top Image Carousel Player */
+.timeline-top-split {
   display: grid;
-  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 2.15fr);
-  gap: clamp(40px, 5vw, 72px);
-  align-items: start;
+  grid-template-columns: minmax(320px, 1fr) minmax(320px, 1.15fr);
+  gap: clamp(36px, 5vw, 64px);
+  align-items: center;
+  margin-bottom: clamp(48px, 6vw, 72px);
 }
 .timeline-header {
-  position: sticky;
-  top: 110px;
+  position: static;
 }
 .timeline-header .eyebrow {
   margin-bottom: 14px;
@@ -787,6 +787,121 @@ button.button, input[type="submit"].button {
   font-size: 1rem;
   line-height: 1.62;
 }
+
+/* Milestones Image Carousel Player */
+.milestones-player {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0f172a;
+  box-shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(15, 23, 42, 0.08);
+  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
+}
+.milestones-slider-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+}
+.milestones-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(1.03);
+}
+.milestones-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 2;
+}
+.milestones-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.milestones-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.72) 100%);
+  pointer-events: none;
+}
+.milestones-slide-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 120px;
+  z-index: 3;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+}
+.milestones-player-controls {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 6px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.player-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  line-height: 1;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s ease, transform 0.2s ease;
+  padding: 0;
+}
+.player-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+.player-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.player-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.player-dot.is-active {
+  background: var(--coral, #ff6b4a);
+  width: 20px;
+  border-radius: 9999px;
+}
+
 .timeline-track-wrap {
   position: relative;
   width: 100%;
@@ -875,9 +990,9 @@ button.button, input[type="submit"].button {
 }
 
 @media (max-width: 1024px) {
-  .timeline-section-wrap {
+  .timeline-top-split {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
   }
   .timeline-header {
     position: static;
