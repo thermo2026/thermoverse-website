@@ -631,8 +631,8 @@ button.button, input[type="submit"].button {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(16px, 2.2vw, 32px);
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(12px, 1.8vw, 24px);
 }
 .timeline-step {
   display: flex;
@@ -1558,5 +1558,38 @@ button.button, input[type="submit"].button {
     display: none;
   }
 }
+
+.faithe-values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+.faithe-val-item {
+  background: #f8fafc;
+  border: 1px solid #eef2f6;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.faithe-val-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #1e252b;
+}
+.faithe-val-desc {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #64748b;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .faithe-values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
