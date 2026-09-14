@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=37">
+  <link rel="stylesheet" href="styles.css?v=38">
 </head>
 <body>
   <header class="site-header">
@@ -196,47 +196,105 @@
       </div>
     </section>
 
-    <!-- SECTION 03 · COMPANY PRINCIPLES (Official FAITHE Values) -->
+    <!-- SECTION 03 · COMPANY PRINCIPLES (Centerpiece FAITHE Triad Layout) -->
     <section class="section" id="company-principles" style="padding-top: 88px; padding-bottom: 96px; background: #ffffff;">
       <div class="wrap">
-        <div class="eyebrow" style="margin-bottom: 32px;">03 · COMPANY PRINCIPLES</div>
-        <div class="principle-section-header">
-          <div class="principle-col-header">
-            <a class="principle-go-pill" href="contact.html?type=General%20Inquiry&amp;source=Company%20Principles" aria-label="Explore Company Principles">
-              <span>Go</span>
-              <span class="arrow">↗</span>
-            </a>
-            <h3 class="principle-col-title">COMPANY<br>PRINCIPLES</h3>
-          </div>
-          <p class="principle-col-desc" style="max-width: 720px; font-size: 16px; margin-top: 16px;">
-            <strong>Leading by FAITHE:</strong> Driven by Purpose. Leading by Action. Our six core values guide technical discipline, engineering excellence, and enduring relationships across all projects.
-          </p>
-        </div>
+        <div class="eyebrow" style="text-align: center; margin-bottom: 48px;">03 · COMPANY PRINCIPLES</div>
 
-        <div class="faithe-values-grid-full">
-          <div class="faithe-val-item">
-            <span class="faithe-val-title">F · Foundational Excellence</span>
-            <p class="faithe-val-desc">Embracing first-principles thinking approach to problem-solving.</p>
-          </div>
-          <div class="faithe-val-item">
-            <span class="faithe-val-title">A · Agency</span>
-            <p class="faithe-val-desc">Valuing lived experience in empowering individuals to act and make decisions.</p>
-          </div>
-          <div class="faithe-val-item">
-            <span class="faithe-val-title">I · Intentionality</span>
-            <p class="faithe-val-desc">Working together through authentic engagement and a shared purpose.</p>
-          </div>
-          <div class="faithe-val-item">
-            <span class="faithe-val-title">T · Transparency</span>
-            <p class="faithe-val-desc">Building trust through open and honest communication.</p>
-          </div>
-          <div class="faithe-val-item">
-            <span class="faithe-val-title">H · Horizon</span>
-            <p class="faithe-val-desc">Innovating the future while responsibly managing the trust that has been built.</p>
-          </div>
-          <div class="faithe-val-item">
-            <span class="faithe-val-title">E · Relational (Equity)</span>
-            <p class="faithe-val-desc">Fostering strong, positive relationships through mutual trust and shared understanding.</p>
+        <div class="faith-triad-wrap">
+          <div class="faith-triad-grid">
+
+            <!-- Left Column: F, A, I -->
+            <div class="faith-triad-col faith-col-left">
+              <!-- Value F -->
+              <div class="faith-item left-item" data-letter="F">
+                <div class="goals-item-header">
+                  <h3 class="goals-item-title">F · Foundational Excellence</h3>
+                  <span class="goals-item-arrow" aria-hidden="true">→</span>
+                </div>
+                <p class="goals-item-desc">
+                  Embracing first-principles thinking approach to problem-solving.
+                </p>
+              </div>
+
+              <!-- Value A -->
+              <div class="faith-item left-item" data-letter="A">
+                <div class="goals-item-header">
+                  <h3 class="goals-item-title">A · Agency</h3>
+                  <span class="goals-item-arrow" aria-hidden="true">→</span>
+                </div>
+                <p class="goals-item-desc">
+                  Valuing lived experience in empowering individuals to act and make decisions.
+                </p>
+              </div>
+
+              <!-- Value I -->
+              <div class="faith-item left-item" data-letter="I">
+                <div class="goals-item-header">
+                  <h3 class="goals-item-title">I · Intentionality</h3>
+                  <span class="goals-item-arrow" aria-hidden="true">→</span>
+                </div>
+                <p class="goals-item-desc">
+                  Working together through authentic engagement and a shared purpose.
+                </p>
+              </div>
+            </div>
+
+            <!-- Center Column: Glowing FAITHE Centerpiece -->
+            <div class="faith-triad-center">
+              <div class="center-faith-container">
+                <div class="center-faith-glow" aria-hidden="true"></div>
+                <div class="center-faith-letters" aria-label="FAITHE Principles">
+                  <button class="faith-letter-btn" data-key="F" type="button" aria-label="F: Foundational Excellence">F</button>
+                  <button class="faith-letter-btn" data-key="A" type="button" aria-label="A: Agency">A</button>
+                  <button class="faith-letter-btn" data-key="I" type="button" aria-label="I: Intentionality">I</button>
+                  <button class="faith-letter-btn" data-key="T" type="button" aria-label="T: Transparency">T</button>
+                  <button class="faith-letter-btn" data-key="H" type="button" aria-label="H: Horizon">H</button>
+                  <button class="faith-letter-btn" data-key="E" type="button" aria-label="E: Relational Equity">E</button>
+                </div>
+              </div>
+              <h2 class="center-goals-title">Leading by FAITHE</h2>
+              <p class="center-goals-subtitle">
+                <strong>Driven by Purpose. Leading by Action.</strong> Six core values guiding technical discipline, engineering excellence, and enduring relationships.
+              </p>
+            </div>
+
+            <!-- Right Column: T, H, E -->
+            <div class="faith-triad-col faith-col-right">
+              <!-- Value T -->
+              <div class="faith-item right-item" data-letter="T">
+                <div class="goals-item-header">
+                  <span class="goals-item-arrow" aria-hidden="true">←</span>
+                  <h3 class="goals-item-title">T · Transparency</h3>
+                </div>
+                <p class="goals-item-desc">
+                  Building trust through open and honest communication.
+                </p>
+              </div>
+
+              <!-- Value H -->
+              <div class="faith-item right-item" data-letter="H">
+                <div class="goals-item-header">
+                  <span class="goals-item-arrow" aria-hidden="true">←</span>
+                  <h3 class="goals-item-title">H · Horizon</h3>
+                </div>
+                <p class="goals-item-desc">
+                  Innovating the future while responsibly managing the trust that has been built.
+                </p>
+              </div>
+
+              <!-- Value E -->
+              <div class="faith-item right-item" data-letter="E">
+                <div class="goals-item-header">
+                  <span class="goals-item-arrow" aria-hidden="true">←</span>
+                  <h3 class="goals-item-title">E · Relational (Equity)</h3>
+                </div>
+                <p class="goals-item-desc">
+                  Fostering strong, positive relationships through mutual trust and shared understanding.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -311,5 +369,55 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script>
+    // FAITHE Interactive Expansion & Linking
+    (function() {
+      const letters = document.querySelectorAll('.faith-letter-btn');
+      const items = document.querySelectorAll('.faith-item');
+      const faithWrap = document.querySelector('.faith-triad-wrap');
+
+      function activate(key) {
+        letters.forEach(btn => {
+          btn.classList.toggle('is-active', btn.getAttribute('data-key') === key);
+        });
+        items.forEach(item => {
+          item.classList.toggle('is-active', item.getAttribute('data-letter') === key);
+        });
+      }
+
+      function clearActive() {
+        letters.forEach(btn => btn.classList.remove('is-active'));
+        items.forEach(item => item.classList.remove('is-active'));
+      }
+
+      letters.forEach(btn => {
+        const key = btn.getAttribute('data-key');
+        btn.addEventListener('mouseenter', () => activate(key));
+        btn.addEventListener('mouseleave', clearActive);
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          activate(key);
+        });
+      });
+
+      items.forEach(item => {
+        const key = item.getAttribute('data-letter');
+        item.addEventListener('mouseenter', () => activate(key));
+        item.addEventListener('mouseleave', clearActive);
+      });
+
+      if ('IntersectionObserver' in window && faithWrap) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              faithWrap.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        observer.observe(faithWrap);
+      }
+    })();
+  </script>
 </body>
 </html>
