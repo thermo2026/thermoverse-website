@@ -1183,193 +1183,214 @@ button.button, input[type="submit"].button {
 }
 
 /* ==========================================================================
-   01 · MISSION & PRINCIPLES - CENTERPIECE LOGO LAYOUT (IMAGE REFERENCE)
+   01 · MISSION & PRINCIPLES - CONCENTRIC ORBIT 4-CARD LAYOUT (IMAGE REFERENCE)
    ========================================================================== */
-.goals-triad-wrap {
+.orbit-layout-wrap {
+  position: relative;
   width: 100%;
-  position: relative;
-  padding: 10px 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 0;
+  overflow: hidden;
 }
 
-.goals-triad-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr 1fr;
-  gap: clamp(28px, 3.8vw, 56px);
-  align-items: center;
-}
-
-.goals-triad-col {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(36px, 4.8vw, 64px);
-}
-
-.goals-triad-item {
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.25s ease;
-}
-
-.goals-triad-item:hover {
-  transform: translateY(-2px);
-}
-
-.goals-item-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-
-.goals-item-title {
-  font-size: clamp(20px, 2.1vw, 25px);
-  font-weight: 800;
-  color: #1e252b;
-  letter-spacing: -0.015em;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.goals-item-arrow {
-  font-size: 18px;
-  font-weight: 600;
-  color: #1e252b;
-  transition: transform 0.2s ease, color 0.2s ease;
-  display: inline-block;
-  user-select: none;
-}
-
-.goals-triad-item:hover .goals-item-arrow {
-  color: #df4862;
-}
-
-.goals-triad-item.left-item:hover .goals-item-arrow {
-  transform: translateX(4px);
-}
-
-.goals-triad-item.right-item:hover .goals-item-arrow {
-  transform: translateX(-4px);
-}
-
-.goals-item-desc {
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: #556270;
-  margin: 0;
-}
-
-/* Centerpiece */
-.goals-triad-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 10px 16px;
-  position: relative;
-}
-
-.center-logo-container {
-  position: relative;
-  width: 170px;
-  height: 170px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.center-logo-glow {
+.orbit-rings-bg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle, rgba(223, 72, 98, 0.22) 0%, rgba(223, 72, 98, 0.08) 45%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(24px);
+  width: 760px;
+  height: 760px;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
-.center-logo-disc {
-  position: relative;
-  z-index: 1;
-  width: 130px;
-  height: 130px;
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 16px 36px rgba(223, 72, 98, 0.12), 0 4px 16px rgba(15, 23, 42, 0.06);
-  border: 1px solid rgba(223, 72, 98, 0.15);
+  box-sizing: border-box;
+}
+
+.orbit-ring.ring-outer {
+  width: 720px;
+  height: 720px;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.orbit-ring.ring-mid {
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+}
+
+.orbit-ring.ring-inner {
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 65%, transparent 100%);
+}
+
+.orbit-layout-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr clamp(200px, 20vw, 280px) 1fr;
+  align-items: center;
+  gap: clamp(24px, 3.2vw, 48px);
+}
+
+.orbit-layout-col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4vw, 56px);
+}
+
+.orbit-center-focal {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  min-height: 360px;
 }
 
-.center-logo-disc:hover {
-  transform: scale(1.04);
-  box-shadow: 0 20px 44px rgba(223, 72, 98, 0.2), 0 6px 20px rgba(15, 23, 42, 0.08);
+.orbit-center-pill {
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
 }
 
-.center-logo-disc img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.center-goals-title {
-  font-size: clamp(28px, 3.2vw, 38px);
-  font-weight: 800;
-  color: #1e252b;
-  letter-spacing: -0.02em;
-  margin: 0 0 12px 0;
+.orbit-center-title {
+  font-family: var(--font-sans);
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 450;
   line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0;
 }
 
-.center-goals-subtitle {
-  font-size: 15px;
-  line-height: 1.6;
+.orbit-card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  padding: clamp(24px, 2.5vw, 32px);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.orbit-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(223, 72, 98, 0.28);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06), 0 2px 10px rgba(223, 72, 98, 0.05);
+}
+
+.orbit-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.orbit-card-title {
+  font-family: var(--font-sans);
+  font-size: clamp(20px, 2.1vw, 24px);
+  font-weight: 650;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  transition: color 0.25s ease;
+}
+
+.orbit-card:hover .orbit-card-title {
+  color: var(--coral);
+}
+
+.orbit-card-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.orbit-card-badge::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  transition: background 0.25s ease;
+}
+
+.orbit-card:hover .orbit-card-badge {
+  border-color: rgba(223, 72, 98, 0.3);
+  color: var(--coral);
+  background: rgba(223, 72, 98, 0.06);
+}
+
+.orbit-card:hover .orbit-card-badge::after {
+  background: var(--coral);
+}
+
+.orbit-card-desc {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.65;
   color: #64748b;
-  max-width: 380px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 @media (max-width: 992px) {
-  .goals-triad-grid {
+  .orbit-layout-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 36px;
   }
-  .goals-triad-center {
+  .orbit-center-focal {
     order: -1;
-    margin-bottom: 8px;
+    min-height: auto;
+    padding: 16px 0;
   }
-  .goals-triad-col {
+  .orbit-rings-bg {
+    width: 360px;
+    height: 360px;
+  }
+  .orbit-ring.ring-outer { width: 340px; height: 340px; }
+  .orbit-ring.ring-mid { width: 250px; height: 250px; }
+  .orbit-ring.ring-inner { width: 160px; height: 160px; }
+  .orbit-layout-col {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    gap: 20px;
   }
 }
 
 @media (max-width: 680px) {
-  .goals-triad-col {
+  .orbit-layout-col {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 16px;
   }
-  .center-logo-container {
-    width: 140px;
-    height: 140px;
-    margin-bottom: 18px;
-  }
-  .center-logo-disc {
-    width: 110px;
-    height: 110px;
-    padding: 18px;
-  }
-  .center-goals-title {
-    font-size: 28px;
+  .orbit-center-title {
+    font-size: 26px;
   }
 }
 

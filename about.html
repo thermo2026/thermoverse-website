@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=40">
+  <link rel="stylesheet" href="styles.css?v=41">
 </head>
 <body>
   <header class="site-header">
@@ -38,76 +38,83 @@
       </div>
     </section>
 
-    <!-- SECTION 01 · MISSION & PRINCIPLES (Centerpiece Logo Triad Layout - Image Reference) -->
+    <!-- SECTION 01 · MISSION & PRINCIPLES (Concentric Orbit 4-Card Layout - Reference Design) -->
     <section class="section" id="positioning" style="padding-top: 88px; padding-bottom: 96px; background: #ffffff;">
       <div class="wrap">
         <div class="eyebrow" style="text-align: center; margin-bottom: 48px;">01 · MISSION &amp; PRINCIPLES</div>
 
-        <div class="goals-triad-wrap">
-          <div class="goals-triad-grid">
+        <div class="orbit-layout-wrap">
+          <div class="orbit-rings-bg" aria-hidden="true">
+            <div class="orbit-ring ring-outer"></div>
+            <div class="orbit-ring ring-mid"></div>
+            <div class="orbit-ring ring-inner"></div>
+          </div>
+
+          <div class="orbit-layout-grid">
             
-            <!-- Left Column: Mission & Vision -->
-            <div class="goals-triad-col">
-              <!-- Item 1: Mission -->
-              <div class="goals-triad-item left-item">
-                <div class="goals-item-header">
-                  <h3 class="goals-item-title">Our Mission</h3>
-                  <span class="goals-item-arrow" aria-hidden="true">→</span>
+            <!-- Left Column: 01 Mission & 02 Vision -->
+            <div class="orbit-layout-col">
+              <!-- Card 01: Mission -->
+              <article class="orbit-card">
+                <div class="orbit-card-header">
+                  <h3 class="orbit-card-title">Our Mission</h3>
+                  <div class="orbit-card-badge">
+                    <span class="orbit-card-num">01</span>
+                  </div>
                 </div>
-                <p class="goals-item-desc">
+                <p class="orbit-card-desc">
                   As electrical demands surge from data centers and electric mobility, optimizing building energy use is critical for ensuring sustainable smart cities. We redirect peak HVAC demand to unlock municipal grid capacity.
                 </p>
-              </div>
+              </article>
 
-              <!-- Item 2: Vision -->
-              <div class="goals-triad-item left-item">
-                <div class="goals-item-header">
-                  <h3 class="goals-item-title">Our Vision</h3>
-                  <span class="goals-item-arrow" aria-hidden="true">→</span>
+              <!-- Card 02: Vision -->
+              <article class="orbit-card">
+                <div class="orbit-card-header">
+                  <h3 class="orbit-card-title">Our Vision</h3>
+                  <div class="orbit-card-badge">
+                    <span class="orbit-card-num">02</span>
+                  </div>
                 </div>
-                <p class="goals-item-desc">
+                <p class="orbit-card-desc">
                   We develop the technologies that harness waste heat to significantly reduce HVAC operational load, ensuring commercial and multifamily properties are highly efficient, resilient, and grid-ready.
                 </p>
+              </article>
+            </div>
+
+            <!-- Center Column: Orbital Concentric Core -->
+            <div class="orbit-center-focal">
+              <div class="orbit-center-pill">
+                <h2 class="orbit-center-title">About<br>ThermoVerse</h2>
               </div>
             </div>
 
-            <!-- Center Column: Glowing Logo Centerpiece -->
-            <div class="goals-triad-center">
-              <div class="center-logo-container">
-                <div class="center-logo-glow" aria-hidden="true"></div>
-                <div class="center-logo-disc">
-                  <img src="assets/logo-icon.png" alt="ThermoVerse Icon Emblem">
+            <!-- Right Column: 03 Impact & 04 Active SIMs -->
+            <div class="orbit-layout-col">
+              <!-- Card 03: Impact -->
+              <article class="orbit-card">
+                <div class="orbit-card-header">
+                  <h3 class="orbit-card-title">Our Impact</h3>
+                  <div class="orbit-card-badge">
+                    <span class="orbit-card-num">03</span>
+                  </div>
                 </div>
-              </div>
-              <h2 class="center-goals-title">Our goals</h2>
-              <p class="center-goals-subtitle">
-                Lowering HVAC energy burden today to ensure the resilient grid edge of tomorrow.
-              </p>
-            </div>
-
-            <!-- Right Column: Impact & Active SIMs -->
-            <div class="goals-triad-col">
-              <!-- Item 3: Impact -->
-              <div class="goals-triad-item right-item">
-                <div class="goals-item-header">
-                  <span class="goals-item-arrow" aria-hidden="true">←</span>
-                  <h3 class="goals-item-title">Our Impact</h3>
-                </div>
-                <p class="goals-item-desc">
+                <p class="orbit-card-desc">
                   Vital for addressing rising electrical loads from electric vehicles and AI data centers, ensuring a resilient, interoperable energy network — from the building ceiling to the municipal utility grid.
                 </p>
-              </div>
+              </article>
 
-              <!-- Item 4: Active SIMs -->
-              <div class="goals-triad-item right-item">
-                <div class="goals-item-header">
-                  <span class="goals-item-arrow" aria-hidden="true">←</span>
-                  <h3 class="goals-item-title">Active SIMs</h3>
+              <!-- Card 04: Active SIMs -->
+              <article class="orbit-card">
+                <div class="orbit-card-header">
+                  <h3 class="orbit-card-title">Active SIMs</h3>
+                  <div class="orbit-card-badge">
+                    <span class="orbit-card-num">04</span>
+                  </div>
                 </div>
-                <p class="goals-item-desc">
+                <p class="orbit-card-desc">
                   A patented family of compact, self-contained units that embed sensing, thermal energy storage, and control directly in ceilings and walls, unlocking active load flexibility from ceiling to grid.
                 </p>
-              </div>
+              </article>
             </div>
 
           </div>
