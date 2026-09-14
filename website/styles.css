@@ -1173,282 +1173,193 @@ button.button, input[type="submit"].button {
 }
 
 /* ==========================================================================
-   01 · MISSION & POSITIONING - GOALS SHOWCASE (IMAGE REFERENCE STYLE)
+   01 · MISSION & PRINCIPLES - CENTERPIECE LOGO LAYOUT (IMAGE REFERENCE)
    ========================================================================== */
-.goals-showcase-card {
-  background: #f8fafc;
-  border: 1px solid #eef2f6;
-  border-radius: 28px;
-  padding: 52px 56px;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
-}
-
-.goals-showcase-header {
-  margin-bottom: 40px;
-}
-
-.goals-showcase-header .eyebrow {
-  margin-bottom: 8px;
-}
-
-.goals-showcase-title {
-  font-size: clamp(34px, 4.2vw, 44px);
-  font-weight: 700;
-  color: #1e252b;
-  letter-spacing: -0.025em;
-  margin: 0;
-  line-height: 1.15;
-}
-
-.goals-showcase-body {
-  display: flex;
-  gap: 48px;
-  align-items: stretch;
-}
-
-.goals-nav {
-  flex: 0 0 270px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.goals-progress-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 36px;
-}
-
-.goals-progress-track {
-  flex: 1;
-  height: 2px;
-  background: #e2e8f0;
-  border-radius: 2px;
-  position: relative;
-  overflow: hidden;
-}
-
-.goals-progress-bar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 25%;
-  background: #1e252b;
-  border-radius: 2px;
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.goals-counter {
-  font-size: 13px;
-  font-weight: 600;
-  color: #64748b;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  letter-spacing: 0.05em;
-  min-width: 46px;
-  text-align: right;
-}
-
-.goals-tab-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.goals-tab-btn {
-  background: transparent;
-  border: none;
-  padding: 6px 0;
-  text-align: left;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 17px;
-  font-weight: 500;
-  color: #8a95a5;
-  transition: color 0.25s ease, font-weight 0.25s ease;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  outline: none;
-}
-
-.goals-tab-btn:hover {
-  color: #1e252b;
-}
-
-.goals-tab-btn.active {
-  color: #1e252b;
-  font-weight: 700;
-}
-
-.goals-tab-bullet {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #1e252b;
-  opacity: 0;
-  transform: scale(0.4);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  flex-shrink: 0;
-}
-
-.goals-tab-btn.active .goals-tab-bullet {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.goals-card-display {
-  flex: 1;
-  min-width: 0;
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 40px;
-  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.04);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  position: relative;
-  min-height: 380px;
-  display: flex;
-}
-
-.goals-pane {
-  display: none;
+.goals-triad-wrap {
   width: 100%;
-  grid-template-columns: 1.15fr 0.95fr;
-  gap: 36px;
-  align-items: stretch;
+  position: relative;
+  padding: 10px 0;
 }
 
-.goals-pane.active {
+.goals-triad-grid {
   display: grid;
-  animation: fadeInGoalsPane 0.35s ease forwards;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  gap: clamp(28px, 3.8vw, 56px);
+  align-items: center;
 }
 
-@keyframes fadeInGoalsPane {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.goals-pane-content {
+.goals-triad-col {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 28px;
+  gap: clamp(36px, 4.8vw, 64px);
 }
 
-.goals-pane-title {
-  font-size: clamp(24px, 2.6vw, 30px);
-  font-weight: 700;
-  line-height: 1.25;
+.goals-triad-item {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
+}
+
+.goals-triad-item:hover {
+  transform: translateY(-2px);
+}
+
+.goals-item-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.goals-item-title {
+  font-size: clamp(20px, 2.1vw, 25px);
+  font-weight: 800;
   color: #1e252b;
   letter-spacing: -0.015em;
   margin: 0;
+  line-height: 1.2;
 }
 
-.goals-pane-bottom {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.goals-item-arrow {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e252b;
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+  user-select: none;
 }
 
-.goals-pane-desc {
+.goals-triad-item:hover .goals-item-arrow {
+  color: #df4862;
+}
+
+.goals-triad-item.left-item:hover .goals-item-arrow {
+  transform: translateX(4px);
+}
+
+.goals-triad-item.right-item:hover .goals-item-arrow {
+  transform: translateX(-4px);
+}
+
+.goals-item-desc {
   font-size: 14.5px;
   line-height: 1.65;
   color: #556270;
   margin: 0;
 }
 
-.goals-pane-tag {
-  display: inline-flex;
+/* Centerpiece */
+.goals-triad-center {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  background: #f1f5f9;
-  border-radius: 999px;
-  color: #0f172a;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  align-self: flex-start;
+  text-align: center;
+  padding: 10px 16px;
+  position: relative;
 }
 
-.goals-pane-media {
-  border-radius: 18px;
-  overflow: hidden;
-  height: 100%;
-  min-height: 280px;
-  background: #f1f5f9;
+.center-logo-container {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
 }
 
-.goals-pane-media img {
+.center-logo-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(223, 72, 98, 0.22) 0%, rgba(223, 72, 98, 0.08) 45%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(24px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.center-logo-disc {
+  position: relative;
+  z-index: 1;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 16px 36px rgba(223, 72, 98, 0.12), 0 4px 16px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(223, 72, 98, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.center-logo-disc:hover {
+  transform: scale(1.04);
+  box-shadow: 0 20px 44px rgba(223, 72, 98, 0.2), 0 6px 20px rgba(15, 23, 42, 0.08);
+}
+
+.center-logo-disc img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
-  border-radius: 18px;
+}
+
+.center-goals-title {
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 800;
+  color: #1e252b;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px 0;
+  line-height: 1.15;
+}
+
+.center-goals-subtitle {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #64748b;
+  max-width: 380px;
+  margin: 0 auto;
 }
 
 @media (max-width: 992px) {
-  .goals-showcase-card {
-    padding: 40px 32px;
+  .goals-triad-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
-  .goals-showcase-body {
-    flex-direction: column;
-    gap: 36px;
+  .goals-triad-center {
+    order: -1;
+    margin-bottom: 8px;
   }
-  .goals-nav {
-    flex: 0 0 auto;
-    width: 100%;
-  }
-  .goals-tab-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 12px 24px;
-  }
-  .goals-card-display {
-    padding: 32px 28px;
-    min-height: auto;
+  .goals-triad-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   }
 }
 
-@media (max-width: 720px) {
-  .goals-showcase-card {
-    padding: 28px 20px;
-    border-radius: 20px;
-  }
-  .goals-showcase-title {
-    font-size: 28px;
-  }
-  .goals-tab-list {
-    gap: 8px 16px;
-  }
-  .goals-tab-btn {
-    font-size: 15px;
-  }
-  .goals-card-display {
-    padding: 24px 18px;
-    border-radius: 18px;
-  }
-  .goals-pane {
+@media (max-width: 680px) {
+  .goals-triad-col {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
   }
-  .goals-pane-media {
-    height: 220px;
-    min-height: 220px;
+  .center-logo-container {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 18px;
   }
-  .goals-pane-title {
-    font-size: 22px;
+  .center-logo-disc {
+    width: 110px;
+    height: 110px;
+    padding: 18px;
+  }
+  .center-goals-title {
+    font-size: 28px;
   }
 }
 

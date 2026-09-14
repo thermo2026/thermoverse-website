@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=34">
+  <link rel="stylesheet" href="styles.css?v=35">
 </head>
 <body>
   <header class="site-header">
@@ -38,111 +38,78 @@
       </div>
     </section>
 
-    <!-- SECTION 01 · MISSION & PRINCIPLES (Goals Showcase - Image Reference Style) -->
-    <section class="section" id="positioning" style="padding-top: 72px; padding-bottom: 84px; background: #ffffff;">
+    <!-- SECTION 01 · MISSION & PRINCIPLES (Centerpiece Logo Triad Layout - Image Reference) -->
+    <section class="section" id="positioning" style="padding-top: 88px; padding-bottom: 96px; background: #ffffff;">
       <div class="wrap">
-        <div class="goals-showcase-card">
-          <div class="goals-showcase-header">
-            <div class="eyebrow">01 · MISSION &amp; PRINCIPLES</div>
-            <h2 class="goals-showcase-title">Our goals</h2>
-          </div>
+        <div class="eyebrow" style="text-align: center; margin-bottom: 48px;">01 · MISSION &amp; PRINCIPLES</div>
 
-          <div class="goals-showcase-body">
-            <!-- Left Navigation & Progress -->
-            <div class="goals-nav">
-              <div class="goals-progress-row" aria-hidden="true">
-                <div class="goals-progress-track">
-                  <div class="goals-progress-bar" id="goalsProgressBar" style="width: 25%;"></div>
+        <div class="goals-triad-wrap">
+          <div class="goals-triad-grid">
+            
+            <!-- Left Column: Mission & Vision -->
+            <div class="goals-triad-col">
+              <!-- Item 1: Mission -->
+              <div class="goals-triad-item left-item">
+                <div class="goals-item-header">
+                  <h3 class="goals-item-title">Our Mission</h3>
+                  <span class="goals-item-arrow" aria-hidden="true">→</span>
                 </div>
-                <div class="goals-counter" id="goalsCounter">01 / 04</div>
+                <p class="goals-item-desc">
+                  As electrical demands surge from data centers and electric mobility, optimizing building energy use is critical for ensuring sustainable smart cities. We redirect peak HVAC demand to unlock municipal grid capacity.
+                </p>
               </div>
 
-              <ul class="goals-tab-list" role="tablist" aria-label="Mission and Goals Tabs">
-                <li>
-                  <button class="goals-tab-btn active" role="tab" aria-selected="true" data-index="0" id="goal-tab-0" aria-controls="goal-pane-0">
-                    <span class="goals-tab-bullet" aria-hidden="true"></span>
-                    <span>Mission</span>
-                  </button>
-                </li>
-                <li>
-                  <button class="goals-tab-btn" role="tab" aria-selected="false" data-index="1" id="goal-tab-1" aria-controls="goal-pane-1">
-                    <span class="goals-tab-bullet" aria-hidden="true"></span>
-                    <span>Vision</span>
-                  </button>
-                </li>
-                <li>
-                  <button class="goals-tab-btn" role="tab" aria-selected="false" data-index="2" id="goal-tab-2" aria-controls="goal-pane-2">
-                    <span class="goals-tab-bullet" aria-hidden="true"></span>
-                    <span>Impact</span>
-                  </button>
-                </li>
-                <li>
-                  <button class="goals-tab-btn" role="tab" aria-selected="false" data-index="3" id="goal-tab-3" aria-controls="goal-pane-3">
-                    <span class="goals-tab-bullet" aria-hidden="true"></span>
-                    <span>Smart Materials (SIMs)</span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Right Display Card -->
-            <div class="goals-card-display">
-              <!-- Pane 0: Mission -->
-              <div class="goals-pane active" id="goal-pane-0" role="tabpanel" aria-labelledby="goal-tab-0">
-                <div class="goals-pane-content">
-                  <h3 class="goals-pane-title">Transforming the grid edge — one building at a time.</h3>
-                  <div class="goals-pane-bottom">
-                    <p class="goals-pane-desc">As electrical demands surge from data centers and electric mobility, optimizing building energy use is critical for ensuring sustainable smart cities. ThermoVerse optimizes the grid’s most energy-intensive assets to make sustainable urban innovation possible. By redirecting peak HVAC demand, ThermoVerse unlocks the grid capacity necessary to power the next generation of electric mobility and AI-driven infrastructure.</p>
-                    <span class="goals-pane-tag">Lowering HVAC Energy Burden Today</span>
-                  </div>
+              <!-- Item 2: Vision -->
+              <div class="goals-triad-item left-item">
+                <div class="goals-item-header">
+                  <h3 class="goals-item-title">Our Vision</h3>
+                  <span class="goals-item-arrow" aria-hidden="true">→</span>
                 </div>
-                <div class="goals-pane-media">
-                  <img src="assets/city.webp" alt="Urban skyline and smart grid buildings">
-                </div>
-              </div>
-
-              <!-- Pane 1: Vision -->
-              <div class="goals-pane" id="goal-pane-1" role="tabpanel" aria-labelledby="goal-tab-1">
-                <div class="goals-pane-content">
-                  <h3 class="goals-pane-title">Harnessing waste heat for grid-ready building efficiency.</h3>
-                  <div class="goals-pane-bottom">
-                    <p class="goals-pane-desc">We develop the technologies that harness waste heat to significantly reduce HVAC operational load, ensuring commercial and multifamily buildings are efficient, resilient, and grid-ready for the era of smart cities.</p>
-                    <span class="goals-pane-tag">Waste Heat Utilization · Grid-Ready Buildings</span>
-                  </div>
-                </div>
-                <div class="goals-pane-media">
-                  <img src="assets/Commercial buildings.webp" alt="Commercial facility energy management">
-                </div>
-              </div>
-
-              <!-- Pane 2: Impact -->
-              <div class="goals-pane" id="goal-pane-2" role="tabpanel" aria-labelledby="goal-tab-2">
-                <div class="goals-pane-content">
-                  <h3 class="goals-pane-title">A resilient and interoperable energy network.</h3>
-                  <div class="goals-pane-bottom">
-                    <p class="goals-pane-desc">Our work is vital for addressing rising loads from electric vehicles (EVs) and data centers, ensuring a resilient and interoperable energy network — from the building edge to the grid edge.</p>
-                    <span class="goals-pane-tag">From Building Edge to Grid Edge</span>
-                  </div>
-                </div>
-                <div class="goals-pane-media">
-                  <img src="assets/workshop.webp" alt="Engineering and thermal innovation workshop">
-                </div>
-              </div>
-
-              <!-- Pane 3: Smart Materials (SIMs) -->
-              <div class="goals-pane" id="goal-pane-3" role="tabpanel" aria-labelledby="goal-tab-3">
-                <div class="goals-pane-content">
-                  <h3 class="goals-pane-title">From ceiling to grid: Smart Integrated Material systems (SIMs).</h3>
-                  <div class="goals-pane-bottom">
-                    <p class="goals-pane-desc">A patented family of compact, self-contained units that embed sensing, thermal energy storage, and control directly into ceilings and walls. SIMs orchestrate heat flows in real time, minimizing waste, stabilizing indoor environments, and unlocking load flexibility for operators and utilities alike.</p>
-                    <span class="goals-pane-tag">Patented SIMs · Ceiling to Grid</span>
-                  </div>
-                </div>
-                <div class="goals-pane-media">
-                  <img src="assets/install.webp" alt="Modular ceiling installation of thermal panels">
-                </div>
+                <p class="goals-item-desc">
+                  We develop the technologies that harness waste heat to significantly reduce HVAC operational load, ensuring commercial and multifamily properties are highly efficient, resilient, and grid-ready.
+                </p>
               </div>
             </div>
+
+            <!-- Center Column: Glowing Logo Centerpiece -->
+            <div class="goals-triad-center">
+              <div class="center-logo-container">
+                <div class="center-logo-glow" aria-hidden="true"></div>
+                <div class="center-logo-disc">
+                  <img src="assets/logo-icon.png" alt="ThermoVerse Icon Emblem">
+                </div>
+              </div>
+              <h2 class="center-goals-title">Our goals</h2>
+              <p class="center-goals-subtitle">
+                Lowering HVAC energy burden today to ensure the resilient grid edge of tomorrow.
+              </p>
+            </div>
+
+            <!-- Right Column: Impact & Active SIMs -->
+            <div class="goals-triad-col">
+              <!-- Item 3: Impact -->
+              <div class="goals-triad-item right-item">
+                <div class="goals-item-header">
+                  <span class="goals-item-arrow" aria-hidden="true">←</span>
+                  <h3 class="goals-item-title">Our Impact</h3>
+                </div>
+                <p class="goals-item-desc">
+                  Vital for addressing rising electrical loads from electric vehicles and AI data centers, ensuring a resilient, interoperable energy network — from the building ceiling to the municipal utility grid.
+                </p>
+              </div>
+
+              <!-- Item 4: Active SIMs -->
+              <div class="goals-triad-item right-item">
+                <div class="goals-item-header">
+                  <span class="goals-item-arrow" aria-hidden="true">←</span>
+                  <h3 class="goals-item-title">Active SIMs</h3>
+                </div>
+                <p class="goals-item-desc">
+                  A patented family of compact, self-contained units that embed sensing, thermal energy storage, and control directly in ceilings and walls, unlocking active load flexibility from ceiling to grid.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -373,60 +340,5 @@
     </div>
   </footer>
   <script src="script.js"></script>
-  <script>
-    (function() {
-      const tabs = document.querySelectorAll('.goals-tab-btn');
-      const panes = document.querySelectorAll('.goals-pane');
-      const progressBar = document.getElementById('goalsProgressBar');
-      const counter = document.getElementById('goalsCounter');
-      if (!tabs.length || !panes.length) return;
-
-      const total = tabs.length;
-
-      function activateTab(index) {
-        tabs.forEach((tab, i) => {
-          const isActive = (i === index);
-          tab.classList.toggle('active', isActive);
-          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-          tab.setAttribute('tabindex', isActive ? '0' : '-1');
-        });
-
-        panes.forEach((pane, i) => {
-          pane.classList.toggle('active', i === index);
-        });
-
-        if (progressBar) {
-          const pct = Math.round(((index + 1) / total) * 100);
-          progressBar.style.width = pct + '%';
-        }
-
-        if (counter) {
-          counter.textContent = '0' + (index + 1) + ' / 0' + total;
-        }
-      }
-
-      tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-          const index = parseInt(tab.dataset.index, 10);
-          activateTab(index);
-        });
-
-        tab.addEventListener('keydown', (e) => {
-          let currIndex = parseInt(tab.dataset.index, 10);
-          if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-            e.preventDefault();
-            const nextIndex = (currIndex + 1) % total;
-            tabs[nextIndex].focus();
-            activateTab(nextIndex);
-          } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-            e.preventDefault();
-            const prevIndex = (currIndex - 1 + total) % total;
-            tabs[prevIndex].focus();
-            activateTab(prevIndex);
-          }
-        });
-      });
-    })();
-  </script>
 </body>
 </html>
