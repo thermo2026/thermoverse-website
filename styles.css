@@ -1585,11 +1585,71 @@ button.button, input[type="submit"].button {
   color: #64748b;
   margin: 0;
 }
+
+/* Full 3-column grid for FAITHE Values in dedicated Section 04 */
+.faithe-values-grid-full {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+.faithe-values-grid-full .faithe-val-item {
+  background: #f8fafc;
+  border: 1px solid #eef2f6;
+  border-radius: 16px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.faithe-values-grid-full .faithe-val-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+.faithe-values-grid-full .faithe-val-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e252b;
+}
+.faithe-values-grid-full .faithe-val-desc {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #556270;
+  margin: 0;
+}
+
+/* Dedicated Section 05: Talent Pipeline Layout */
+.talent-pipeline-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+}
+.talent-pipeline-content {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  .faithe-values-grid-full {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .talent-pipeline-grid {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
 @media (max-width: 600px) {
   .faithe-values-grid {
     grid-template-columns: 1fr;
   }
+  .faithe-values-grid-full {
+    grid-template-columns: 1fr;
+  }
 }
+
 
 
 
