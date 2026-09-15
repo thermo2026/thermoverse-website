@@ -811,58 +811,141 @@ button.button, input[type="submit"].button {
   }
 }
 
-/* Energy Services 4-Step Process Roadmap */
-.services-steps-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 44px;
+/* Energy Services 4-Step Process - Editorial Asymmetric Grid (Image Reference Style) */
+.roadmap-editorial-section {
+  background: #f8fafc;
+  padding: clamp(72px, 9vw, 120px) 0;
+  position: relative;
+  overflow: hidden;
 }
-.service-step-card {
+.roadmap-editorial-section::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: clamp(320px, 42vw, 560px);
+  height: clamp(320px, 42vw, 560px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(223, 72, 98, 0.14) 0%, rgba(223, 72, 98, 0.04) 45%, rgba(223, 72, 98, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  position: relative;
+  z-index: 1;
+}
+.roadmap-intro-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 12px 24px 20px 0;
+}
+.roadmap-intro-card .eyebrow {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--coral);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.roadmap-intro-card h2 {
+  font-size: clamp(2rem, 2.7vw, 2.65rem);
+  font-weight: 350;
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+  margin: 0 0 20px;
+}
+.roadmap-intro-card p {
+  font-size: 0.98rem;
+  line-height: 1.68;
+  color: #64748b;
+  margin: 0 0 28px;
+}
+.roadmap-intro-card .punchline {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+.roadmap-card {
   background: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 12px;
-  padding: 32px 24px;
+  padding: 38px 32px 34px;
   display: flex;
   flex-direction: column;
-  position: relative;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  justify-content: space-between;
+  min-height: 380px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s ease;
 }
-.service-step-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+.roadmap-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
 }
-.service-step-num {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--coral);
-  margin-bottom: 16px;
-  text-transform: uppercase;
+.roadmap-card-visual {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
 }
-.service-step-card h3 {
-  font-size: 1.15rem;
-  font-weight: 600;
+.roadmap-card-visual svg {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  overflow: visible;
+}
+.roadmap-card-body {
+  margin-top: auto;
+}
+.roadmap-card-body h3 {
+  font-size: 1.55rem;
+  font-weight: 550;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
   color: var(--ink);
-  margin: 0 0 12px;
-  line-height: 1.3;
+  margin: 0 0 26px;
 }
-.service-step-card p {
+.roadmap-card-tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--coral);
+  margin: 0 0 8px;
+  display: block;
+}
+.roadmap-card-desc {
   font-size: 0.92rem;
+  line-height: 1.62;
   color: #64748b;
-  line-height: 1.6;
   margin: 0;
 }
 @media (max-width: 1024px) {
-  .services-steps-grid {
+  .roadmap-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    gap: 22px;
+  }
+  .roadmap-intro-card {
+    grid-column: span 2;
+    padding-right: 0;
+    margin-bottom: 12px;
   }
 }
-@media (max-width: 640px) {
-  .services-steps-grid {
+@media (max-width: 680px) {
+  .roadmap-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 18px;
+  }
+  .roadmap-intro-card {
+    grid-column: span 1;
+  }
+  .roadmap-card {
+    padding: 30px 24px;
+    min-height: auto;
   }
 }
 
