@@ -108,7 +108,7 @@ function skyPoint(x,z){const dep=(z+1)/9;return [w*.5+x*w*(.11+dep*.055),h*(.015
 ctx.strokeStyle=color(cyan,gridAlpha*.42);ctx.lineWidth=.7;
 for(let i=-8;i<=8;i++){ctx.beginPath();for(let j=0;j<9;j++){const p=skyPoint(i,j);j?ctx.lineTo(...p):ctx.moveTo(...p)}ctx.stroke()}
 for(let j=0;j<9;j++){ctx.beginPath();ctx.moveTo(...skyPoint(-8,j));ctx.lineTo(...skyPoint(8,j));ctx.stroke();for(let i=-8;i<=8;i++){const [x,y]=skyPoint(i,j);ctx.fillStyle=color([180,252,255],gridAlpha*.9);ctx.shadowBlur=8;ctx.shadowColor='#8af2ff';ctx.fillRect(x-1.1,y-1.1,2.2,2.2)}}ctx.shadowBlur=0;
-// Luminous electricity ribbons across the city; thermal storage remains orange indoors.
+// Luminous electricity ribbons across the city; thermal battery remains orange indoors.
 for(let k=0;k<3;k++){ctx.beginPath();ctx.moveTo(-w*.1,h*(.83+k*.014));ctx.bezierCurveTo(w*.22,h*.48,w*.56,h*1.14,w*.86,h*.49);ctx.strokeStyle=color(cyan,gridAlpha*.15);ctx.lineWidth=12;ctx.stroke();ctx.strokeStyle=color([123,224,255],gridAlpha*.72);ctx.lineWidth=2.2;ctx.stroke();ctx.strokeStyle=color([239,253,255],gridAlpha*.8);ctx.lineWidth=.65;ctx.stroke()}
 ctx.restore();ctx.restore();
 }
