@@ -894,19 +894,7 @@ button.button, input[type="submit"].button {
   height: auto;
   overflow: visible;
 }
-.roadmap-card-middle {
-  margin: auto 0;
-  padding: 16px 0;
-}
-.roadmap-card-middle h3 {
-  font-size: clamp(1.75rem, 2.1vw, 2.2rem);
-  font-weight: 600;
-  line-height: 1.18;
-  letter-spacing: -0.025em;
-  color: #1e252b;
-  margin: 0;
-}
-.roadmap-card-bottom {
+.roadmap-card-body {
   margin-top: auto;
 }
 .roadmap-card-tag {
@@ -914,9 +902,17 @@ button.button, input[type="submit"].button {
   font-weight: 700;
   letter-spacing: 0.08em;
   color: #df4862;
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   display: block;
   text-transform: uppercase;
+}
+.roadmap-card-body h3 {
+  font-size: clamp(1.75rem, 2.1vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: #1e252b;
+  margin: 0 0 14px;
 }
 .roadmap-card-desc {
   font-size: 0.9rem;
@@ -927,24 +923,15 @@ button.button, input[type="submit"].button {
 .roadmap-cta-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 36px 12px 32px 32px;
   min-height: 460px;
   position: relative;
   z-index: 1;
 }
-.roadmap-cta-top {
-  height: 90px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.roadmap-cta-top .roadmap-card-tag {
-  margin: 0;
-}
-.roadmap-cta-middle {
-  margin: auto 0;
-  padding: 16px 0;
+.roadmap-cta-body {
+  margin-top: auto;
+  margin-bottom: 24px;
 }
 .roadmap-cta-heading {
   font-size: clamp(1.55rem, 1.9vw, 2rem);
@@ -961,8 +948,7 @@ button.button, input[type="submit"].button {
   margin: 0;
 }
 .roadmap-cta-bottom {
-  margin-top: auto;
-  padding-top: 8px;
+  margin-top: 0;
 }
 .roadmap-cta-bottom .btn-pill {
   display: inline-flex;
