@@ -1400,7 +1400,7 @@ button.button, input[type="submit"].button {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   overflow: hidden;
-  min-height: 480px;
+  min-height: 400px;
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
 }
 .pillar-card:hover {
@@ -1417,69 +1417,70 @@ button.button, input[type="submit"].button {
   order: 1;
 }
 .pillar-card-content {
-  padding: clamp(36px, 5vw, 60px);
+  padding: clamp(32px, 4vw, 52px);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .pillar-card-content .eyebrow {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
   color: var(--coral);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   text-transform: uppercase;
 }
 .pillar-card-content h3 {
-  font-size: clamp(1.85rem, 2.3vw, 2.45rem);
+  font-size: clamp(1.3rem, 1.6vw, 1.52rem);
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   color: var(--ink);
-  margin: 0 0 18px;
+  margin: 0 0 14px;
 }
 .pillar-card-desc {
-  font-size: 0.96rem;
-  line-height: 1.65;
+  font-size: 0.86rem;
+  line-height: 1.6;
   color: #64748b;
-  margin: 0 0 28px;
+  margin: 0 0 24px;
+  max-width: 480px;
 }
 .pillar-vertical-list {
   list-style: none;
-  padding: 0 0 0 16px;
-  margin: 0 0 32px;
-  border-left: 2.5px solid #0f172a;
+  padding: 0 0 0 14px;
+  margin: 0 0 26px;
+  border-left: 2px solid #0f172a;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 .pillar-vertical-list li {
-  font-size: 0.94rem;
-  font-weight: 550;
+  font-size: 0.83rem;
+  font-weight: 500;
   color: #334155;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 .pillar-card-action .btn-pill,
 .pillar-card-action .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 13px 30px;
+  padding: 10px 24px;
   background: var(--ink);
   color: #ffffff;
-  font-size: 0.92rem;
+  font-size: 0.84rem;
   font-weight: 600;
   border-radius: 999px;
   text-decoration: none;
   transition: all 0.22s ease;
-  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
 }
 .pillar-card-action .btn-pill:hover,
 .pillar-card-action .button:hover {
   background: var(--coral);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(223, 72, 98, 0.28);
+  box-shadow: 0 6px 18px rgba(223, 72, 98, 0.25);
 }
 .pillar-card-media {
   position: relative;
