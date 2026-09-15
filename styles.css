@@ -730,7 +730,7 @@ button.button, input[type="submit"].button {
 }
 .services-strip-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   align-items: stretch;
 }
 .services-strip-col {
@@ -749,9 +749,9 @@ button.button, input[type="submit"].button {
   flex-shrink: 0;
 }
 .services-strip-col h3 {
-  font-size: 1.05rem;
-  font-weight: 650;
-  letter-spacing: 0.08em;
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--ink);
   margin: 0 0 14px;
@@ -763,14 +763,19 @@ button.button, input[type="submit"].button {
   line-height: 1.62;
   color: #64748b;
 }
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .services-strip-grid {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 36px;
+    grid-template-columns: 1fr;
+    row-gap: 32px;
   }
-  .services-strip-col:nth-child(2n+1) {
-    border-left: none;
-    padding-left: 0;
+  .services-strip-col {
+    border-left: none !important;
+    padding: 0 0 24px 0 !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  .services-strip-col:last-child {
+    border-bottom: none;
+    padding-bottom: 0 !important;
   }
 }
 @media (max-width: 768px) {
