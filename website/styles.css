@@ -377,11 +377,11 @@ button.button, input[type="submit"].button {
 .required, .error { color: #b52842; }
 .error { margin-top: 14px; }
 .footer { padding: 68px 0 24px; border-top: 1px solid var(--line); background: #fff; color: var(--muted); font-size: 0.9rem; }
-.footer-main { display: grid; grid-template-columns: minmax(240px, 1.2fr) minmax(420px, 1fr); gap: clamp(54px, 8vw, 128px); align-items: start; }
-.footer-brand { max-width: 430px; }
+.footer-main { display: flex; justify-content: space-between; align-items: start; gap: clamp(36px, 5vw, 96px); flex-wrap: wrap; }
+.footer-brand { max-width: none; }
 .footer-brand img { display: block; width: min(100%, 280px); height: auto; }
-.footer-brand p { max-width: 420px; margin: 22px 0 0; color: var(--muted); font-size: 1.05rem; line-height: 1.55; }
-.footer-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.footer-brand p { max-width: none; margin: 22px 0 0; color: var(--muted); font-size: 1.05rem; line-height: 1.55; white-space: nowrap; }
+.footer-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; flex-shrink: 0; }
 .footer-columns div { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
 .footer-columns h2 { margin: 0 0 7px; color: var(--ink); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .footer-columns a { color: var(--muted); text-decoration: none; line-height: 1.4; }
@@ -443,9 +443,10 @@ button.button, input[type="submit"].button {
   .line-list > div { grid-template-columns: 48px 1fr; gap: 10px 14px; }
   .line-list p { grid-column: 2; }
   .footer { padding-top: 52px; }
-  .footer-main { grid-template-columns: 1fr; gap: 38px; }
+  .footer-main { flex-direction: column; gap: 38px; }
   .footer-brand img { width: min(100%, 240px); }
-  .footer-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 24px; }
+  .footer-brand p { font-size: clamp(0.72rem, 3.3vw, 0.95rem); white-space: nowrap; }
+  .footer-columns { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 24px; }
   .footer-bottom { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 18px; margin-top: 45px; }
 }
 

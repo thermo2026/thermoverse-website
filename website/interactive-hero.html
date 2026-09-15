@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ThermoVerse — LATCHES™ 原生互動熱能吸收視覺</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07131e;
+      --navy: #091823;
+      --cyan: #38bdf8;
+      --coral: #fb7185;
+      --amber: #fbbf24;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+      user-select: none;
+    }
+    canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    /* UI Overlay */
+    .ui-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(24px, 4vw, 48px);
+    }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      pointer-events: auto;
+    }
+    .brand-group h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-group h1 span {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--cyan);
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+    .brand-group p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    /* Mode Toggle */
+    .mode-switch {
+      display: flex;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      padding: 4px;
+      gap: 4px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+    .mode-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      padding: 8px 18px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      font-family: inherit;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mode-btn.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .mode-btn.flir.active {
+      background: linear-gradient(135deg, rgba(251, 113, 133, 0.3), rgba(56, 189, 248, 0.3));
+      color: #fff;
+      border: 1px solid rgba(251, 113, 133, 0.5);
+    }
+    /* Bottom HUD Status Cards */
+    .hud-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      pointer-events: auto;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .hud-panel {
+      background: rgba(9, 24, 35, 0.75);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 20px 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .hud-metrics {
+      display: flex;
+      gap: 28px;
+    }
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .metric-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .metric-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .metric-val.cyan { color: var(--cyan); }
+    .metric-val.coral { color: var(--coral); }
+    .metric-val.amber { color: var(--amber); }
+    /* Interactive Slider */
+    .hud-control {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .hud-control label {
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      white-space: nowrap;
+    }
+    .slider {
+      -webkit-appearance: none;
+      width: 160px;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.2);
+      outline: none;
+    }
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--cyan);
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--cyan);
+    }
+    /* Guidance hint */
+    .hint-bubble {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 8px 16px;
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="stage"></canvas>
+
+  <div class="ui-layer">
+    <!-- Top Bar -->
+    <div class="header-bar">
+      <div class="brand-group">
+        <h1>ThermoVerse <span>LATCHES™</span></h1>
+        <p>Zero-Footprint Overhead Phase-Change Thermal Battery</p>
+      </div>
+
+      <div class="mode-switch">
+        <button class="mode-btn active" id="btn-realistic">建築寫實視角</button>
+        <button class="mode-btn flir" id="btn-flir">FLIR 專業熱成像</button>
+      </div>
+    </div>
+
+    <!-- Bottom HUD -->
+    <div class="hud-footer">
+      <div class="hud-panel hud-metrics">
+        <div class="metric-item">
+          <span class="metric-label">室內環境溫度</span>
+          <span class="metric-val coral" id="val-temp">24.2 °C</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">天花板儲熱飽和度</span>
+          <span class="metric-val amber" id="val-storage">68 %</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-label">空調尖峰負載轉移</span>
+          <span class="metric-val cyan" id="val-shave">-41.5 %</span>
+        </div>
+      </div>
+
+      <div class="hud-panel hud-control">
+        <label for="heat-rate">模擬辦公熱負荷：</label>
+        <input type="range" id="heat-rate" class="slider" min="1" max="5" value="3">
+        <div class="hint-bubble">滑鼠移動可擾動熱氣流</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('stage');
+    const ctx = canvas.getContext('2d');
+    let width, height, dpr;
+
+    let isFLIR = false;
+    let heatIntensity = 3;
+    let mouse = { x: -1000, y: -1000, vx: 0, vy: 0 };
+
+    function resize() {
+      dpr = window.devicePixelRatio || 1;
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Mode Buttons
+    const btnReal = document.getElementById('btn-realistic');
+    const btnFLIR = document.getElementById('btn-flir');
+    btnReal.addEventListener('click', () => {
+      isFLIR = false;
+      btnReal.classList.add('active');
+      btnFLIR.classList.remove('active');
+    });
+    btnFLIR.addEventListener('click', () => {
+      isFLIR = true;
+      btnFLIR.classList.add('active');
+      btnReal.classList.remove('active');
+    });
+
+    document.getElementById('heat-rate').addEventListener('input', (e) => {
+      heatIntensity = parseFloat(e.target.value);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.vx = (e.clientX - mouse.x) * 0.2;
+      mouse.vy = (e.clientY - mouse.y) * 0.2;
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    // 辦公室人員與熱源節點
+    const heatSources = [
+      { x: 0.22, y: 0.76, type: 'person', label: 'Workstation A' },
+      { x: 0.38, y: 0.74, type: 'laptop', label: 'Laptop 1' },
+      { x: 0.52, y: 0.75, type: 'person', label: 'Workstation B' },
+      { x: 0.68, y: 0.77, type: 'laptop', label: 'Laptop 2' },
+      { x: 0.82, y: 0.75, type: 'person', label: 'Workstation C' },
+    ];
+
+    // 熱能粒子系統（自然升騰吸入天花板）
+    const particles = [];
+    const MAX_PARTICLES = 320;
+
+    class ThermalParticle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        // 從某個熱源產生
+        const src = heatSources[Math.floor(Math.random() * heatSources.length)];
+        this.x = (src.x * width) + (Math.random() - 0.5) * 60;
+        this.y = (src.y * height) + (Math.random() - 0.5) * 20;
+        this.vy = -(1.2 + Math.random() * 2.0); // 向上升騰
+        this.vx = (Math.random() - 0.5) * 0.8;
+        this.size = 2 + Math.random() * 3.5;
+        this.life = 0;
+        this.maxLife = 90 + Math.random() * 80;
+        this.alpha = 0;
+        // 吸引到天花板某個面板
+        this.targetCeilingY = height * 0.18 + Math.random() * (height * 0.08);
+      }
+      update() {
+        this.life++;
+        this.y += this.vy;
+        this.x += this.vx;
+
+        // 滑鼠擾動
+        const dx = this.x - mouse.x;
+        const dy = this.y - mouse.y;
+        const dist = Math.hypot(dx, dy);
+        if (dist < 140) {
+          const force = (1 - dist / 140) * 1.5;
+          this.x += (dx / dist) * force * 4;
+          this.y += (dy / dist) * force * 2;
+        }
+
+        // 生命期淡入淡出
+        const progress = this.life / this.maxLife;
+        if (progress < 0.2) {
+          this.alpha = progress / 0.2;
+        } else if (progress > 0.75) {
+          this.alpha = (1 - progress) / 0.25;
+        } else {
+          this.alpha = 1;
+        }
+
+        // 接近天花板時被吸納
+        if (this.y <= this.targetCeilingY || this.life >= this.maxLife) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.save();
+        ctx.globalCompositeOperation = 'screen';
+        
+        let colorGrad;
+        if (isFLIR) {
+          // FLIR 熱成像熱源：高溫亮黃 ➔ 珊瑚橘紅 ➔ 邊緣深紫
+          const r = this.size * 3.5;
+          const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, r);
+          g.addColorStop(0, `rgba(254, 240, 138, ${this.alpha * 0.9})`);
+          g.addColorStop(0.35, `rgba(244, 63, 94, ${this.alpha * 0.65})`);
+          g.addColorStop(0.8, `rgba(168, 85, 247, ${this.alpha * 0.25})`);
+          g.addColorStop(1, 'rgba(15, 23, 42, 0)');
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, r, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          // 寫實模式：精緻半透明珊瑚微暖粒子
+          const r = this.size * 2.5;
+          const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, r);
+          g.addColorStop(0, `rgba(251, 146, 60, ${this.alpha * 0.7})`);
+          g.addColorStop(0.5, `rgba(244, 63, 94, ${this.alpha * 0.35})`);
+          g.addColorStop(1, 'rgba(251, 146, 60, 0)');
+          ctx.fillStyle = g;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < MAX_PARTICLES; i++) {
+      const p = new ThermalParticle();
+      p.life = Math.random() * p.maxLife; // 隨機預熱
+      particles.push(p);
+    }
+
+    // 繪製頂部 LATCHES™ 天花板模組陣列 (3D 透視感)
+    function drawCeiling(time) {
+      const ceilingHeight = height * 0.26;
+      const rows = 5;
+      const cols = 9;
+      
+      // 天花板背板基底
+      const baseGrad = ctx.createLinearGradient(0, 0, 0, ceilingHeight);
+      if (isFLIR) {
+        baseGrad.addColorStop(0, '#040817');
+        baseGrad.addColorStop(0.8, '#0b193d');
+        baseGrad.addColorStop(1, '#0f2757');
+      } else {
+        baseGrad.addColorStop(0, '#091823');
+        baseGrad.addColorStop(1, '#0f2334');
+      }
+      ctx.fillStyle = baseGrad;
+      ctx.fillRect(0, 0, width, ceilingHeight);
+
+      // 透視天花板方格陣列
+      const pulse = Math.sin(time * 0.002) * 0.5 + 0.5;
+
+      for (let r = 0; r < rows; r++) {
+        const yTop = (r / rows) * ceilingHeight;
+        const yBot = ((r + 1) / rows) * ceilingHeight;
+        const scaleTop = 0.8 + (r / rows) * 0.2;
+        const scaleBot = 0.8 + ((r + 1) / rows) * 0.2;
+
+        for (let c = 0; c < cols; c++) {
+          const normLeft = c / cols;
+          const normRight = (c + 1) / cols;
+
+          const xTL = width * 0.5 + (normLeft - 0.5) * width * scaleTop * 1.1;
+          const xTR = width * 0.5 + (normRight - 0.5) * width * scaleTop * 1.1;
+          const xBL = width * 0.5 + (normLeft - 0.5) * width * scaleBot * 1.1;
+          const xBR = width * 0.5 + (normRight - 0.5) * width * scaleBot * 1.1;
+
+          // 繪製單片面板
+          ctx.beginPath();
+          ctx.moveTo(xTL + 3, yTop + 2);
+          ctx.lineTo(xTR - 3, yTop + 2);
+          ctx.lineTo(xBR - 3, yBot - 2);
+          ctx.lineTo(xBL + 3, yBot - 2);
+          ctx.closePath();
+
+          if (isFLIR) {
+            // 熱成像下的 LATCHES™ 面板：因為正在吸收儲存熱能，面板核心發出均勻溫和的蓄熱微光
+            const absorbWarmth = 0.25 + 0.2 * Math.sin(time * 0.002 + c * 0.5 + r);
+            ctx.fillStyle = `rgba(234, 88, 12, ${absorbWarmth})`;
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          } else {
+            // 寫實視角下的 LATCHES™：比照 LATCHES Image 1 的高質感純白極簡模組
+            const tileGlow = 0.08 + 0.05 * Math.sin(time * 0.0015 + c * 0.4);
+            ctx.fillStyle = `rgba(241, 245, 249, ${0.82 + tileGlow})`;
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(148, 163, 184, 0.4)';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+
+            // 模組微邊框精工倒角 (Chamfer highlight)
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.6)';
+            ctx.beginPath();
+            ctx.moveTo(xTL + 3, yTop + 2);
+            ctx.lineTo(xTR - 3, yTop + 2);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // 天花板下沿陰影與吸熱導引光條
+      ctx.save();
+      const edgeGrad = ctx.createLinearGradient(0, ceilingHeight - 15, 0, ceilingHeight + 45);
+      edgeGrad.addColorStop(0, isFLIR ? 'rgba(56, 189, 248, 0.25)' : 'rgba(9, 24, 35, 0.7)');
+      edgeGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = edgeGrad;
+      ctx.fillRect(0, ceilingHeight - 15, width, 60);
+      ctx.restore();
+    }
+
+    // 繪製下方的現代辦公室場景剪影與熱源
+    function drawOfficeEnvironment(time) {
+      const floorY = height * 0.88;
+      const deskY = height * 0.72;
+
+      // 辦公室地板基底
+      const floorGrad = ctx.createLinearGradient(0, deskY, 0, height);
+      if (isFLIR) {
+        floorGrad.addColorStop(0, '#030712');
+        floorGrad.addColorStop(1, '#020617');
+      } else {
+        floorGrad.addColorStop(0, 'rgba(15, 23, 42, 0.95)');
+        floorGrad.addColorStop(1, '#07131e');
+      }
+      ctx.fillStyle = floorGrad;
+      ctx.fillRect(0, deskY, width, height - deskY);
+
+      // 落地窗景深
+      ctx.save();
+      ctx.strokeStyle = isFLIR ? 'rgba(56, 189, 248, 0.15)' : 'rgba(255, 255, 255, 0.06)';
+      ctx.lineWidth = 2;
+      for (let x = width * 0.1; x < width * 0.95; x += width * 0.22) {
+        ctx.beginPath();
+        ctx.moveTo(x, height * 0.26);
+        ctx.lineTo(x, deskY);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      // 大辦公會議桌
+      ctx.beginPath();
+      ctx.moveTo(width * 0.12, deskY);
+      ctx.lineTo(width * 0.88, deskY);
+      ctx.lineTo(width * 0.85, deskY + 18);
+      ctx.lineTo(width * 0.15, deskY + 18);
+      ctx.closePath();
+      ctx.fillStyle = isFLIR ? '#091e42' : '#1e293b';
+      ctx.fill();
+      ctx.strokeStyle = isFLIR ? 'rgba(56, 189, 248, 0.3)' : 'rgba(255, 255, 255, 0.12)';
+      ctx.stroke();
+
+      // 繪製熱源主體（人員與筆電）
+      heatSources.forEach((src, idx) => {
+        const sx = src.x * width;
+        const sy = src.y * height;
+
+        if (src.type === 'person') {
+          // 人體剪影與熱暈
+          ctx.save();
+          if (isFLIR) {
+            // 熱成像人體（溫潤珊瑚橘紅）
+            const hGlow = ctx.createRadialGradient(sx, sy - 40, 5, sx, sy - 30, 75);
+            hGlow.addColorStop(0, 'rgba(251, 113, 133, 0.95)');
+            hGlow.addColorStop(0.4, 'rgba(244, 63, 94, 0.65)');
+            hGlow.addColorStop(0.8, 'rgba(147, 51, 234, 0.25)');
+            hGlow.addColorStop(1, 'rgba(15, 23, 42, 0)');
+            ctx.fillStyle = hGlow;
+            ctx.beginPath();
+            ctx.arc(sx, sy - 30, 75, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          // 人體頭肩剪影
+          ctx.fillStyle = isFLIR ? '#f43f5e' : '#334155';
+          // 頭部
+          ctx.beginPath();
+          ctx.arc(sx, sy - 52, 14, 0, Math.PI * 2);
+          ctx.fill();
+          // 肩膀
+          ctx.beginPath();
+          ctx.ellipse(sx, sy - 20, 28, 20, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+
+        } else if (src.type === 'laptop') {
+          // 筆電設備
+          ctx.save();
+          if (isFLIR) {
+            // 筆電發熱區
+            const lGlow = ctx.createRadialGradient(sx, sy - 10, 2, sx, sy - 10, 38);
+            lGlow.addColorStop(0, 'rgba(251, 146, 60, 0.85)');
+            lGlow.addColorStop(0.6, 'rgba(168, 85, 247, 0.3)');
+            lGlow.addColorStop(1, 'rgba(15, 23, 42, 0)');
+            ctx.fillStyle = lGlow;
+            ctx.beginPath();
+            ctx.arc(sx, sy - 10, 38, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          // 筆電外觀
+          ctx.fillStyle = isFLIR ? '#fb923c' : '#64748b';
+          ctx.fillRect(sx - 16, sy - 4, 32, 4);
+          ctx.beginPath();
+          ctx.moveTo(sx - 14, sy - 4);
+          ctx.lineTo(sx - 10, sy - 24);
+          ctx.lineTo(sx + 10, sy - 24);
+          ctx.lineTo(sx + 14, sy - 4);
+          ctx.closePath();
+          ctx.fillStyle = isFLIR ? '#fed7aa' : '#94a3b8';
+          ctx.fill();
+          ctx.restore();
+        }
+      });
+    }
+
+    // 儀表數據微更新
+    let tempValue = 24.2;
+    let storageVal = 68;
+    function updateHUD(time) {
+      // 隨時間產生微幅真實波動
+      const t = 23.8 + Math.sin(time * 0.001) * 0.4;
+      const s = Math.min(96, Math.floor(65 + (time * 0.002) % 30));
+      document.getElementById('val-temp').innerText = t.toFixed(1) + ' °C';
+      document.getElementById('val-storage').innerText = s + ' %';
+    }
+
+    // 主動畫循環
+    function render(time) {
+      ctx.clearRect(0, 0, width, height);
+
+      // 1. 空間與辦公室環境
+      drawOfficeEnvironment(time);
+
+      // 2. 熱能粒子升騰吸收（依照 intensity 調整產生數量）
+      const count = Math.min(particles.length, Math.floor(MAX_PARTICLES * (heatIntensity / 3.5)));
+      for (let i = 0; i < count; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+
+      // 3. 頂部 LATCHES™ 天花板模組陣列
+      drawCeiling(time);
+
+      // 4. 更新儀表數據
+      updateHUD(time);
+
+      requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+
+  </script>
+</body>
+</html>
