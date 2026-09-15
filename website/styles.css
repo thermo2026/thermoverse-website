@@ -907,12 +907,13 @@ button.button, input[type="submit"].button {
   margin-top: auto;
 }
 .roadmap-card-tag {
-  font-size: 0.8rem;
-  font-weight: 650;
-  letter-spacing: 0.02em;
-  color: #e11d48;
-  margin: 0 0 10px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #df4862;
+  margin: 0 0 12px;
   display: block;
+  text-transform: uppercase;
 }
 .roadmap-card-desc {
   font-size: 0.9rem;
