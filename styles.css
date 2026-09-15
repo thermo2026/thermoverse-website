@@ -424,14 +424,14 @@ button.button, input[type="submit"].button {
 .animated-hero > .hero-content { position:relative; z-index:2; width:100%; max-width:1400px; min-height:100vh; min-height:100svh; margin:0 auto; box-sizing:border-box; padding:clamp(112px, 15vh, 164px) 40px clamp(36px, 6vh, 72px); display:flex; flex-direction:column; justify-content:space-between; gap:56px; }
 .animated-hero h1 { max-width:100%; margin:18px 0 0; color:#fff; font-size:clamp(2.5rem, 4.2vw, 4.5rem); font-weight:350; line-height:1.04; letter-spacing:-0.025em; }
 .animated-hero .eyebrow { max-width:100%; margin:0; color:var(--coral); font-size:clamp(1.25rem, 1.69vw, 1.63rem); font-weight:600; line-height:1.4; letter-spacing:0.045em; text-transform:none; }
-.animated-hero .hero-bottom h2 { max-width:100%; margin:0; color:#fff; font-size:clamp(2.3rem, 3.86vw, 4.13rem); font-weight:350; line-height:1.08; letter-spacing:-0.02em; }
+.animated-hero .hero-bottom h2 { max-width:100%; margin:0; color:#fff; font-size:clamp(1.96rem, 3.28vw, 3.51rem); font-weight:350; line-height:1.1; letter-spacing:-0.02em; }
 .animated-hero .actions { margin:28px 0 0; }
 .animated-hero .hero-media { display:none; }
 @media(max-width:760px){
   .animated-hero > .hero-content { min-height:100vh; min-height:100svh; padding:96px 24px 32px; gap:40px; }
   .animated-hero h1 { font-size:clamp(2.15rem, 10vw, 2.75rem); line-height:1.04; }
   .animated-hero .eyebrow { max-width:34ch; font-size:1.18rem; line-height:1.4; }
-  .animated-hero .hero-bottom h2 { font-size:clamp(1.97rem, 9.18vw, 2.52rem); line-height:1.1; }
+  .animated-hero .hero-bottom h2 { font-size:clamp(1.67rem, 7.8vw, 2.14rem); line-height:1.12; }
   .animated-hero .actions { margin-top:24px; gap:10px; }
   .animated-hero .button.glass { max-width:100%; padding:11px 22px; font-size:0.9rem; }
 }
