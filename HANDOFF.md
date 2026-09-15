@@ -1,6 +1,69 @@
 # ThermoVerse 專案交接
 
-更新日期：2026-09-11 22:30（臺灣時間）
+> **最新工作狀態：2026-09-15（臺灣時間）**
+>
+> 下方舊紀錄為歷史脈絡；本節為下一個 Session 的立即起點。
+
+## Squarespace CRM／原生表單交接（進行中，尚未儲存）
+
+### 使用者已授權的目標
+
+- 保留目前自製的 ThermoVerse 靜態網站內容與視覺；以 Squarespace 的原生表單、Contacts 與 Form Submitters 管理詢問資料。
+- 建立兩個**未連結（Not Linked）**的 Squarespace 頁面：
+  1. `Energy Services Inquiry`
+  2. `LATCHES POC Inquiry`
+- 不要把這兩個表單頁加入公開導覽列。未來可讓外部網站的 CTA 連往 Squarespace 表單頁或其自訂子網域。
+
+### 已查證的 Squarespace 狀態
+
+- 正式網站為 `www.thermoverse.com`，Squarespace 7.1。
+- 帳號中既有 Contacts 與 Form Submitters；不得讀取、複製或外流個別聯絡人資料。
+- Squarespace 的公開 API 並沒有可從外部自架 HTML 表單直接寫入 Contacts 的一般寫入端點；要使用 Squarespace CRM，應使用 Squarespace 託管的原生 Form Block。
+- 現有 `Contact Us` 頁面是一般聯絡／電子報表單，不是這次要建立的專案詢問表單。
+
+### 瀏覽器與目前畫面
+
+- 目前使用 Codex In-app Browser 的 Squarespace 編輯器，頁籤標題：`Energy Services Inquiry — ThermoVerse`。
+- URL：`https://rust-magnolia-cm9m.squarespace.com/config/pages`
+- 現在停在 **Energy Services Inquiry 的內容編輯器**；右上／上方的 **Save 仍可按**，表示變更尚未儲存。
+- 頁面狀態文字雖顯示 `Page · Published`，但此頁位於 **Not Linked**，尚未加入導航。
+- 已加入一個 Squarespace 內建的 Contact section（白色簡約版型）。它目前仍是預設欄位，包含 Name、Email、Phone、服務選項、Budget、Start date、Project details。
+- **尚未儲存、尚未正式發布本次變更、未刪除任何既有頁面或內容。**
+
+### 下一步：先完成 Energy Services Inquiry
+
+1. 在編輯器內點選 Form block 本體（不是 section 外框），開啟表單欄位／儲存設定。
+2. 將預設欄位改成：
+   - `Name`（必填）
+   - `Email`（必填）
+   - `Company or organization`（選填）
+   - `Role or title`（選填）
+   - `Inquiry type`（必填；選項：BPI energy assessment、ASHRAE audit、MEP consulting、Energy retrofits、General inquiry）
+   - `Message`（必填）
+3. 移除不符合需求的預設 Phone、Budget、Start date 與 Basic／Intermediate／Advanced service 選項。
+4. 表單名稱設為 `Website | Energy Services`；成功訊息：`Thank you. A ThermoVerse team member will review your inquiry.`
+5. 儲存目的地設為 Squarespace Contacts／Form Submitters。通知信收件者尚未取得使用者指定的公司信箱，**不可自行猜測或變更通知路由**。
+6. 行銷同意欄位暫不啟用；需先取得公司核准的隱私權與同意文案。
+
+### 接著建立 LATCHES POC Inquiry
+
+- 同樣建立在 Not Linked，使用原生 Form Block。
+- 基本欄位沿用 Name、Email、Company or organization、Role or title、Message。
+- 另加入（均可先設為選填）：Site type、Site location、Building/facility description、Current building/energy challenge、Available building/HVAC/energy data、Preferred contact time。
+- 不要新增未經 Company 書面核准的技術、效能、安全、法規、節能、碳排或碳權承諾。
+
+### 儲存與驗證規則
+
+- 在最後按 Squarespace 的 **Save** 前，向使用者簡短確認即將儲存的頁面名稱、欄位與 Contacts/Form Submitters 目的地；這會建立可被外部訪問的未連結頁面。
+- 儲存後需確認 Save 變成停用／顯示已儲存，並以預覽模式檢查必填欄位與成功訊息。
+- 不要為測試而送出含個資的表單；若需提交測試，先取得明確授權並使用非個人測試資料。
+
+### 本機內容依據
+
+- 內容權威：`FUTEX SOW - FINAL DRAFT (9_8).md` 的 Website Guidelines；若與其他規劃檔衝突，以此與 Company 最新書面確認為準。
+- 目前外部靜態網站的 contact 欄位來源：`website/contact.html`。其現況是預覽表單，尚無真實送出或儲存功能。
+
+原始交接紀錄更新日期：2026-09-11 22:30（臺灣時間）
 
 ## 下個 Session 先做什麼
 
@@ -408,8 +471,6 @@
     - 卡片標題：`Maintenance-free drop-in integration`
     - 卡片內文：`Installs seamlessly into standard ceiling grids without dedicated equipment rooms, liquid cooling loops, or routine degradation concerns.`
   - **效益**：將原本偏向物理定義與生硬數字的文案，全面翻轉為業主、物業與機電工程師最關心的「無火災隱患、通過都會消防法規」與「零維護、直接嵌裝無機房負擔」的核心價值。
-
-
 
 
 
