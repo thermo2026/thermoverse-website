@@ -56,12 +56,17 @@
   form.addEventListener('submit', function (event) {
     event.preventDefault();
     const status = document.querySelector('#form-error');
+    const isZh = form.elements.language?.value === 'zh' || document.documentElement.lang.startsWith('zh');
     if (!form.checkValidity()) {
-      status.textContent = 'Please complete the required fields before submitting.';
+      status.textContent = isZh
+        ? '請填妥所有必填欄位後再送出。'
+        : 'Please complete the required fields before submitting.';
       form.reportValidity();
       return;
     }
-    status.textContent = 'Preview only: no information was sent or stored. Your entries remain on this page for review.';
+    status.textContent = isZh
+      ? '展示預覽模式：目前表單處於展示階段，尚未實際送出或儲存資料。您的輸入內容已保留於本頁以供檢視。'
+      : 'Preview only: no information was sent or stored. Your entries remain on this page for review.';
     status.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 }());
