@@ -1,8 +1,42 @@
 # ThermoVerse 專案交接
 
+## 2026-09-16｜交給 Gemini 的最新網站修改指示
+
+### 目前已完成（本機檔案）
+- 聯絡頁已改為全站可開啟的 Contact modal；舊的 `website/contact.html` 與 `website/zh/contact.html` 會導向首頁並自動開啟 modal。
+- Modal 表單已包含名字、姓氏、企業信箱、公司、職稱、國家／地區、諮詢主題、需求說明，以及 LATCHES POC 延伸欄位。
+- 表單送出會 POST 至 `/api/inquiries`；可由 `window.THERMO_API_BASE_URL` 指定 AWS API base URL。
+- Modal 背景已調亮為 `#182b38`，仍保留深色半透明遮罩。
+- 行銷勾選框下方已加入隱私聲明與 `Privacy Policy`／`隱私權政策` 連結，位於 Submit 按鈕上方。
+
+### 請 Gemini 接續處理
+1. 只在本機修改，不要直接發布到 Squarespace 或 AWS。
+2. 保留 SOW 核准文案與現有英文優先內容；不要自行改寫產品宣稱。
+3. 檢查 Contact modal 在桌面、平板、手機寬度下：欄位不溢出、Submit 按鈕可見、內容可捲動、ESC 與右上角 X 可關閉。
+4. 確認隱私政策連結在英文頁與 `/zh/` 頁都能正確開啟對應的 `privacy.html`。
+5. 確認表單錯誤與成功狀態清楚可見；不要移除 honeypot 欄位。
+6. 修改後執行：`node --check website/script.js`、`git diff --check`，以及 `rg -n "contact-privacy|#182b38|openContact|/api/inquiries" website`。
+
+### 目前尚未完成
+- AWS CloudFormation 部署仍受限於 WebDev role 缺少 `cloudformation:DescribeStacks` 等權限；尚未建立正式 API Gateway、Lambda、DynamoDB、Cognito 資源。
+- CRM 目前只有本機 API／管理頁，尚未接上正式 AWS API。
+- `website/config.js` 的正式 `THERMO_API_BASE_URL` 尚未設定。
+
 > **最新工作狀態：2026-09-15（臺灣時間）**
 >
 > 下方舊紀錄為歷史脈絡；本節為下一個 Session 的立即起點。
+
+> **架構決策更新：2026-09-16（臺灣時間）**
+>
+> 使用者已決定正式網站、表單與 CRM **全部改放 AWS**。Squarespace 路線已停止；不得儲存、發布或繼續建立 Squarespace 表單。AWS 實作依據見 [`AWS_網站與CRM實作方案.md`](AWS_網站與CRM實作方案.md)。
+
+> **AWS 實作狀態：2026-09-16（臺灣時間）**
+>
+> AWS IAM Identity Center SSO 已設定為帳號 `236934871408`、角色 `WebDev`、區域 `us-east-1`。已建立並驗證私有部署桶 `thermoverse-aws-artifacts-236934871408`（公開封鎖、AES-256 加密、版本控制皆已啟用），Lambda 部署封包也已成功上傳。CRM CloudFormation stack **尚未建立**：`WebDev` 缺少 `cloudformation:DescribeStacks`，請依 [`aws/README.md`](aws/README.md) 對 `WebDev` 補上 [`aws/DEPLOYMENT_ACCESS_POLICY.json`](aws/DEPLOYMENT_ACCESS_POLICY.json) 後，重新執行其中的部署命令。未建立 DynamoDB、Cognito、API Gateway 或 Lambda 資源。
+
+> **聯絡模組更新：2026-09-16**
+>
+> 獨立 `Contact Us` 頁面已改為相容導向；英文與繁中網站現在由 `website/script.js` 產生深色模糊背景的聯絡模組，所有原本導向 `contact.html` 的導覽與 CTA 會在原頁開啟表單。表單仍沿用 `/api/inquiries`，並加入名字、姓氏、企業信箱、公司、職稱、國家／地區、諮詢主題、專案說明及 POC 選填欄位。
 
 ## Squarespace CRM／原生表單交接（進行中，尚未儲存）
 
@@ -471,10 +505,6 @@
     - 卡片標題：`Maintenance-free drop-in integration`
     - 卡片內文：`Installs seamlessly into standard ceiling grids without dedicated equipment rooms, liquid cooling loops, or routine degradation concerns.`
   - **效益**：將原本偏向物理定義與生硬數字的文案，全面翻轉為業主、物業與機電工程師最關心的「無火災隱患、通過都會消防法規」與「零維護、直接嵌裝無機房負擔」的核心價值。
-
-
-
-
 
 
 

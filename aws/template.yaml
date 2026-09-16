@@ -1,0 +1,134 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: ThermoVerse public inquiry API and CRM data store.
+
+Parameters:
+  AllowedOrigin:
+    Type: String
+    Default: http://127.0.0.1:8787
+    Description: Exact HTTPS origin of the Amplify-hosted site, with no trailing slash.
+
+Globals:
+  Function:
+    Runtime: python3.12
+    CodeUri: lambda/
+    Timeout: 10
+    MemorySize: 256
+    Environment:
+      Variables:
+        INQUIRIES_TABLE: !Ref InquiriesTable
+        ALLOWED_ORIGIN: !Ref AllowedOrigin
+
+Resources:
+  InquiriesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      SSESpecification:
+        SSEEnabled: true
+
+  InquiryApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      CorsConfiguration:
+        AllowOrigins: [!Ref AllowedOrigin]
+        AllowHeaders: [content-type, authorization]
+        AllowMethods: [POST, GET, PATCH, OPTIONS]
+      Auth:
+        Authorizers:
+          CognitoJwt:
+            JwtConfiguration:
+              audience: [!Ref CrmUserPoolClient]
+              issuer: !Sub https://cognito-idp.${AWS::Region}.amazonaws.com/${CrmUserPool}
+            IdentitySource: $request.header.Authorization
+
+  CrmUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: !Sub ${AWS::StackName}-crm-admins
+      AutoVerifiedAttributes: [email]
+      UsernameAttributes: [email]
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 14
+          RequireLowercase: true
+          RequireUppercase: true
+          RequireNumbers: true
+          RequireSymbols: true
+
+  CrmUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      UserPoolId: !Ref CrmUserPool
+      ClientName: thermoverse-crm-web
+      GenerateSecret: false
+      ExplicitAuthFlows: [ALLOW_USER_SRP_AUTH, ALLOW_REFRESH_TOKEN_AUTH]
+      PreventUserExistenceErrors: ENABLED
+
+  SubmitInquiryFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.submit_inquiry
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref InquiriesTable
+      Events:
+        Submit:
+          Type: HttpApi
+          Properties:
+            Api: !Ref InquiryApi
+            Path: /api/inquiries
+            Method: POST
+
+  ListInquiriesFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.list_inquiries
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref InquiriesTable
+      Events:
+        List:
+          Type: HttpApi
+          Properties:
+            Api: !Ref InquiryApi
+            Path: /api/inquiries
+            Method: GET
+            Auth:
+              Authorizer: CognitoJwt
+
+  UpdateInquiryFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handler.update_inquiry
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref InquiriesTable
+      Events:
+        Update:
+          Type: HttpApi
+          Properties:
+            Api: !Ref InquiryApi
+            Path: /api/inquiries/{id}
+            Method: PATCH
+            Auth:
+              Authorizer: CognitoJwt
+
+Outputs:
+  ApiBaseUrl:
+    Description: Add this to website/config.js as window.THERMO_API_BASE_URL.
+    Value: !Sub https://${InquiryApi}.execute-api.${AWS::Region}.amazonaws.com
+  InquiriesTableName:
+    Value: !Ref InquiriesTable
+  CrmUserPoolId:
+    Value: !Ref CrmUserPool
+  CrmUserPoolClientId:
+    Value: !Ref CrmUserPoolClient

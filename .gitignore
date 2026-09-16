@@ -34,3 +34,7 @@ venv/
 # Environment variables
 .env
 .env.*
+
+# Local CRM data
+crm/data/
+website/config.js
