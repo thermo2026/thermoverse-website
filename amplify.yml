@@ -1,0 +1,20 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands: []
+  artifacts:
+    baseDirectory: .
+    files:
+      - 'index.html'
+      - 'about.html'
+      - 'technology.html'
+      - 'use-cases.html'
+      - 'contact.html'
+      - 'privacy.html'
+      - 'styles.css'
+      - 'script.js'
+      - 'assets/**/*'
+      - 'zh/**/*'
+  cache:
+    paths: []
