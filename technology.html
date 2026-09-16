@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Technology (LATCHES™) | ThermoVerse</title><meta name="description" content="LATCHES™ turns ceilings and walls into programmable, BACnet-native thermal batteries for buildings."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=76"></head>
+<body>
+  <header class="site-header"><nav class="nav" aria-label="Main navigation"><a href="index.html"><img class="logo" src="assets/logo.webp" alt="ThermoVerse"></a><div class="nav-links" id="nav-links"><a href="index.html">Home</a><a aria-current="page" href="technology.html">LATCHES™</a><a href="use-cases.html">Energy Services</a><a href="about.html">About Us</a><a href="contact.html">Contact Us</a></div><div class="nav-actions"><a class="lang-pill" href="zh/technology.html" aria-label="切換至正體中文"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>繁中</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">☰</button></div></nav></header>
+  <main>
+    <section class="page-hero" id="overview"><div class="wrap"><div class="eyebrow">LATCHES™</div><h1>Urban-Safe Zero-Footprint Thermal Battery</h1><p>Compact thermal battery designed for dense urban environments where chemical batteries are restricted.</p></div></section>
+
+    <section class="section" id="thermal-battery"><div class="wrap editorial-row"><div><div class="eyebrow">Urban-safe energy storage</div><h2>Code-compliant thermal battery without surrendering floor area.</h2></div><p class="section-intro">By integrating thermal batteries directly into existing drop-ceilings, LATCHES™ offers a safe, fire-code compliant alternative where traditional chemical Battery Energy Storage Systems (BESS) are restricted or prohibited by urban fire codes.</p></div></section>
+
+    <section class="section" id="sensing-control"><div class="wrap"><div class="eyebrow">Sensing, Storage, and Predictive Control</div><h2>Command the timed release of stored thermal energy.</h2><div class="process-cards">
+      <article class="process-card"><div class="process-visual" aria-hidden="true">
+        <svg class="process-diagram arch-wireframe-svg" viewBox="0 0 280 160" focusable="false" aria-hidden="true">
+          <!-- Top layer: dashed back, solid front -->
+          <path class="wire-dash" d="M 84 36 L 140 14 L 196 36" />
+          <path class="wire-stroke" d="M 84 36 L 140 58 L 196 36" />
+          <!-- Stacked intermediate strata layers -->
+          <path class="wire-stroke" d="M 84 54 L 140 32 L 196 54 L 140 76 Z" />
+          <path class="wire-stroke" d="M 84 72 L 140 50 L 196 72 L 140 94 Z" />
+          <path class="wire-stroke" d="M 84 90 L 140 68 L 196 90 L 140 112 Z" />
+          <path class="wire-stroke" d="M 84 108 L 140 86 L 196 108 L 140 130 Z" />
+          <!-- Vertical construction dashed lines -->
+          <path class="wire-dash" d="M 84 36 V 108" />
+          <path class="wire-dash" d="M 196 36 V 108" />
+          <path class="wire-dash" d="M 140 14 V 86" />
+          <path class="wire-stroke" d="M 140 58 V 130" />
+          <!-- Central monitoring axis line -->
+          <path class="wire-dash" d="M 140 6 V 138" />
+          <!-- Animated State-of-Charge scanning beam (monitoring thermal battery state) -->
+          <g class="scan-beam">
+            <polygon points="84,40 140,18 196,40 140,62" fill="none" stroke="#df4862" stroke-width="1.2" stroke-dasharray="2 2" />
+            <line x1="84" y1="40" x2="196" y2="40" stroke="#df4862" stroke-width="1" stroke-dasharray="3 3" opacity="0.65" />
+          </g>
+          <!-- Expanding monitoring radar pulses observing building conditions -->
+          <circle class="wire-dash sense-pulse-ring" cx="140" cy="72" r="18" stroke="#df4862" stroke-width="1.1" fill="none" />
+          <circle class="wire-dash sense-pulse-ring-2" cx="140" cy="72" r="28" stroke="#1e252b" stroke-width="1" fill="none" />
+          <!-- Focal State-of-Charge sensor node -->
+          <circle class="wire-dot sensor-light" cx="140" cy="72" r="3.6" />
+          <circle cx="140" cy="72" r="1.5" fill="#ffffff" />
+        </svg>
+      </div><span class="process-index">01 / MONITOR</span><h3>Sense</h3><p>A State-of-Charge Monitor observes the thermal battery state and relevant building conditions.</p></article>
+      <article class="process-card"><div class="process-visual" aria-hidden="true">
+        <svg class="process-diagram arch-wireframe-svg" viewBox="0 0 280 160" focusable="false" aria-hidden="true">
+          <!-- Baseline / Horizon Axis -->
+          <line class="wire-stroke" x1="42" y1="88" x2="238" y2="88" />
+          <!-- Left side: Incoming Multi-Signal Streams (Demand, HVAC, Operating signals) -->
+          <line class="wire-dash stream-signal" x1="52" y1="44" x2="116" y2="88" />
+          <circle class="wire-dot signal-node-pulse" cx="52" cy="44" r="2.8" />
+          <line class="wire-dash stream-signal" x1="52" y1="132" x2="116" y2="88" />
+          <circle class="wire-dot signal-node-pulse" cx="52" cy="132" r="2.8" />
+          <!-- Central Edge Controller Processing Unit -->
+          <polygon class="wire-stroke" points="116,68 136,88 116,108 96,88" />
+          <circle class="wire-dot" cx="116" cy="88" r="3.2" />
+          <!-- Forward Predictive Horizon & Forecast Envelope -->
+          <line class="wire-dash" x1="116" y1="68" x2="228" y2="38" />
+          <line class="wire-dash" x1="116" y1="108" x2="228" y2="138" />
+          <!-- Dynamic Predictive Demand Wave (Forecasted Peak Shift) -->
+          <path class="wire-stroke predict-wave" d="M 116 88 Q 145 48, 172 88 T 228 88" />
+          <!-- Animated Predictive Time Horizon Cursor -->
+          <g class="predict-cursor">
+            <line x1="172" y1="44" x2="172" y2="132" stroke="#df4862" stroke-width="1.2" stroke-dasharray="2.5 2.5" />
+            <circle cx="172" cy="88" r="3" fill="#df4862" />
+          </g>
+          <!-- Horizon Apex Node (Optimal Control Target) -->
+          <circle class="wire-dot" cx="228" cy="88" r="3" />
+        </svg>
+      </div><span class="process-index">02 / EDGE CONTROL</span><h3>Predict</h3><p>A predictive edge controller interprets demand, HVAC, and operating signals close to the equipment.</p></article>
+      <article class="process-card"><div class="process-visual" aria-hidden="true">
+        <svg class="process-diagram arch-wireframe-svg" viewBox="0 0 280 160" focusable="false" aria-hidden="true">
+          <!-- Thermal Energy Flow IN (Charge): top-left intake vector -->
+          <path class="wire-dash thermal-flow-in" d="M 46 44 H 92 L 108 60" />
+          <polygon points="108,60 101,54 104,64" fill="#1e252b" />
+          <!-- Thermal Energy Flow OUT (Discharge): bottom-right release vector -->
+          <path class="wire-dash thermal-flow-out" d="M 172 100 L 188 116 H 234" />
+          <polygon points="234,116 226,112 226,120" fill="#1e252b" />
+          <!-- Rotating Thermal Battery Cycle Orbit -->
+          <g class="cycle-orbit-group">
+            <circle class="wire-stroke" cx="140" cy="80" r="46" />
+            <!-- Directional Flow Orbit Arrows -->
+            <path class="wire-stroke" d="M 124 24 A 58 58 0 0 1 156 28" />
+            <polygon points="156,28 147,24 153,35" fill="#1e252b" />
+            <path class="wire-stroke" d="M 156 136 A 58 58 0 0 1 124 132" />
+            <polygon points="124,132 133,136 127,125" fill="#1e252b" />
+          </g>
+          <!-- Breathing PCM Latent Phase Change Boundary (Solid <-> Liquid Phase Transition) -->
+          <circle class="wire-dash pcm-latent-boundary" cx="140" cy="80" r="28" stroke="#df4862" stroke-width="1.3" />
+          <!-- Inner Core Thermal Equilibrium Node -->
+          <circle class="wire-dot" cx="140" cy="80" r="3.5" />
+          <circle cx="140" cy="80" r="1.5" fill="#ffffff" />
+        </svg>
+      </div><span class="process-index">03 / THERMAL CYCLE</span><h3>Store &amp; Control</h3><p>The controller commands active thermal battery cycles and the timed release of latent cooling energy.</p></article>
+    </div></div></section>
+
+    <section class="section" id="pcm-storage"><div class="wrap split"><div><div class="eyebrow">Faster, Smarter, Scalable</div><h2>Unlocking Megawatt-hour peak capacity across building portfolios.</h2><p class="section-intro">Unlike chemical battery systems (BESS) restricted by dense urban fire codes, LATCHES™ utilizes Phase Change Materials that are non-toxic, safe for occupied indoor spaces, and scalable across commercial building portfolios.</p></div><article class="card"><div class="num">THERMAL CAPACITY</div><h3>102 BTU/SF battery capacity*</h3><p>LATCHES™ delivers 102 BTU/SF of latent thermal battery capacity, designed to maintain indoor temperature setpoints four hours longer while unlocking significant electrical peak headroom.</p><p class="footnote">*Based on laboratory test results.</p></article></div></section>
+
+    <section class="section" id="installation"><div class="wrap split"><img src="assets/install.webp" alt="Technician working with a ceiling installation"><div><div class="eyebrow">Installed up to 8× faster*</div><h2>Zero-footprint integration with drop-ceilings.</h2><p class="section-intro">LATCHES™ is designed specifically for standard drop-ceiling integration, preserving 100% of rentable floor area while placing the thermal battery close to the conditioned space.</p><p class="footnote">*Compared to conventional battery energy storage systems (BESS).</p></div></div></section>
+
+    <section class="section" id="bas-integration"><div class="wrap"><div class="eyebrow">Peak Demand Management &amp; Demand Response</div><h2>BACnet-native control through the building’s existing BAS.</h2><p class="section-intro">LATCHES™ integrates natively with Building Automation Systems (BAS) via BACnet protocols. Buildings can coordinate thermal charging and discharge with HVAC schedules, peak tariff periods, and utility demand-response signals.</p><div class="grid two-column"><article class="card"><h3>Peak HVAC Demand Management</h3><p>Shift commercial HVAC compressor loads away from expensive peak-tariff periods to lower operational expenditure.</p></article><article class="card"><h3>Automated Demand Response</h3><p>Use existing BAS signals to support municipal grid demand-response strategies and monetize load flexibility.</p></article></div></div></section>
+
+    <!-- USE CASE 01 · COMMERCIAL BUILDINGS -->
+    <section class="arch-split-section" id="commercial">
+      <div class="wrap arch-split-wrap">
+        <div class="arch-split-content">
+          <div class="eyebrow">USE CASE 01</div>
+          <h2>Commercial Buildings</h2>
+          <p class="section-intro">Office towers and corporate campuses balancing severe peak-demand utility charges with strict urban indoor fire safety codes.</p>
+          <div>
+            <a class="btn-pill" href="contact.html?type=Apply%20for%20LATCHES%20POC%20Site%20Partnership&amp;source=Technology%20Commercial">Evaluate Commercial POC</a>
+          </div>
+          <dl class="arch-metric-row">
+            <div class="arch-metric-item">
+              <dt>Peak Shaving</dt>
+              <dd>Reduce high-tariff demand spikes</dd>
+            </div>
+            <div class="arch-metric-item">
+              <dt>0 SF</dt>
+              <dd>Rentable floor space preserved</dd>
+            </div>
+            <div class="arch-metric-item">
+              <dt>BACnet</dt>
+              <dd>Seamless BAS automation control</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="arch-split-media">
+          <img src="assets/Commercial%20buildings.webp" alt="Commercial office architecture">
+        </div>
+      </div>
+    </section>
+
+    <!-- USE CASE 02 · EDUCATION & CAMPUSES -->
+    <section class="arch-split-section alt reverse" id="education">
+      <div class="wrap arch-split-wrap">
+        <div class="arch-split-content">
+          <div class="eyebrow">USE CASE 02</div>
+          <h2>Education &amp; Campuses</h2>
+          <p class="section-intro">Universities, schools, and institutional facilities striving to meet aggressive ESG and zero-emission mandates while maintaining acoustic comfort and classroom air quality.</p>
+          <div>
+            <a class="btn-pill" href="contact.html?type=Apply%20for%20LATCHES%20POC%20Site%20Partnership&amp;source=Technology%20Education">Evaluate Campus POC</a>
+          </div>
+          <dl class="arch-metric-row">
+            <div class="arch-metric-item">
+              <dt>ESG Goals</dt>
+              <dd>Campus decarbonization roadmaps</dd>
+            </div>
+            <div class="arch-metric-item">
+              <dt>Silent</dt>
+              <dd>No noisy mechanical vibration</dd>
+            </div>
+            <div class="arch-metric-item">
+              <dt>Flexible</dt>
+              <dd>Buffers sharp lecture occupancy</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="arch-split-media">
+          <img src="assets/Education%20campus.jpg" alt="Sustainable modern university campus">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap faq-layout">
+        <div class="faq-header">
+          <div class="eyebrow">FAQ</div>
+          <h2>Suitability, ceiling coverage, and building readiness.</h2>
+          <p class="section-intro">Clear criteria to evaluate your building’s electrical, ceiling, and network readiness for LATCHES™ zero-footprint thermal batteries.</p>
+          <div class="faq-header-action" style="margin-top: 32px;">
+            <a class="button" href="contact.html?type=Technology%20%2F%20Engineering%20Inquiry&amp;source=Technology">Discuss Your Requirements &rarr;</a>
+          </div>
+        </div>
+        <div class="faq-body">
+          <div class="faq-list">
+            <details class="faq-accordion" open>
+              <summary class="faq-summary">
+                <h3>How much ceiling coverage is required to unlock capacity?</h3>
+                <span class="faq-icon-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="3" x2="8" y2="13"></line><polyline points="4 9 8 13 12 9"></polyline></svg>
+                </span>
+              </summary>
+              <div class="faq-content">
+                <p>Approximately 35% ceiling coverage in a 100,000 sq. ft. commercial facility unlocks up to 1 Megawatt-hour (MWh) of active thermal battery headroom—equivalent to a grid-scale battery pack—without surrendering any rentable floor area.</p>
+              </div>
+            </details>
+            <details class="faq-accordion">
+              <summary class="faq-summary">
+                <h3>Can standard drop-ceilings support the system?</h3>
+                <span class="faq-icon-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="3" x2="8" y2="13"></line><polyline points="4 9 8 13 12 9"></polyline></svg>
+                </span>
+              </summary>
+              <div class="faq-content">
+                <p>Yes. Lightweight LATCHES™ cassettes are engineered to distribute loads across standard commercial T-bar ceiling grids, verified against structural ratings and local codes during preliminary site review.</p>
+              </div>
+            </details>
+            <details class="faq-accordion">
+              <summary class="faq-summary">
+                <h3>What criteria determine building readiness for LATCHES™?</h3>
+                <span class="faq-icon-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="3" x2="8" y2="13"></line><polyline points="4 9 8 13 12 9"></polyline></svg>
+                </span>
+              </summary>
+              <div class="faq-content">
+                <p>Building readiness is evaluated through drop-ceiling plenum accessibility, utility tariff structure (peak-to-off-peak cost ratio), existing BAS BACnet connectivity, and historical HVAC cooling load profiles.</p>
+              </div>
+            </details>
+            <details class="faq-accordion">
+              <summary class="faq-summary">
+                <h3>What network compatibility is required?</h3>
+                <span class="faq-icon-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="3" x2="8" y2="13"></line><polyline points="4 9 8 13 12 9"></polyline></svg>
+                </span>
+              </summary>
+              <div class="faq-content">
+                <p>LATCHES™ operates natively over BACnet MS/TP and BACnet/IP protocols, communicating directly with existing Building Automation Systems without requiring proprietary gateways or cloud lock-in.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footer-main"><div class="footer-brand"><a href="index.html" aria-label="ThermoVerse home"><img src="assets/logo.webp" alt="ThermoVerse"></a><p>Take Command of Your Energy from Audit to thermal Battery.</p></div><nav class="footer-columns" aria-label="Footer navigation"><div><h2>Explore</h2><a href="technology.html">LATCHES™</a><a href="use-cases.html">Energy Services</a></div><div><h2>Company</h2><a href="about.html">About Us</a><a href="contact.html">Contact Us</a></div><div><h2>Connect</h2><a href="https://www.linkedin.com/company/thermoverse/">LinkedIn</a></div></nav></div><div class="wrap footer-bottom"><span>© 2026 ThermoVerse Inc.</span><a href="privacy.html" aria-current="page">Privacy Policy</a></div></footer><script src="script.js"></script>
+</body>
+</html>
