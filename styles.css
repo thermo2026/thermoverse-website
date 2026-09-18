@@ -1421,10 +1421,10 @@ button.button, input[type="submit"].button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 .pillars-head h2 {
-  font-size: clamp(1.72rem, 2.3vw, 2.35rem);
+  font-size: clamp(2.25rem, 2.8vw, 3rem);
   font-weight: 350;
-  line-height: 1.18;
-  letter-spacing: -0.025em;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0 0 16px;
 }
