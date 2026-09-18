@@ -126,7 +126,7 @@
       payload.name = [payload.firstName, payload.lastName].filter(Boolean).join(' ');
     }
     payload.marketing = form.elements.marketing.checked;
-    const configuredBase = window.THERMO_API_BASE_URL || '';
+    const configuredBase = window.THERMO_API_BASE_URL || 'https://yyuah016q3.execute-api.ap-southeast-2.amazonaws.com';
     submit.disabled = true;
     setStatus(isZh ? '正在送出諮詢內容…' : 'Sending your inquiry…', 'pending');
     fetch(configuredBase + '/api/inquiries', {
