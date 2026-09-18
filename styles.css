@@ -115,6 +115,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .section h2, .band h2 { max-width: 100%; font-size: clamp(2.25rem, 2.8vw, 3rem); font-weight: 350; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 16px; }
 .page-hero { min-height: 100vh; min-height: 100svh; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; padding: clamp(112px, 14vh, 160px) 0 clamp(40px, 8vh, 80px); border-bottom: 1px solid var(--line); }
 .page-hero > .wrap { width: 100%; }
+.page-hero.policy-page { min-height: clamp(360px, 46vh, 520px); padding: clamp(104px, 11vh, 132px) 0 clamp(42px, 6vh, 64px); }
 
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 42px; }
 .grid.two-column { grid-template-columns: repeat(2, 1fr); }
@@ -484,6 +485,7 @@ button.button, input[type="submit"].button {
   .hero-media { height: 330px; min-height: 0; aspect-ratio: auto; }
   .section { padding: 72px 0; }
   .page-hero { min-height: 100vh; min-height: 100svh; padding: 96px 0 40px; }
+  .page-hero.policy-page { min-height: 360px; padding: 92px 0 36px; }
   .grid, .grid.two-column { grid-template-columns: 1fr; margin-top: 28px; }
   .split img { height: 300px; }
   .line-list > div { grid-template-columns: 48px 1fr; gap: 10px 14px; }
