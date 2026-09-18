@@ -2916,3 +2916,9 @@ button.button, input[type="submit"].button {
   }
 }
 
+
+.policy-content { max-width: 900px; padding-top: clamp(48px, 8vw, 96px); padding-bottom: clamp(64px, 10vw, 128px); }
+.policy-content h2 { margin: 42px 0 14px; color: var(--ink); font-size: clamp(1.35rem, 2.2vw, 1.8rem); line-height: 1.2; }
+.policy-content p, .policy-content li { color: var(--muted); font-size: 1.04rem; line-height: 1.8; }
+.policy-content ul { padding-left: 1.3rem; }
+.policy-content a { color: var(--coral); text-decoration: underline; text-underline-offset: 3px; }
