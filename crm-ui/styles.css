@@ -285,6 +285,12 @@ tbody tr.clickable { cursor: pointer; }
 .pill.spam, .pill.high { background: #fee2e2; color: #b91c1c; }
 .pill.normal { background: #e0f2fe; color: #0369a1; }
 .pill.low { background: #f1f5f9; color: #64748b; }
+.pill.administrator, .pill.admin { background: #ede9fe; color: #6d28d9; }
+.pill.manager { background: #e0f2fe; color: #0284c7; }
+.pill.member, .pill.sales { background: #dcfce7; color: #16a34a; }
+.pill.viewer { background: #f1f5f9; color: #475569; }
+.pill.active { background: #dcfce7; color: #15803d; }
+.pill.suspended { background: #fee2e2; color: #b91c1c; }
 
 /* Lists & Rows */
 .list { display: grid; gap: 8px; }
