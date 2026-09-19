@@ -2,7 +2,9 @@ version: 1
 frontend:
   phases:
     build:
-      commands: []
+      commands:
+        - mkdir -p CRM && cp -r crm-ui/* CRM/
+        - mkdir -p crm && cp -r crm-ui/* crm/
   artifacts:
     baseDirectory: .
     files:
@@ -16,5 +18,7 @@ frontend:
       - 'script.js'
       - 'assets/**/*'
       - 'zh/**/*'
+      - 'CRM/**/*'
+      - 'crm/**/*'
   cache:
     paths: []

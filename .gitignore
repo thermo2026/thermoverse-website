@@ -1,0 +1,10 @@
+.DS_Store
+*.zip
+HANDOFF.md
+crm/
+deliverables/
+docs/
+output/
+website/
+tmp/
+.build/
