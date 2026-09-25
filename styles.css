@@ -151,7 +151,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .app-card-inner h3 { color: #fff; font-size: 1.48rem; font-weight: 600; margin: 0; letter-spacing: 0.02em; text-shadow: 0 2px 8px rgba(0,0,0,0.35); }
 .app-card-bottom { margin-top: auto; display: flex; flex-direction: column; }
 .card.app-card .app-card-bottom p { flex: none; min-height: 0; color: #fff; font-size: 0.86rem; line-height: 1.38; margin: 0 0 10px; text-shadow: 0 1px 8px rgba(0,0,0,0.45); }
-.app-card-bottom .card-action { width: calc(88% + 52.8px); margin-inline: auto; }
+.app-card-bottom .card-action { width: 100%; margin: 0 auto; display: flex; justify-content: center; }
 .app-card-bottom .button.glass { width: 100%; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 48px; padding: 12px 20px; font-size: 0.94rem; font-weight: 600; letter-spacing: 0.02em; border-radius: 999px; background: #ffffff; border: 1px solid #ffffff; color: #0f172a; text-decoration: none; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18); transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1); }
 .app-card-bottom .button.glass:hover { background: #f1f5f9; border-color: #f1f5f9; color: #0f172a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28); }
 @media (min-width: 1200px) {
