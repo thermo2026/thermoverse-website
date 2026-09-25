@@ -144,7 +144,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .app-card-industrial { background-image: url('assets/AI%20center.webp'); background-size: auto 118%; background-position: center bottom; }
 .app-card-education { background-image: url('assets/Education%20campus.jpg'); background-position: center center; }
 .app-card-factory { background-image: url('assets/Smart%20factory.jpg'); background-position: center center; }
-.app-card-multifamily { background-image: url('assets/Multifamily%20properties.webp'); background-position: center center; }
+.app-card-multifamily { background-image: url('assets/Multifamily%20properties.jpg'); background-position: center center; }
 .app-card-overlay { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(180deg, rgba(9, 24, 35, 0.6) 0%, rgba(9, 24, 35, 0.22) 28%, rgba(9, 24, 35, 0.72) 68%, rgba(9, 24, 35, 0.95) 100%); background-clip: padding-box; z-index: 1; transition: background 0.3s ease; }
 .app-card:hover .app-card-overlay { background: linear-gradient(180deg, rgba(9, 24, 35, 0.5) 0%, rgba(9, 24, 35, 0.15) 28%, rgba(9, 24, 35, 0.66) 68%, rgba(9, 24, 35, 0.92) 100%); }
 .app-card-inner { position: relative; z-index: 2; padding: 34px 30px 16px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; }
