@@ -487,8 +487,8 @@ button.button, input[type="submit"].button {
     color: var(--coral);
   }
   .hero:not(.animated-hero), .split, .form-layout, .editorial-row { grid-template-columns: 1fr; gap: 34px; }
-  .hero h1, .page-hero h1, .arch-hero-title, .animated-hero h1 { font-size: clamp(2.15rem, 10vw, 2.75rem); line-height: 1.04; }
-  .about-hero .arch-hero-title { font-size: clamp(1.65rem, 6.8vw, 2.35rem); line-height: 1.15; max-width: 100%; }
+  .hero h1, .page-hero h1, .arch-hero-title, .animated-hero h1 { font-size: clamp(2.15rem, 10vw, 2.75rem); line-height: 1.04; text-wrap: balance; }
+  .about-hero .arch-hero-title { font-size: clamp(1.65rem, 6.8vw, 2.35rem); line-height: 1.18; max-width: 100%; text-wrap: balance; }
   .section h2, .band h2, .arch-split-content h2, .arch-banner-content h2 { font-size: clamp(1.75rem, 6.5vw, 2.25rem); line-height: 1.15; }
   .hero-media { height: 330px; min-height: 0; aspect-ratio: auto; }
   .section { padding: 72px 0; }
@@ -715,6 +715,7 @@ button.button, input[type="submit"].button {
   font-size: clamp(2.35rem, 3.7vw, 3.9rem);
   line-height: 1.08;
   max-width: 1150px;
+  text-wrap: balance;
 }
 
 .about-hero .arch-hero-desc {
