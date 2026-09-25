@@ -431,10 +431,10 @@ button.button, input[type="submit"].button {
 .footer-brand p { margin: 22px 0 0; color: var(--muted); font-size: clamp(0.88rem, 1.15vw, 1.05rem); line-height: 1.55; }
 .footer-brand p.footer-tagline { margin: 18px 0 0; font-weight: 500; color: var(--ink); }
 .footer-address { margin-top: 14px; font-size: 0.84rem; color: var(--muted); line-height: 1.55; }
-.footer-address p { margin: 2px 0 0; font-size: 0.84rem; }
-.footer-address strong { color: var(--ink); font-weight: 600; }
-.footer-map-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; color: var(--coral); font-weight: 500; font-size: 0.82rem; text-decoration: none; }
-.footer-map-link:hover { text-decoration: underline; }
+.footer-address p { margin: 0; font-size: 0.84rem; white-space: normal; }
+@media (min-width: 480px) {
+  .footer-address p { white-space: nowrap; }
+}
 .footer-columns { display: grid; grid-template-columns: repeat(3, minmax(88px, auto)); gap: clamp(24px, 3vw, 44px); }
 .footer-columns div { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
 .footer-columns h2 { margin: 0 0 7px; color: var(--ink); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
