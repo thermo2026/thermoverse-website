@@ -61,7 +61,7 @@ main { background: var(--white); display: flow-root; }
 a { color: inherit; }
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid rgba(15, 23, 42, 0.35); outline-offset: 3px; }
 
-.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.08) 60%, rgba(255, 255, 255, 0.01) 100%); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: none; box-shadow: none; }
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.22) 60%, rgba(255, 255, 255, 0.08) 100%); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: none; box-shadow: none; }
 .site-header .nav-links a { color: var(--ink); font-weight: 550; }
 .site-header .nav-links a:hover, .site-header .nav-links a[aria-current="page"] { color: var(--coral); }
 .nav { max-width: var(--max); min-height: 58px; margin: auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; position: relative; }
