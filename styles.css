@@ -705,17 +705,12 @@ button.button, input[type="submit"].button {
 }
 
 .about-hero .eyebrow {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  display: inline-block;
-  padding: 5px 14px;
-  border-radius: 999px;
-  font-size: 0.76rem;
-  letter-spacing: 0.08em;
-  margin-bottom: 16px;
+  color: var(--coral);
+  background: none;
+  border: none;
+  padding: 0;
+  display: block;
+  margin-bottom: 14px;
 }
 
 .about-hero .arch-hero-title {
