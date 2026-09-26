@@ -14,6 +14,23 @@
 .contact-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 24px; }
 .contact-backdrop { position: absolute; inset: 0; background: rgba(3, 7, 10, .76); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .contact-dialog { position: relative; width: min(580px, 100%); max-height: min(820px, calc(100vh - 36px)); max-height: min(820px, calc(100dvh - 36px)); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; padding: clamp(22px, 3.5vw, 34px); border: 1px solid rgba(176, 195, 207, .3); border-radius: 18px; background: #182b38; color: #f8fbfd; box-shadow: 0 24px 80px rgba(0,0,0,.5); }
+.modal-container, .contact-dialog {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+.modal-container::-webkit-scrollbar, .contact-dialog::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-container::-webkit-scrollbar-track, .contact-dialog::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal-container::-webkit-scrollbar-thumb, .contact-dialog::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+}
+.modal-container::-webkit-scrollbar-thumb:hover, .contact-dialog::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
 .contact-dialog .eyebrow { color: #e54a64; font-size: .76rem; letter-spacing: .08em; margin-bottom: 6px; }
 .contact-dialog h2 { margin: 0; color: #fff; font-size: clamp(1.45rem, 2.4vw, 1.85rem); line-height: 1.15; }
 .contact-lead { margin: 8px 0 18px; color: #9baab6; font-size: .88rem; line-height: 1.45; }
@@ -643,9 +660,10 @@ button.button, input[type="submit"].button {
 .usecases-hero .arch-hero-desc {
   color: rgba(255, 255, 255, 0.92);
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
-  max-width: 660px;
+  max-width: 760px;
   font-size: 1.1rem;
   line-height: 1.68;
+  text-wrap: balance;
 }
 
 .usecases-hero .btn-pill {
@@ -729,12 +747,12 @@ button.button, input[type="submit"].button {
   text-wrap: balance;
 }
 
-.hero-desc-br {
+.hero-desc-br, .br-desktop {
   display: inline;
 }
 
 @media (max-width: 768px) {
-  .hero-desc-br {
+  .hero-desc-br, .br-desktop {
     display: none;
   }
 }
